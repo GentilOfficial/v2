@@ -1,25 +1,18 @@
 import React from "react";
 import { Link, Button } from "@nextui-org/react";
 import { useInView } from "framer-motion";
-import {
-    FaTwitter,
-    FaInstagram,
-    FaGithub,
-    FaTelegramPlane,
-} from "react-icons/fa";
+import { FaInstagram, FaGithub, FaTelegramPlane } from "react-icons/fa";
 import { SiteConfig } from "../data/links";
 
 export default function Footer(x) {
     const mail = React.useRef(null);
     const linkInstagram = React.useRef(null);
-    const linkTwitter = React.useRef(null);
     const linkGithub = React.useRef(null);
     const linkTelegram = React.useRef(null);
     const credits = React.useRef(null);
 
     const mailIsInView = useInView(mail, { once: true });
     const linkInstagramIsInView = useInView(linkInstagram, { once: true });
-    const linkTwitterIsInView = useInView(linkTwitter, { once: true });
     const linkGithubIsInView = useInView(linkGithub, { once: true });
     const linkTelegramIsInView = useInView(linkTelegram, { once: true });
     const creditsAreInView = useInView(credits, { once: true });
@@ -43,7 +36,7 @@ export default function Footer(x) {
                 >
                     {SiteConfig.email}
                 </Link>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 items-center justify-center">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center justify-center">
                     <Button
                         style={{
                             transform: linkInstagramIsInView
@@ -67,25 +60,25 @@ export default function Footer(x) {
                     </Button>
                     <Button
                         style={{
-                            transform: linkTwitterIsInView
+                            transform: linkTelegramIsInView
                                 ? "none"
                                 : "translateY(20px)",
-                            opacity: linkTwitterIsInView ? 1 : 0,
+                            opacity: linkTelegramIsInView ? 1 : 0,
                             transitionProperty: "opacity, transform",
                             transitionDuration: "0.9s",
                             transitionDelay: "0.2s",
                             ease: "cubic-bezier(1.01, 0.2, 0.71, 0)",
                         }}
-                        ref={linkTwitter}
+                        ref={linkTelegram}
                         size="sm"
                         as={Link}
                         showAnchorIcon
-                        href={SiteConfig.links.twitter}
+                        href={SiteConfig.links.telegram}
                         isExternal
                         className="bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none"
                     >
-                        <FaTwitter />
-                        Twitter
+                        <FaTelegramPlane />
+                        Telegram
                     </Button>
                     <Button
                         style={{
@@ -104,32 +97,10 @@ export default function Footer(x) {
                         showAnchorIcon
                         href={SiteConfig.links.github}
                         isExternal
-                        className="bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none"
+                        className="bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none col-span-2 sm:col-span-1"
                     >
                         <FaGithub />
                         GitHub
-                    </Button>
-                    <Button
-                        style={{
-                            transform: linkTelegramIsInView
-                                ? "none"
-                                : "translateY(20px)",
-                            opacity: linkTelegramIsInView ? 1 : 0,
-                            transitionProperty: "opacity, transform",
-                            transitionDuration: "0.9s",
-                            transitionDelay: "0.6s",
-                            ease: "cubic-bezier(1.01, 0.2, 0.71, 0)",
-                        }}
-                        ref={linkTelegram}
-                        size="sm"
-                        as={Link}
-                        showAnchorIcon
-                        href={SiteConfig.links.telegram}
-                        isExternal
-                        className="bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none"
-                    >
-                        <FaTelegramPlane />
-                        Telegram
                     </Button>
                 </div>
                 <p
@@ -137,7 +108,7 @@ export default function Footer(x) {
                         opacity: creditsAreInView ? 1 : 0,
                         transitionProperty: "opacity",
                         transitionDuration: "0.9s",
-                        transitionDelay: "0.8s",
+                        transitionDelay: "0.6s",
                         ease: "cubic-bezier(1.01, 0.2, 0.71, 0)",
                     }}
                     ref={credits}
