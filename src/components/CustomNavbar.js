@@ -37,7 +37,12 @@ export default function CustomNavbar(x) {
                         color="foreground"
                         className="flex gap-1 items-center rounded"
                     >
-                        <Image width={36} src={Avatar} classNames="m-5" />
+                        <Image
+                            width={36}
+                            src={Avatar}
+                            classNames="m-5"
+                            alt="Site logo"
+                        />
                         <p className="font-caveat text-lg font-bold mr-2">
                             Federico Gentili
                         </p>

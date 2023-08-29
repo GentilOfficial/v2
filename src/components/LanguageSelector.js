@@ -23,7 +23,10 @@ export default function LanguageSelector(x) {
     return (
         <Dropdown showArrow>
             <DropdownTrigger>
-                <button className="flex items-center text-2xl text-foreground-600 hover:text-foreground-500 duration-75">
+                <button
+                    title={x.isIT ? "Cambia lingua" : "Change language"}
+                    className="flex items-center text-2xl text-foreground-600 hover:text-foreground-500 duration-75"
+                >
                     <IoLanguage />
                 </button>
             </DropdownTrigger>

@@ -18,6 +18,7 @@ export default function ThemeSwitcher() {
                 />
             </Helmet>
             <button
+                title={theme === "dark" ? "Light" : "Dark"}
                 className="flex items-center text-2xl text-foreground-600 hover:text-foreground-500 duration-75"
                 onClick={() => {
                     theme === "dark" ? setTheme("light") : setTheme("dark");
