@@ -44,7 +44,7 @@ export default function EasterEgg({ playing, setPlaying }) {
     return (
         <>
             {playing ? (
-                <motion.div
+                <motion.section
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{
@@ -93,7 +93,7 @@ export default function EasterEgg({ playing, setPlaying }) {
                             </motion.div>
                         </motion.div>
                     </motion.div>
-                </motion.div>
+                </motion.section>
             ) : (
                 ""
             )}

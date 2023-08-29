@@ -13,7 +13,7 @@ export default function HomeHeader(x) {
     const headerSubsAreInView = useInView(headerSubs, { once: true });
 
     return (
-        <div className="py-16 flex relative">
+        <section className="py-16 flex relative">
             <div className="flex flex-col gap-6 items-center md:items-start md:justify-center w-full md:w-1/2 z-10">
                 <div
                     ref={headerTitle}
@@ -101,6 +101,6 @@ export default function HomeHeader(x) {
                     </motion.div>
                 </motion.div>
             </div>
-        </div>
+        </section>
     );
 }

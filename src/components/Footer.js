@@ -18,7 +18,7 @@ export default function Footer(x) {
     const creditsAreInView = useInView(credits, { once: true });
 
     return (
-        <div className="max-w-screen-lg mx-auto p-5 mt-5">
+        <footer className="max-w-screen-lg mx-auto p-5 mt-5">
             <div className="flex flex-col items-center gap-4 text-default-500/75 text-sm text-center">
                 <Link
                     ref={mail}
@@ -36,7 +36,7 @@ export default function Footer(x) {
                 >
                     {SiteConfig.email}
                 </Link>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center justify-center">
+                <section className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center justify-center">
                     <Button
                         style={{
                             transform: linkInstagramIsInView
@@ -102,7 +102,7 @@ export default function Footer(x) {
                         <FaGithub />
                         GitHub
                     </Button>
-                </div>
+                </section>
                 <p
                     style={{
                         opacity: creditsAreInView ? 1 : 0,
@@ -130,6 +130,6 @@ export default function Footer(x) {
                     </span>
                 </p>
             </div>
-        </div>
+        </footer>
     );
 }

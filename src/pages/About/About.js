@@ -2,8 +2,8 @@ import React from "react";
 
 export default function About(x) {
     return (
-        <div>
+        <section>
             <p>ABOUT</p>
-        </div>
+        </section>
     );
 }

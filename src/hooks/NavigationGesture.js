@@ -75,7 +75,7 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
     return (
         <main {...handlers}>
             {children}
-            <div
+            <section
                 className={`flex ${
                     indexOfNow - 1 < 0 ? "justify-end" : "justify-between"
                 } mx-auto max-w-5xl ${
@@ -121,7 +121,7 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
                         <IoIosArrowForward className="text-primary" />
                     </Button>
                 )}
-            </div>
+            </section>
         </main>
     );
 }

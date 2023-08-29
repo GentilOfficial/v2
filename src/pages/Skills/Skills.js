@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Skills(x) {
     return (
-        <div>
+        <section>
             <p>SKILLS</p>
-        </div>
+        </section>
     );
 }

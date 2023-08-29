@@ -10,7 +10,7 @@ export default function HomeFeatureSection(x) {
     const featureSubsAreInView = useInView(featureSubs, { once: true });
 
     return (
-        <div className="flex flex-col gap-2">
+        <section className="flex flex-col gap-2">
             <h2
                 ref={featureTitle}
                 className="font-semibold text-4xl"
@@ -53,6 +53,6 @@ export default function HomeFeatureSection(x) {
                     : "To simplify navigation, there are two features that allow you to move between sections."}
             </p>
             <HomeFeatureSectionCard isIT={x.isIT} />
-        </div>
+        </section>
     );
 }
