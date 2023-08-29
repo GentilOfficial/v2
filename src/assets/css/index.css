@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+*::selection {
+    background: #647c64;
+    color: #ffffff;
+}
