@@ -1,4 +1,4 @@
-<p align="center"><img alt="FG logo" src="https://www.fgentili.it/logov2.png" width="100" /></p>
+<p align="center"><img alt="FG logo" src="https://raw.githubusercontent.com/GentilOfficial/v2/main/public/maskable-512.png" width="150" style="border-radius: 50%"/></p>
 <h1 align="center">V2</h1>
 <p align="center">Federico Gentili's Portfolio V2</p>
 
