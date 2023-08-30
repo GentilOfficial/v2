@@ -1,37 +1,37 @@
 {
-  "short_name": "Federico Gentili",
-  "name": "Federico Gentili",
-  "description": "Federico Gentili portfolio v2",
-  "display": "standalone",
-  "orientation": "portrait",
-  "id": "/",
-  "start_url": "/",
-  "theme_color": "#647c64",
-  "background_color": "#647c64",
-  "icons": [
-    {
-      "src": "/logo-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/logo-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/maskable-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/maskable-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ]
+    "short_name": "Federico Gentili",
+    "name": "Federico Gentili",
+    "description": "Federico Gentili, a Fullstack Web Developer",
+    "display": "standalone",
+    "orientation": "portrait",
+    "id": "/",
+    "start_url": "/",
+    "theme_color": "#647c64",
+    "background_color": "#647c64",
+    "icons": [
+        {
+            "src": "/logo-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/logo-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
 }
