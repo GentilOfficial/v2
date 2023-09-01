@@ -2,7 +2,6 @@ import React from "react";
 import { useInView } from "framer-motion";
 import { Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import { TypeAnimation } from "react-type-animation";
 import Fly from "../../../assets/images/fly.png";
 import Hello from "../../../assets/images/hello.png";
 
@@ -61,16 +60,9 @@ export default function HomeHeader(x) {
                     }}
                     className="text-xl md:text-2xl text-default-500 font-caveat text-center md:text-start max-w-sm"
                 >
-                    <TypeAnimation
-                        sequence={[
-                            1000,
-                            x.isIT
-                                ? "Sono uno sviluppatore web fullstack, proveniente da Ferrara, Italia."
-                                : "I'm an italian fullstack web developer, based near Ferrara, Italy.",
-                        ]}
-                        speed={50}
-                        cursor={false}
-                    />
+                    {x.isIT
+                        ? "Sono uno sviluppatore web fullstack, proveniente da Ferrara, Italia."
+                        : "I'm an italian fullstack web developer, based near Ferrara, Italy."}
                 </p>
             </div>
             <div className="hidden md:flex w-1/2 items-center">
