@@ -22,7 +22,7 @@ export default function Footer(x) {
             <div className="flex flex-col items-center gap-4 text-default-500/75 text-sm text-center">
                 <Link
                     ref={mail}
-                    variant="bordered"
+                    variant="bordere"
                     showAnchorIcon
                     target="_blank"
                     href={"mailto:" + x.mail}
