@@ -26,7 +26,7 @@ export default function Footer(x) {
                     showAnchorIcon
                     target="_blank"
                     href={"mailto:" + x.mail}
-                    className="text-sm text-default-500/75"
+                    className="text-sm text-foreground"
                     style={{
                         opacity: mailIsInView ? 1 : 0,
                         transitionProperty: "opacity",
