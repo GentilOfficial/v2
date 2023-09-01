@@ -16,9 +16,11 @@ To simplify navigation, there are two features that allow to move between sectio
 You can switch theme with a button on the top-right of the navbar.
 
 Light:
+
 ![Light](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/light.png)
 
 Dark:
+
 ![Dark](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/dark.png)  
 
 ### 📚 Languages
