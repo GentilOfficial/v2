@@ -1,8 +1,6 @@
 <h1 align="center">V2</h1>
 <p align="center">Federico Gentili's Portfolio V2</p>
 
-![Open-Graph](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/open-graph.png)
-
 ## 🔗 Features
 
 ### 🧭 Navigation
