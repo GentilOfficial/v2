@@ -9,6 +9,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
+                sans: ["Red Hat Text"],
                 caveat: ["Caveat"],
             },
         },
