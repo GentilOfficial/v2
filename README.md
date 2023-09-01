@@ -4,11 +4,11 @@
 <h1 align="center">www.fgentili.it - V2</h1>
 <p align="center">Federico Gentili's Portfolio V2</p>
 
-# Table of Features
+## 🔗 Features
 
-1. [Navigation](#-navigation)
-2. [Dark/Light](#-darklight)
-3. [Language](#-language)
+1. [🧭 Navigation](#-navigation)
+2. [🌑 Dark/Light](#-darklight)
+3. [📚 Language](#-language)
 
 ## 🧭 Navigation
 
