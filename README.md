@@ -24,6 +24,6 @@ Dark:
 
 ![Dark](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/dark.png)  
 
-### 📚 Languages
+### 📚 Language
 
 You can change the language from English to Italian with a button on the top-right of the navbar.
