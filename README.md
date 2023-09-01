@@ -4,6 +4,12 @@
 <h1 align="center">www.fgentili.it - V2</h1>
 <p align="center">Federico Gentili's Portfolio V2</p>
 
+# Table of Features
+
+1. [Navigation](#🧭-Navigation)
+2. [Dark/Light](#🌑-Dark/Light)
+3. [Language](#📚-Language)
+
 ## 🧭 Navigation
 
 To simplify navigation, there are two features that allow to move between sections using:
