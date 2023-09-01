@@ -22,19 +22,20 @@ You can switch theme with a button on the top-right of the navbar.
 ## 🧭 Navigation
 
 To simplify navigation, there are two features that allow to move between sections using:
-- ⬅️ <b>Left Arrow</b> or ➡️ <b>Right Arrow</b> (Keyboard)
-- ◀️ <b>Swipe from Right to Left</b> or ▶️ <b>Swipe from Left to Right</b> (Touch Screen)
+
+-   ⬅️ <b>Left Arrow</b> or ➡️ <b>Right Arrow</b> (Keyboard)
+-   ◀️ <b>Swipe from Right to Left</b> or ▶️ <b>Swipe from Left to Right</b> (Touch Screen)
 
 ## 📷 Screenshots
 
 ### ☀️ Light
 
-![Light Navbar](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/lightNavbar.png)
+![LightNavbar](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/lightNavbar.png)
 
-![Light Navigation Card](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/lightNavigationCard.png)
+![LightNavigationCard](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/lightNavigationCard.png)
 
 ### 🌙 Dark
 
-![Dark Navbar](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/darkNavbar.png)  
+![DarkNavbar](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/darkNavbar.png)
 
-![Dark Navigation Card](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/darkNavigationCard.png)
+![DarkNavigationCard](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/darkNavigationCard.png)
