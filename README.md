@@ -9,5 +9,5 @@ React
 ## 🔗 Feature
 
 To simplify navigation, there are two features that allow to move between sections using:
-- [⬅️] Left Arrow or [➡️] Right Arrow (Keyboard)
-- [◀️] Swipe from Right to Left or [▶️] Swipe from Left to Right (Touch Screen)
+- ⬅️ <b>Left Arrow</b> or ➡️ <b>Right Arrow</b> (Keyboard)
+- ◀️ <b>Swipe from Right to Left</b> or ▶️ <b>Swipe from Left to Right</b> (Touch Screen)
