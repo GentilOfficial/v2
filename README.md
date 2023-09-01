@@ -6,16 +6,13 @@
 
 ## 🔗 Features
 
-1. [🧭 Navigation](#-navigation)
+1. [📚 Language](#-language)
 2. [🌑 Dark/Light](#-darklight)
-3. [📚 Language](#-language)
+3. [🧭 Navigation](#-navigation)
 
-## 🧭 Navigation
+## 📚 Language
 
-To simplify navigation, there are two features that allow to move between sections using:
-- ⬅️ <b>Left Arrow</b> or ➡️ <b>Right Arrow</b> (Keyboard)
-- ◀️ <b>Swipe from Right to Left</b> or ▶️ <b>Swipe from Left to Right</b> (Touch Screen)
-
+You can change the language from English to Italian with a button on the top-right of the navbar.
 
 ## 🌑 Dark/Light
 
@@ -29,7 +26,8 @@ Dark:
 
 ![Dark](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/dark.png)  
 
+## 🧭 Navigation
 
-## 📚 Language
-
-You can change the language from English to Italian with a button on the top-right of the navbar.
+To simplify navigation, there are two features that allow to move between sections using:
+- ⬅️ <b>Left Arrow</b> or ➡️ <b>Right Arrow</b> (Keyboard)
+- ◀️ <b>Swipe from Right to Left</b> or ▶️ <b>Swipe from Left to Right</b> (Touch Screen)
