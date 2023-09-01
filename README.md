@@ -6,9 +6,9 @@
 
 # Table of Features
 
-1. [Navigation](#🧭-Navigation)
-2. [Dark/Light](#🌑-Dark/Light)
-3. [Language](#📚-Language)
+1. [Navigation](#navigation)
+2. [Dark/Light](#darklight)
+3. [Language](#language)
 
 ## 🧭 Navigation
 
