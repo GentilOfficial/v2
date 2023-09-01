@@ -13,9 +13,13 @@ To simplify navigation, there are two features that allow to move between sectio
 
 ### 🌑 Dark/Light
 
+<p align="center">
+  
 ![Light](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/light.png)
+  
+![Dark](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/dark.png)  
+</p>
 
-![Dark](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/dark.png)
 
 ### 📚 Languages
 
