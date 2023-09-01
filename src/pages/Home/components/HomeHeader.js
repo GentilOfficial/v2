@@ -13,8 +13,8 @@ export default function HomeHeader(x) {
     const headerSubsAreInView = useInView(headerSubs, { once: true });
 
     return (
-        <section className="py-16 flex relative h-[calc(100vh-4rem)]">
-            <div className="flex flex-col gap-6 items-center md:items-start md:justify-center w-full md:w-1/2 z-10">
+        <section className="py-16 flex relative min-h-[calc(100vh-12.7rem)] md:min-h-[calc(100vh-12rem)]">
+            <section className="flex flex-col gap-6 items-center md:items-start md:justify-center w-full md:w-1/2 z-10">
                 <div
                     ref={headerTitle}
                     style={{
@@ -64,8 +64,8 @@ export default function HomeHeader(x) {
                         ? "Sono uno sviluppatore web fullstack, proveniente da Ferrara, Italia."
                         : "I'm an italian fullstack web developer, based near Ferrara, Italy."}
                 </p>
-            </div>
-            <div className="hidden md:flex w-1/2 items-center">
+            </section>
+            <section className="hidden md:flex w-1/2 items-center">
                 <motion.div
                     initial={{ x: 1000, y: -1000, scale: 0.5, opacity: 0.5 }}
                     animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
@@ -100,7 +100,7 @@ export default function HomeHeader(x) {
                         <Image isBlurred alt="Fly image" src={Fly} />
                     </motion.div>
                 </motion.div>
-            </div>
+            </section>
         </section>
     );
 }
