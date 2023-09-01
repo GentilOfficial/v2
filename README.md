@@ -1,24 +1,19 @@
-<p align="center"><img alt="FG logo" src="https://raw.githubusercontent.com/GentilOfficial/v2/main/public/logov2.png" width="150" style="border-radius: 50%"/></p>
 <h1 align="center">V2</h1>
 <p align="center">Federico Gentili's Portfolio V2</p>
+<p align="center"><img alt="FG logo" src="https://raw.githubusercontent.com/GentilOfficial/v2/main/public/open-graph.png"/></p>
 
-## 🛠️ Tech Stack
+## 🔗 Features
 
--   **Frontend**: HTML, CSS, JavaScript
--   **Backend**: Node.js, PHP
--   **Database**: MySQL
--   **Frameworks**: React
--   **Tools**: Git, VS Code
+### 🧭 Navigation
 
-## 🌱 Currently Learning
+To simplify navigation, there are two features that allow to move between sections using:
+- ⬅️ <b>Left Arrow</b> or ➡️ <b>Right Arrow</b> (Keyboard)
+- ◀️ <b>Swipe from Right to Left</b> or ▶️ <b>Swipe from Left to Right</b> (Touch Screen)
 
-I believe in continuous learning. I am currently taking a degree course in Computer Science at the University of Ferrara.
+### 🌑 Dark/Light
+![Light](https://unsplash.com/photos/VBPzRgd7gfc)
+![Dark](https://unsplash.com/photos/VBPzRgd7gfc)
 
-## 📫 Let's Connect
+### 📚 Languages
 
--   GitHub: [@GentilOfficial](https://github.com/GentilOfficial)
--   Instagram: [@federico.gnt](https://www.instagram.com/federico.gnt)
--   Telegram: [@gentil104](https://www.t.me/gentil104)
--   Portfolio: [www.fgentili.it](https://www.fgentili.it)
-
-Feel free to reach out if you'd like to collaborate or just say hi!
+You can change the language from English to Italian with a simple button on the top-right of the navbar.
