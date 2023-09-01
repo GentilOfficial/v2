@@ -10,6 +10,7 @@ To simplify navigation, there are two features that allow to move between sectio
 - ⬅️ <b>Left Arrow</b> or ➡️ <b>Right Arrow</b> (Keyboard)
 - ◀️ <b>Swipe from Right to Left</b> or ▶️ <b>Swipe from Left to Right</b> (Touch Screen)
 
+
 ## 🌑 Dark/Light
 
 You can switch theme with a button on the top-right of the navbar.
@@ -21,6 +22,7 @@ Light:
 Dark:
 
 ![Dark](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/dark.png)  
+
 
 ## 📚 Language
 
