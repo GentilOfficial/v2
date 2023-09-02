@@ -4,7 +4,7 @@
 <h1 align="center">www.fgentili.it - V2</h1>
 <p align="center">Federico Gentili's Portfolio V2</p>
 
-## 🔗 Features
+## 🔎 Content Table
 
 1. [📚 Language](#-language)
 2. [💡 Dark/Light](#-darklight)
