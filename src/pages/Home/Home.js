@@ -1,5 +1,4 @@
 import React from "react";
-import { Divider } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { BsArrowDownShort } from "react-icons/bs";
 import HomeHeader from "./components/HomeHeader";
@@ -10,7 +9,7 @@ export default function HomeIndex(x) {
         <div className="space-y-16">
             <HomeHeader isIT={x.isIT} />
             <section className="flex items-center justify-center gap-2 text-primary">
-                <Divider className="w-1/2" />
+                <div className="w-full h-px bg-neutral-500/30"></div>
                 <motion.span
                     animate={{
                         y: [0, 5],
@@ -26,7 +25,7 @@ export default function HomeIndex(x) {
                 >
                     <BsArrowDownShort />
                 </motion.span>
-                <Divider className="w-1/2" />
+                <div className="w-full h-px bg-neutral-500/30"></div>
             </section>
             <HomeFeatureSection isIT={x.isIT} />
         </div>
