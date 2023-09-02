@@ -34,8 +34,12 @@ To simplify navigation, there are two features that allow to move between sectio
 
 ![LightNavigationCard](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/lightNavigationCard.png)
 
+![LightLanguage](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/lightLanguage.png)
+
 ### 🌙 Dark
 
 ![DarkNavbar](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/darkNavbar.png)
 
 ![DarkNavigationCard](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/darkNavigationCard.png)
+
+![DarkLanguage](https://raw.githubusercontent.com/GentilOfficial/v2/main/public/screenshots/darkLanguage.png)
