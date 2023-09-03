@@ -1,8 +1,8 @@
 <div align="center">
   <img alt="Logo" src="https://raw.githubusercontent.com/GentilOfficial/v2/main/public/icons/logo.png" width="100" />
 </div>
-<h1 align="center">www.fgentili.it - V2</h1>
-<p align="center">Federico Gentili's Portfolio V2</p>
+<h1 align="center">www.fgentili.it - v2</h1>
+<p align="center">Federico Gentili's Portfolio</p>
 
 ## 🔎 Content Table
 
