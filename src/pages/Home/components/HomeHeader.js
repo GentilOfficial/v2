@@ -4,6 +4,7 @@ import { Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import Fly from "../../../assets/images/fly.png";
 import Hello from "../../../assets/images/hello.png";
+import { ReactComponent as LooperPattern } from "../../../assets/images/looper-pattern.svg";
 
 export default function HomeHeader(x) {
     const headerTitle = useRef(null);
@@ -14,6 +15,7 @@ export default function HomeHeader(x) {
 
     return (
         <section className="py-16 flex relative min-h-[calc(100vh-12.7rem)] md:min-h-[calc(100vh-12rem)]">
+            <LooperPattern className="absolute min-h-screen top-0 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0" />
             <section className="flex flex-col gap-6 items-center md:items-start md:justify-center w-full md:w-1/2 z-10">
                 <div
                     ref={headerTitle}
