@@ -1,10 +1,10 @@
-import React from "react";
+import { useRef } from "react";
 import { useInView } from "framer-motion";
 import HomeFeatureSectionCard from "./HomeFeatureSectionCard";
 
 export default function HomeFeatureSection(x) {
-    const featureTitle = React.useRef(null);
-    const featureSubs = React.useRef(null);
+    const featureTitle = useRef(null);
+    const featureSubs = useRef(null);
 
     const featureTitleIsInView = useInView(featureTitle, { once: true });
     const featureSubsAreInView = useInView(featureSubs, { once: true });

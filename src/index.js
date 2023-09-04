@@ -1,10 +1,10 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./assets/css/index.css";
 import { NextUIProvider } from "@nextui-org/react";
 import { BrowserRouter as Router } from "react-router-dom";
+import "./assets/css/index.css";
 import ScrollToTop from "./hooks/ScrollToTop";
+import App from "./App";
 
 console.log.apply(console, [
     "%c Designed & Built by Federico Gentili ",
@@ -13,12 +13,12 @@ console.log.apply(console, [
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <React.StrictMode>
+    <StrictMode>
         <NextUIProvider>
             <Router>
                 <ScrollToTop />
                 <App />
             </Router>
         </NextUIProvider>
-    </React.StrictMode>
+    </StrictMode>
 );

@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { useSwipeable } from "react-swipeable";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@nextui-org/react";
@@ -65,7 +65,7 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
         }
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         document.addEventListener("keydown", handleKeyPress);
         return () => {
             document.removeEventListener("keydown", handleKeyPress);

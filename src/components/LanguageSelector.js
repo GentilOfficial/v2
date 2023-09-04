@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import {
     Dropdown,
     DropdownTrigger,
@@ -16,7 +16,7 @@ export default function LanguageSelector(x) {
         ? "/" + now.slice(1).split("/")[1]
         : "/it/" + now.slice(1).split("/")[0];
 
-    const [selectedKeys, setSelectedKeys] = React.useState(
+    const [selectedKeys, setSelectedKeys] = useState(
         new Set([x.isIT ? "it" : "en"])
     );
 

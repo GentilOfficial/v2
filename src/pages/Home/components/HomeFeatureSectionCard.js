@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef } from "react";
 import { Card, CardBody, Divider } from "@nextui-org/react";
 import { motion, useInView } from "framer-motion";
 import {
@@ -14,8 +14,8 @@ import {
 } from "react-icons/hi";
 
 export default function HomeFeatureSectionCard(x) {
-    const featureCard = React.useRef(null);
-    const featureCardBody = React.useRef(null);
+    const featureCard = useRef(null);
+    const featureCardBody = useRef(null);
 
     const featureCardIsInView = useInView(featureCard, { once: true });
     const featureCardBodyIsInView = useInView(featureCardBody, { once: true });

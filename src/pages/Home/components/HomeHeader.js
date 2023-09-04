@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
@@ -6,8 +6,8 @@ import Fly from "../../../assets/images/fly.png";
 import Hello from "../../../assets/images/hello.png";
 
 export default function HomeHeader(x) {
-    const headerTitle = React.useRef(null);
-    const headerSubs = React.useRef(null);
+    const headerTitle = useRef(null);
+    const headerSubs = useRef(null);
 
     const headerTitleIsInView = useInView(headerTitle, { once: true });
     const headerSubsAreInView = useInView(headerSubs, { once: true });

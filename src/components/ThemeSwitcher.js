@@ -1,4 +1,3 @@
-import React from "react";
 import { useTheme } from "next-themes";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { TbSunFilled, TbMoonFilled } from "react-icons/tb";

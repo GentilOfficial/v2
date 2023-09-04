@@ -1,13 +1,13 @@
-import React from "react";
+import { useRef, useEffect } from "react";
 import { Link, Button } from "@nextui-org/react";
 import { useInView, useAnimation, motion } from "framer-motion";
 import { FaInstagram, FaGithub, FaTelegramPlane } from "react-icons/fa";
 import { SiteConfig } from "../data/links";
 
 export default function Footer(x) {
-    const mail = React.useRef(null);
-    const links = React.useRef(null);
-    const credits = React.useRef(null);
+    const mail = useRef(null);
+    const links = useRef(null);
+    const credits = useRef(null);
 
     const mailIsInView = useInView(mail, { once: true });
     const linksAreInView = useInView(links, { once: true });
@@ -35,7 +35,7 @@ export default function Footer(x) {
         },
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (linksAreInView) {
             linkContainerAnimation.start("visible");
         } else {

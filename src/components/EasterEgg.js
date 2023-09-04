@@ -1,19 +1,19 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Image } from "@nextui-org/react";
 import { IoClose } from "react-icons/io5";
 import MindBlown from "../assets/images/mindBlown.png";
 
 export default function EasterEgg({ playing, setPlaying }) {
-    const [audio] = React.useState(new Audio("/easter_egg.mp3"));
+    const [audio] = useState(new Audio("/easter_egg.mp3"));
     audio.volume = 0.05;
 
-    React.useEffect(() => {
+    useEffect(() => {
         audio.currentTime = 0;
         playing ? audio.play() : audio.pause();
     });
 
-    React.useEffect(() => {
+    useEffect(() => {
         audio.addEventListener("ended", () => {
             setPlaying(false);
             document.body.style.overflow = "unset";
@@ -35,7 +35,7 @@ export default function EasterEgg({ playing, setPlaying }) {
         }
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         document.addEventListener("keydown", handleKeyPress);
         return () => {
             document.removeEventListener("bind", handleKeyPress);

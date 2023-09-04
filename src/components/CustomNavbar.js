@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import {
     Navbar,
     NavbarBrand,
@@ -20,7 +20,7 @@ import ThemeSwitcher from "./ThemeSwitcher";
 import { SiteConfig } from "../data/links";
 
 export default function CustomNavbar(x) {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const location = useLocation().pathname;
 
