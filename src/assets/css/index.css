@@ -13,3 +13,7 @@
     background: #647c64;
     color: #ffffff;
 }
+
+.bg-looper-pattern {
+    background-image: url("../images/looper-pattern.svg");
+}
