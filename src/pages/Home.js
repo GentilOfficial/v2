@@ -1,7 +1,7 @@
 import React from "react";
-import HomeHeader from "./components/HomeHeader";
-import HomeDivider from "./components/HomeDivider";
-import HomeFeatureSection from "./components/HomeFeatureSection";
+import HomeHeader from "../components/home_components/HomeHeader";
+import HomeDivider from "../components/home_components/HomeDivider";
+import HomeFeatureSection from "../components/home_components/HomeFeatureSection";
 
 export default function Home(x) {
     return (

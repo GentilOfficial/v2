@@ -3,11 +3,11 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import CustomNavbar from "./components/CustomNavbar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home/Home";
-import Skills from "./pages/Skills/Skills";
-import Projects from "./pages/Projects/Projects";
-import About from "./pages/About/About";
-import NotFound from "./pages/NotFound/NotFound";
+import Home from "./pages/Home";
+import Skills from "./pages/Skills";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import NotFound from "./pages/NotFound";
 import EasterEgg from "./components/EasterEgg";
 import NavigationGesture from "./hooks/NavigationGesture";
 

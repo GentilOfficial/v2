@@ -2,8 +2,8 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import Fly from "../../../assets/images/fly.png";
-import Hello from "../../../assets/images/hello.png";
+import Fly from "../../assets/images/fly.png";
+import Hello from "../../assets/images/hello.png";
 
 export default function HomeHeader(x) {
     const headerTitle = useRef(null);

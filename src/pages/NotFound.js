@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import Chilling from "../../assets/images/chilling.png";
+import Chilling from "../assets/images/chilling.png";
 
 export default function NotFound(x) {
     return (
