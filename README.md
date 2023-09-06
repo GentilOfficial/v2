@@ -6,10 +6,10 @@
 
 ## 🔎 Content Table
 
-1. [📚 Language](#-language)
-2. [💡 Dark/Light](#-darklight)
-3. [🧭 Navigation](#-navigation)
-4. [📷 Screenshots](#-screenshots)
+1. 📚 [Language](#-language)
+2. 💡 [Dark/Light](#-darklight)
+3. 🧭 [Navigation](#-navigation)
+4. 📷 [Screenshots](#-screenshots)
 
 ## 📚 Language
 
