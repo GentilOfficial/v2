@@ -1,12 +1,11 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import CustomNavbar from "./components/CustomNavbar";
+import PagesPath from "./hooks/PagesPath";
 import Footer from "./components/Footer";
-import NotFound from "./pages/NotFound";
 import EasterEgg from "./components/EasterEgg";
 import NavigationGesture from "./hooks/NavigationGesture";
-import { SiteConfig } from "./data/SiteConfig";
 
 export default function App() {
     const [playing, setPlaying] = React.useState(false);
@@ -32,41 +31,7 @@ export default function App() {
                 <NavigationGesture isIT={isIT} isPlaying={playing}>
                     <div className="bg-background overflow-x-hidden">
                         <div className="mx-auto max-w-5xl px-6 min-h-[calc(100vh-21rem)] sm:min-h-[calc(100vh-18rem)]">
-                            <Routes>
-                                {SiteConfig.navItems.map((item, index) => (
-                                    <Route
-                                        key={`${item}-${index}`}
-                                        path={item.href}
-                                        element={
-                                            <item.component
-                                                isIT={isIT}
-                                                isPlaying={playing}
-                                            />
-                                        }
-                                    />
-                                ))}
-                                {SiteConfig.navItemsIT.map((item, index) => (
-                                    <Route
-                                        key={`${item}-${index}`}
-                                        path={item.href}
-                                        element={
-                                            <item.component
-                                                isIT={isIT}
-                                                isPlaying={playing}
-                                            />
-                                        }
-                                    />
-                                ))}
-                                <Route
-                                    path="*"
-                                    element={
-                                        <NotFound
-                                            isIT={isIT}
-                                            isPlaying={playing}
-                                        />
-                                    }
-                                />
-                            </Routes>
+                            <PagesPath isIT={isIT} isPlaying={playing} />
                         </div>
                     </div>
                 </NavigationGesture>
