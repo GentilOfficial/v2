@@ -45,12 +45,12 @@ export const SiteConfig = {
         {
             label: "Telegram",
             href: "https://t.me/gentil104",
-            icon: FaGithub,
+            icon: FaTelegramPlane,
         },
         {
             label: "Github",
             href: "https://github.com/GentilOfficial",
-            icon: FaTelegramPlane,
+            icon: FaGithub,
         },
     ],
 };
