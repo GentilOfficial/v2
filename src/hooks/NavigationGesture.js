@@ -23,8 +23,6 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
         ? SiteConfig.navItemsIT.length
         : SiteConfig.navItems.length;
 
-    console.log(now + " " + indexOfNow + " " + itemsArrayLength);
-
     const handlers = useSwipeable({
         onSwipedRight: () => {
             if (!isPlaying && indexOfNow - 1 > -1 && indexOfNow !== -1) {
