@@ -1,8 +1,7 @@
 import { useRef, useEffect } from "react";
 import { Link, Button } from "@nextui-org/react";
 import { useInView, useAnimation, motion } from "framer-motion";
-import { FaInstagram, FaGithub, FaTelegramPlane } from "react-icons/fa";
-import { SiteConfig } from "../data/links";
+import { SiteConfig } from "../data/SiteConfig";
 
 export default function Footer(x) {
     const mail = useRef(null);
@@ -69,48 +68,24 @@ export default function Footer(x) {
                     animate={linkContainerAnimation}
                     className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center justify-center"
                 >
-                    <motion.div variants={linkAnimation}>
-                        <Button
-                            size="sm"
-                            as={Link}
-                            showAnchorIcon
-                            href={SiteConfig.links.instagram}
-                            isExternal
-                            className="bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none w-full"
+                    {SiteConfig.links.map((item, index) => (
+                        <motion.div
+                            variants={linkAnimation}
+                            key={`${item}-${index}`}
                         >
-                            <FaInstagram />
-                            Instagram
-                        </Button>
-                    </motion.div>
-                    <motion.div variants={linkAnimation}>
-                        <Button
-                            size="sm"
-                            as={Link}
-                            showAnchorIcon
-                            href={SiteConfig.links.telegram}
-                            isExternal
-                            className="bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none w-full"
-                        >
-                            <FaTelegramPlane />
-                            Telegram
-                        </Button>
-                    </motion.div>
-                    <motion.div
-                        variants={linkAnimation}
-                        className="col-span-2 sm:col-span-1"
-                    >
-                        <Button
-                            size="sm"
-                            as={Link}
-                            showAnchorIcon
-                            href={SiteConfig.links.github}
-                            isExternal
-                            className="bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none w-full"
-                        >
-                            <FaGithub />
-                            GitHub
-                        </Button>
-                    </motion.div>
+                            <Button
+                                size="sm"
+                                as={Link}
+                                showAnchorIcon
+                                href={item.href}
+                                isExternal
+                                className="bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none w-full"
+                            >
+                                <item.icon />
+                                {item.label}
+                            </Button>
+                        </motion.div>
+                    ))}
                 </motion.section>
                 <section
                     ref={credits}

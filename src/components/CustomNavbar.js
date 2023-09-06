@@ -17,7 +17,7 @@ import { Link, useLocation } from "react-router-dom";
 import Avatar from "../assets/images/avatar.png";
 import LanguageSelector from "./LanguageSelector";
 import ThemeSwitcher from "./ThemeSwitcher";
-import { SiteConfig } from "../data/links";
+import { SiteConfig } from "../data/SiteConfig";
 
 export default function CustomNavbar(x) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

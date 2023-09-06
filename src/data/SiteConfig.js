@@ -1,3 +1,5 @@
+import { FaInstagram, FaGithub, FaTelegramPlane } from "react-icons/fa";
+
 export const SiteConfig = {
     navItems: [
         {
@@ -35,10 +37,22 @@ export const SiteConfig = {
             href: "/it/about",
         },
     ],
-    links: {
-        instagram: "https://www.instagram.com/federico.gnt/",
-        telegram: "https://t.me/gentil104",
-        github: "https://github.com/GentilOfficial",
-    },
+    links: [
+        {
+            label: "Instagram",
+            icon: FaInstagram,
+            href: "https://www.instagram.com/federico.gnt/",
+        },
+        {
+            label: "Telegram",
+            icon: FaGithub,
+            href: "https://t.me/gentil104",
+        },
+        {
+            label: "Github",
+            icon: FaTelegramPlane,
+            href: "https://github.com/GentilOfficial",
+        },
+    ],
     email: "federicogentili05@gmail.com",
 };

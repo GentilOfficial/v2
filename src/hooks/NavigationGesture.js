@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import { SiteConfig } from "../data/links";
+import { SiteConfig } from "../data/SiteConfig";
 
 export default function NavigationGesture({ children, isPlaying, isIT }) {
     const navigate = useNavigate();
