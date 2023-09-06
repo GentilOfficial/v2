@@ -37,9 +37,8 @@ export const SiteConfig = {
     ],
     links: {
         instagram: "https://www.instagram.com/federico.gnt/",
-        twitter: "https://twitter.com/FedericoGent05",
-        github: "https://github.com/GentilOfficial",
         telegram: "https://t.me/gentil104",
+        github: "https://github.com/GentilOfficial",
     },
     email: "federicogentili05@gmail.com",
 };
