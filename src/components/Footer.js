@@ -72,6 +72,13 @@ export default function Footer(x) {
                         <motion.div
                             variants={linkAnimation}
                             key={`${item}-${index}`}
+                            className={
+                                SiteConfig.links.length % 2 === 0
+                                    ? "col-span-1"
+                                    : SiteConfig.links.length === index + 1
+                                    ? "col-span-2 sm:col-span-1"
+                                    : "col-span-1"
+                            }
                         >
                             <Button
                                 size="sm"
