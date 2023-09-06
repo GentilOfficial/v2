@@ -14,7 +14,7 @@ import {
 } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import Avatar from "../assets/images/avatar.png";
+import Avatar from "../assets/images/avatar.webp";
 import LanguageSelector from "./LanguageSelector";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { SiteConfig } from "../data/SiteConfig";
@@ -39,6 +39,7 @@ export default function CustomNavbar(x) {
                     >
                         <Image
                             width={36}
+                            height={36}
                             src={Avatar}
                             classNames="m-5"
                             alt="Site logo"

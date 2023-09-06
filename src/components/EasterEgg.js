@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Image } from "@nextui-org/react";
 import { IoClose } from "react-icons/io5";
-import MindBlown from "../assets/images/mindBlown.png";
+import MindBlown from "../assets/images/mindBlown.webp";
 
 export default function EasterEgg({ playing, setPlaying }) {
     const [audio] = useState(new Audio("/easter_egg.mp3"));

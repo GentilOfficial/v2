@@ -2,8 +2,8 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { Image } from "@nextui-org/react";
 import { motion } from "framer-motion";
-import Fly from "../../assets/images/fly.png";
-import Hello from "../../assets/images/hello.png";
+import Fly from "../../assets/images/fly.webp";
+import Hello from "../../assets/images/hello.webp";
 
 export default function HomeHeader(x) {
     const headerTitle = useRef(null);
@@ -41,6 +41,7 @@ export default function HomeHeader(x) {
                     <Image
                         isBlurred
                         width={200}
+                        height={200}
                         className="md:hidden"
                         alt="Hi image"
                         src={Hello}
@@ -107,7 +108,13 @@ export default function HomeHeader(x) {
                             },
                         }}
                     >
-                        <Image isBlurred alt="Fly image" src={Fly} />
+                        <Image
+                            isBlurred
+                            alt="Fly image"
+                            width="100%"
+                            height="100%"
+                            src={Fly}
+                        />
                     </motion.div>
                 </motion.div>
             </section>
