@@ -12,12 +12,18 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
     const now = useLocation().pathname;
 
     const indexOfNow = isIT
-        ? SiteConfig.navItemsIT.findIndex((i) => i.href === now)
-        : SiteConfig.navItems.findIndex((i) => i.href === now);
+        ? SiteConfig.navItemsIT.findIndex(
+              (i) => i.href.replaceAll("/", "") === now.replaceAll("/", "")
+          )
+        : SiteConfig.navItems.findIndex(
+              (i) => i.href.replaceAll("/", "") === now.replaceAll("/", "")
+          );
 
     const itemsArrayLength = isIT
         ? SiteConfig.navItemsIT.length
         : SiteConfig.navItems.length;
+
+    console.log(now + " " + indexOfNow + " " + itemsArrayLength);
 
     const handlers = useSwipeable({
         onSwipedRight: () => {
