@@ -55,9 +55,15 @@ export default function CustomNavbar(x) {
                     ? SiteConfig.navItemsIT.map((item, index) => (
                           <NavbarItem
                               key={`${item}-${index}`}
-                              isActive={location === item.href ? true : false}
+                              isActive={
+                                  location.replaceAll("/", "") ===
+                                  item.href.replaceAll("/", "")
+                                      ? true
+                                      : false
+                              }
                               className={
-                                  location === item.href
+                                  location.replaceAll("/", "") ===
+                                  item.href.replaceAll("/", "")
                                       ? "text-primary"
                                       : "text-foreground-600 hover:text-foreground-500 duration-75"
                               }
@@ -68,9 +74,15 @@ export default function CustomNavbar(x) {
                     : SiteConfig.navItems.map((item, index) => (
                           <NavbarItem
                               key={`${item}-${index}`}
-                              isActive={location === item.href ? true : false}
+                              isActive={
+                                  location.replaceAll("/", "") ===
+                                  item.href.replaceAll("/", "")
+                                      ? true
+                                      : false
+                              }
                               className={
-                                  location === item.href
+                                  location.replaceAll("/", "") ===
+                                  item.href.replaceAll("/", "")
                                       ? "text-primary"
                                       : "text-foreground-600 hover:text-foreground-500 duration-75"
                               }
@@ -113,7 +125,8 @@ export default function CustomNavbar(x) {
                               <NavbarMenuItem
                                   key={`${item}-${index}`}
                                   className={`${index === 0 ? "mt-5" : ""} ${
-                                      location === item.href
+                                      location.replaceAll("/", "") ===
+                                      item.href.replaceAll("/", "")
                                           ? "text-primary font-bold text-4xl"
                                           : "text-foreground text-2xl"
                                   }`}
@@ -131,7 +144,8 @@ export default function CustomNavbar(x) {
                               <NavbarMenuItem
                                   key={`${item}-${index}`}
                                   className={`${index === 0 ? "mt-5" : ""} ${
-                                      location === item.href
+                                      location.replaceAll("/", "") ===
+                                      item.href.replaceAll("/", "")
                                           ? "text-primary font-bold text-4xl"
                                           : "text-foreground text-2xl"
                                   }`}
