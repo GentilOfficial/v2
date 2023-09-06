@@ -11,35 +11,37 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
 
     const now = useLocation().pathname;
 
-    const indexOfNow = isIT
-        ? SiteConfig.navItemsIT.findIndex(
-              (i) => i.href.replaceAll("/", "") === now.replaceAll("/", "")
-          )
-        : SiteConfig.navItems.findIndex(
-              (i) => i.href.replaceAll("/", "") === now.replaceAll("/", "")
-          );
+    const indexOfNow = SiteConfig.navItems.findIndex(
+        isIT
+            ? (i) => i.hrefIT.replaceAll("/", "") === now.replaceAll("/", "")
+            : (i) => i.href.replaceAll("/", "") === now.replaceAll("/", "")
+    );
 
-    const itemsArrayLength = isIT
-        ? SiteConfig.navItemsIT.length
-        : SiteConfig.navItems.length;
+    const itemsArrayLength = SiteConfig.navItems.length;
+
+    console.log(indexOfNow);
 
     const handlers = useSwipeable({
         onSwipedRight: () => {
             if (!isPlaying && indexOfNow - 1 > -1 && indexOfNow !== -1) {
-                isIT
-                    ? navigate(SiteConfig.navItemsIT[indexOfNow - 1].href)
-                    : navigate(SiteConfig.navItems[indexOfNow - 1].href);
+                navigate(
+                    isIT
+                        ? SiteConfig.navItems[indexOfNow - 1].hrefIT
+                        : SiteConfig.navItems[indexOfNow - 1].href
+                );
             }
         },
         onSwipedLeft: () => {
             if (
                 !isPlaying &&
-                indexOfNow + 1 < itemsArrayLength &&
+                indexOfNow + 1 < SiteConfig.navItems.length &&
                 indexOfNow !== -1
             ) {
-                isIT
-                    ? navigate(SiteConfig.navItemsIT[indexOfNow + 1].href)
-                    : navigate(SiteConfig.navItems[indexOfNow + 1].href);
+                navigate(
+                    isIT
+                        ? SiteConfig.navItems[indexOfNow + 1].hrefIT
+                        : SiteConfig.navItems[indexOfNow + 1].href
+                );
             }
         },
         swipeDuration: 500,
@@ -53,19 +55,23 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
             indexOfNow - 1 > -1 &&
             indexOfNow !== -1
         ) {
-            isIT
-                ? navigate(SiteConfig.navItemsIT[indexOfNow - 1].href)
-                : navigate(SiteConfig.navItems[indexOfNow - 1].href);
+            navigate(
+                isIT
+                    ? SiteConfig.navItems[indexOfNow - 1].hrefIT
+                    : SiteConfig.navItems[indexOfNow - 1].href
+            );
         }
         if (
             event.key === "ArrowRight" &&
             !isPlaying &&
-            indexOfNow + 1 < itemsArrayLength &&
+            indexOfNow + 1 < SiteConfig.navItems.length &&
             indexOfNow !== -1
         ) {
-            isIT
-                ? navigate(SiteConfig.navItemsIT[indexOfNow + 1].href)
-                : navigate(SiteConfig.navItems[indexOfNow + 1].href);
+            navigate(
+                isIT
+                    ? SiteConfig.navItems[indexOfNow + 1].hrefIT
+                    : SiteConfig.navItems[indexOfNow + 1].href
+            );
         }
     };
 
@@ -94,14 +100,14 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
                         className={`${indexOfNow === -1 ? "hidden" : "flex"}`}
                         to={
                             isIT
-                                ? SiteConfig.navItemsIT[indexOfNow - 1].href
+                                ? SiteConfig.navItems[indexOfNow - 1].hrefIT
                                 : SiteConfig.navItems[indexOfNow - 1].href
                         }
                         variant="light"
                     >
                         <IoIosArrowBack className="text-primary" />{" "}
                         {isIT
-                            ? SiteConfig.navItemsIT[indexOfNow - 1].label
+                            ? SiteConfig.navItems[indexOfNow - 1].labelIT
                             : SiteConfig.navItems[indexOfNow - 1].label}
                     </Button>
                 )}
@@ -114,13 +120,13 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
                         className={`${indexOfNow === -1 ? "hidden" : "flex"}`}
                         to={
                             isIT
-                                ? SiteConfig.navItemsIT[indexOfNow + 1].href
+                                ? SiteConfig.navItems[indexOfNow + 1].hrefIT
                                 : SiteConfig.navItems[indexOfNow + 1].href
                         }
                         variant="light"
                     >
                         {isIT
-                            ? SiteConfig.navItemsIT[indexOfNow + 1].label
+                            ? SiteConfig.navItems[indexOfNow + 1].labelIT
                             : SiteConfig.navItems[indexOfNow + 1].label}{" "}
                         <IoIosArrowForward className="text-primary" />
                     </Button>

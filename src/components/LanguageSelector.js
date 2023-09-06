@@ -41,7 +41,6 @@ export default function LanguageSelector(x) {
                 selectionMode="single"
                 selectedKeys={selectedKeys}
                 onSelectionChange={setSelectedKeys}
-                onClick={() => navigate("/skills")}
             >
                 <DropdownSection
                     title={

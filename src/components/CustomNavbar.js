@@ -52,45 +52,37 @@ export default function CustomNavbar(x) {
             </NavbarContent>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                {x.isIT
-                    ? SiteConfig.navItemsIT.map((item, index) => (
-                          <NavbarItem
-                              key={`${item}-${index}`}
-                              isActive={
-                                  location.replaceAll("/", "") ===
+                {SiteConfig.navItems.map((item, index) => (
+                    <NavbarItem
+                        key={`${item}-${index}`}
+                        isActive={
+                            x.isIT
+                                ? location.replaceAll("/", "") ===
+                                  item.hrefIT.replaceAll("/", "")
+                                    ? true
+                                    : false
+                                : location.replaceAll("/", "") ===
                                   item.href.replaceAll("/", "")
-                                      ? true
-                                      : false
-                              }
-                              className={
-                                  location.replaceAll("/", "") ===
+                                ? true
+                                : false
+                        }
+                        className={
+                            x.isIT
+                                ? location.replaceAll("/", "") ===
+                                  item.hrefIT.replaceAll("/", "")
+                                    ? "text-primary"
+                                    : "text-foreground-600 hover:text-foreground-500 duration-75"
+                                : location.replaceAll("/", "") ===
                                   item.href.replaceAll("/", "")
-                                      ? "text-primary"
-                                      : "text-foreground-600 hover:text-foreground-500 duration-75"
-                              }
-                          >
-                              <Link to={item.href}>{item.label}</Link>
-                          </NavbarItem>
-                      ))
-                    : SiteConfig.navItems.map((item, index) => (
-                          <NavbarItem
-                              key={`${item}-${index}`}
-                              isActive={
-                                  location.replaceAll("/", "") ===
-                                  item.href.replaceAll("/", "")
-                                      ? true
-                                      : false
-                              }
-                              className={
-                                  location.replaceAll("/", "") ===
-                                  item.href.replaceAll("/", "")
-                                      ? "text-primary"
-                                      : "text-foreground-600 hover:text-foreground-500 duration-75"
-                              }
-                          >
-                              <Link to={item.href}>{item.label}</Link>
-                          </NavbarItem>
-                      ))}
+                                ? "text-primary"
+                                : "text-foreground-600 hover:text-foreground-500 duration-75"
+                        }
+                    >
+                        <Link to={x.isIT ? item.hrefIT : item.href}>
+                            {x.isIT ? item.labelIT : item.label}
+                        </Link>
+                    </NavbarItem>
+                ))}
             </NavbarContent>
 
             <NavbarContent justify="end">
@@ -121,45 +113,30 @@ export default function CustomNavbar(x) {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, ease: [0, 0.71, 0.2, 1.01] }}
                 >
-                    {x.isIT
-                        ? SiteConfig.navItemsIT.map((item, index) => (
-                              <NavbarMenuItem
-                                  key={`${item}-${index}`}
-                                  className={`${index === 0 ? "mt-5" : ""} ${
-                                      location.replaceAll("/", "") ===
+                    {SiteConfig.navItems.map((item, index) => (
+                        <NavbarMenuItem
+                            key={`${item}-${index}`}
+                            className={`${index === 0 ? "mt-5" : ""} ${
+                                x.isIT
+                                    ? location.replaceAll("/", "") ===
+                                      item.hrefIT.replaceAll("/", "")
+                                        ? "text-primary font-bold text-4xl"
+                                        : "text-foreground text-2xl"
+                                    : location.replaceAll("/", "") ===
                                       item.href.replaceAll("/", "")
-                                          ? "text-primary font-bold text-4xl"
-                                          : "text-foreground text-2xl"
-                                  }`}
-                              >
-                                  <Link
-                                      className="w-full"
-                                      to={item.href}
-                                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                  >
-                                      {item.label}
-                                  </Link>
-                              </NavbarMenuItem>
-                          ))
-                        : SiteConfig.navItems.map((item, index) => (
-                              <NavbarMenuItem
-                                  key={`${item}-${index}`}
-                                  className={`${index === 0 ? "mt-5" : ""} ${
-                                      location.replaceAll("/", "") ===
-                                      item.href.replaceAll("/", "")
-                                          ? "text-primary font-bold text-4xl"
-                                          : "text-foreground text-2xl"
-                                  }`}
-                              >
-                                  <Link
-                                      className="w-full"
-                                      to={item.href}
-                                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                                  >
-                                      {item.label}
-                                  </Link>
-                              </NavbarMenuItem>
-                          ))}
+                                    ? "text-primary font-bold text-4xl"
+                                    : "text-foreground text-2xl"
+                            }`}
+                        >
+                            <Link
+                                className="w-full"
+                                to={x.isIT ? item.hrefIT : item.href}
+                                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            >
+                                {x.isIT ? item.labelIT : item.label}
+                            </Link>
+                        </NavbarMenuItem>
+                    ))}
                     <NavbarItem className="w-full gap-4 flex flex-col items-center">
                         <Divider className="w-3/5" />
                         <Button

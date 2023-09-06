@@ -9,44 +9,30 @@ export const SiteConfig = {
     navItems: [
         {
             label: "Home",
+            labelIT: "Home",
             href: "/",
+            hrefIT: "/it/",
             component: Home,
         },
         {
             label: "Skills",
+            labelIT: "Abilità",
             href: "/skills",
+            hrefIT: "/it/abilita",
             component: Skills,
         },
         {
             label: "Projects",
+            labelIT: "Progetti",
             href: "/projects",
+            hrefIT: "/it/progetti",
             component: Projects,
         },
         {
             label: "About",
+            labelIT: "Info",
             href: "/about",
-            component: About,
-        },
-    ],
-    navItemsIT: [
-        {
-            label: "Home",
-            href: "/it/",
-            component: Home,
-        },
-        {
-            label: "Abilità",
-            href: "/it/skills",
-            component: Skills,
-        },
-        {
-            label: "Progetti",
-            href: "/it/projects",
-            component: Projects,
-        },
-        {
-            label: "Info",
-            href: "/it/about",
+            hrefIT: "/it/info",
             component: About,
         },
     ],

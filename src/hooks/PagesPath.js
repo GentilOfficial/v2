@@ -14,10 +14,10 @@ export default function PagesPath({ isIT, isPlaying }) {
                     }
                 />
             ))}
-            {SiteConfig.navItemsIT.map((item, index) => (
+            {SiteConfig.navItems.map((item, index) => (
                 <Route
                     key={`${item}-${index}`}
-                    path={item.href}
+                    path={item.hrefIT}
                     element={
                         <item.component isIT={isIT} isPlaying={isPlaying} />
                     }
