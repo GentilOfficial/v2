@@ -3,13 +3,10 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import CustomNavbar from "./components/CustomNavbar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Skills from "./pages/Skills";
-import Projects from "./pages/Projects";
-import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import EasterEgg from "./components/EasterEgg";
 import NavigationGesture from "./hooks/NavigationGesture";
+import { SiteConfig } from "./data/SiteConfig";
 
 export default function App() {
     const [playing, setPlaying] = React.useState(false);
@@ -36,84 +33,32 @@ export default function App() {
                     <div className="bg-background overflow-x-hidden">
                         <div className="mx-auto max-w-5xl px-6 min-h-[calc(100vh-21rem)] sm:min-h-[calc(100vh-18rem)]">
                             <Routes>
-                                <Route
-                                    path="/"
-                                    element={
-                                        <Home isIT={isIT} isPlaying={playing} />
-                                    }
-                                />
-                                <Route
-                                    path="/skills"
-                                    element={
-                                        <Skills
-                                            isIT={isIT}
-                                            isPlaying={playing}
-                                        />
-                                    }
-                                />
-                                <Route
-                                    path="/projects"
-                                    element={
-                                        <Projects
-                                            isIT={isIT}
-                                            isPlaying={playing}
-                                        />
-                                    }
-                                />
-                                <Route
-                                    path="/about"
-                                    element={
-                                        <About
-                                            isIT={isIT}
-                                            isPlaying={playing}
-                                        />
-                                    }
-                                />
+                                {SiteConfig.navItems.map((item, index) => (
+                                    <Route
+                                        key={`${item}-${index}`}
+                                        path={item.href}
+                                        element={
+                                            <item.component
+                                                isIT={isIT}
+                                                isPlaying={playing}
+                                            />
+                                        }
+                                    />
+                                ))}
+                                {SiteConfig.navItemsIT.map((item, index) => (
+                                    <Route
+                                        key={`${item}-${index}`}
+                                        path={item.href}
+                                        element={
+                                            <item.component
+                                                isIT={isIT}
+                                                isPlaying={playing}
+                                            />
+                                        }
+                                    />
+                                ))}
                                 <Route
                                     path="*"
-                                    element={
-                                        <NotFound
-                                            isIT={isIT}
-                                            isPlaying={playing}
-                                        />
-                                    }
-                                />
-
-                                <Route
-                                    path="/it/"
-                                    element={
-                                        <Home isIT={isIT} isPlaying={playing} />
-                                    }
-                                />
-                                <Route
-                                    path="/it/skills"
-                                    element={
-                                        <Skills
-                                            isIT={isIT}
-                                            isPlaying={playing}
-                                        />
-                                    }
-                                />
-                                <Route
-                                    path="/it/projects"
-                                    element={
-                                        <Projects
-                                            isIT={isIT}
-                                            isPlaying={playing}
-                                        />
-                                    }
-                                />
-                                <Route
-                                    path="/it/about"
-                                    element={
-                                        <About
-                                            isIT={isIT}
-                                            isPlaying={playing}
-                                        />
-                                    }
-                                />
-                                <Route
-                                    path="/it/*"
                                     element={
                                         <NotFound
                                             isIT={isIT}
