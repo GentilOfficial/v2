@@ -22,7 +22,7 @@ export default function HomeHeader(x) {
                     stiffness: 260,
                     damping: 20,
                 }}
-                className="absolute w-[calc(100%+3rem)] -translate-x-6 h-full top-32 left-0 bg-looper-pattern bg-center md:bg-left bg-no-repeat bg-cover md:bg-contain"
+                className="absolute w-[calc(100%+20rem)] -translate-x-6 h-full top-20 left-0 bg-looper-pattern bg-center bg-no-repeat bg-cover md:bg-contain"
             ></motion.div>
             <section className="flex flex-col gap-6 items-center md:items-start md:justify-center w-full md:w-1/2 z-10">
                 <div
