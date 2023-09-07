@@ -56,11 +56,23 @@ export default function LanguageSelector(x) {
                     <DropdownItem
                         key="it"
                         onPress={() =>
-                            navigate(SiteConfig.navItems[indexOfNow].hrefIT)
+                            navigate(
+                                indexOfNow === -1
+                                    ? x.isIT
+                                        ? now
+                                        : `/it${now}`
+                                    : SiteConfig.navItems[indexOfNow].hrefIT
+                            )
                         }
                         onKeyDown={(event) =>
                             event.key === "Enter" &&
-                            navigate(SiteConfig.navItems[indexOfNow].hrefIT)
+                            navigate(
+                                indexOfNow === -1
+                                    ? x.isIT
+                                        ? now
+                                        : `/it${now}`
+                                    : SiteConfig.navItems[indexOfNow].hrefIT
+                            )
                         }
                     >
                         Italiano
@@ -68,11 +80,23 @@ export default function LanguageSelector(x) {
                     <DropdownItem
                         key="en"
                         onPress={() =>
-                            navigate(SiteConfig.navItems[indexOfNow].href)
+                            navigate(
+                                indexOfNow === -1
+                                    ? x.isIT
+                                        ? now.slice(3)
+                                        : now
+                                    : SiteConfig.navItems[indexOfNow].href
+                            )
                         }
                         onKeyDown={(event) =>
                             event.key === "Enter" &&
-                            navigate(SiteConfig.navItems[indexOfNow].href)
+                            navigate(
+                                indexOfNow === -1
+                                    ? x.isIT
+                                        ? now.slice(3)
+                                        : now
+                                    : SiteConfig.navItems[indexOfNow].href
+                            )
                         }
                     >
                         English
