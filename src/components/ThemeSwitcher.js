@@ -1,4 +1,5 @@
 import { useTheme } from "next-themes";
+import { Button } from "@nextui-org/react";
 import { TbSunFilled, TbMoonFilled } from "react-icons/tb";
 
 export default function ThemeSwitcher() {
@@ -18,14 +19,18 @@ export default function ThemeSwitcher() {
         }
     });
     return (
-        <button
+        <Button
+            isIconOnly
+            variant="light"
+            size="sm"
+            aria-label={theme === "dark" ? "Light" : "Dark"}
             title={theme === "dark" ? "Light" : "Dark"}
-            className="flex items-center text-2xl text-foreground-600 hover:text-foreground-500 duration-75"
             onClick={() => {
                 theme === "dark" ? setTheme("light") : setTheme("dark");
             }}
+            className="text-2xl"
         >
             {theme === "dark" ? <TbSunFilled /> : <TbMoonFilled />}
-        </button>
+        </Button>
     );
 }

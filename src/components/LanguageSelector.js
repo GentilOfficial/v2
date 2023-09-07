@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
     Dropdown,
+    Button,
     DropdownTrigger,
     DropdownMenu,
     DropdownItem,
@@ -27,12 +28,16 @@ export default function LanguageSelector(x) {
     return (
         <Dropdown showArrow>
             <DropdownTrigger>
-                <button
+                <Button
+                    isIconOnly
+                    variant="light"
+                    size="sm"
+                    aria-label={x.isIT ? "Cambia lingua" : "Change language"}
                     title={x.isIT ? "Cambia lingua" : "Change language"}
-                    className="flex items-center text-2xl text-foreground-600 hover:text-foreground-500 duration-75"
+                    className="text-2xl"
                 >
                     <IoLanguage />
-                </button>
+                </Button>
             </DropdownTrigger>
             <DropdownMenu
                 aria-label={
