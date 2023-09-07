@@ -21,37 +21,82 @@ export default function CustomNavbar(x) {
 
     const location = useLocation().pathname;
 
+    const navContainer = {
+        hidden: { opacity: 1, scale: 0 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const navItems = {
+        hidden: { y: -20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const navItemsChild = {
+        hidden: { y: -20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+        },
+    };
+
     return (
         <Navbar
+            as={motion.nav}
+            variants={navContainer}
+            initial="hidden"
+            animate="visible"
             onMenuOpenChange={setIsMenuOpen}
             disableAnimation
             isMenuOpen={isMenuOpen}
         >
-            <NavbarContent>
-                <NavbarBrand className="select-none">
-                    <LinkHref
-                        href={SiteConfig.domain}
-                        color="foreground"
-                        className="flex gap-1 items-center rounded"
-                    >
-                        <Image
-                            width={36}
-                            height={36}
-                            src={Avatar}
-                            classNames="m-5"
-                            alt="Site logo"
-                        />
-                        <p className="font-caveat text-lg font-bold mr-2">
-                            Federico Gentili
-                        </p>
-                    </LinkHref>
-                </NavbarBrand>
-            </NavbarContent>
+            <NavbarBrand
+                as={motion.div}
+                variants={navItems}
+                className="select-none"
+            >
+                <LinkHref
+                    href={SiteConfig.domain}
+                    color="foreground"
+                    className="flex items-center rounded"
+                >
+                    <Image
+                        width={36}
+                        height={36}
+                        src={Avatar}
+                        classNames="m-5"
+                        alt="Site logo"
+                    />
+                    <p className="font-caveat text-lg font-bold mx-1">
+                        Federico Gentili
+                    </p>
+                </LinkHref>
+            </NavbarBrand>
 
-            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+            <NavbarContent
+                as={motion.ul}
+                variants={navItems}
+                className="hidden sm:flex gap-4"
+                justify="center"
+            >
                 {SiteConfig.navItems.map((item, index) => (
                     <NavbarItem
                         key={`${item}-${index}`}
+                        as={motion.li}
+                        variants={navItemsChild}
                         isActive={
                             x.isIT
                                 ? location.replaceAll("/", "") ===
@@ -87,14 +132,18 @@ export default function CustomNavbar(x) {
                 ))}
             </NavbarContent>
 
-            <NavbarContent justify="end">
-                <NavbarItem>
+            <NavbarContent as={motion.ul} variants={navItems} justify="end">
+                <NavbarItem as={motion.li} variants={navItemsChild}>
                     <ThemeSwitcher />
                 </NavbarItem>
-                <NavbarItem>
+                <NavbarItem as={motion.li} variants={navItemsChild}>
                     <LanguageSelector isIT={x.isIT} />
                 </NavbarItem>
-                <NavbarItem className="hidden sm:block">
+                <NavbarItem
+                    as={motion.li}
+                    variants={navItemsChild}
+                    className="hidden sm:block"
+                >
                     <Button
                         as={LinkHref}
                         color="primary"
@@ -105,8 +154,13 @@ export default function CustomNavbar(x) {
                         {x.isIT ? "Curriculum" : "Resume"}
                     </Button>
                 </NavbarItem>
-                <NavbarMenuToggle className="sm:hidden" />
             </NavbarContent>
+
+            <NavbarMenuToggle
+                as={motion.button}
+                variants={navItems}
+                className="sm:hidden"
+            />
 
             <NavbarMenu>
                 <motion.div
