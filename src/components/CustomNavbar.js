@@ -96,7 +96,7 @@ export default function CustomNavbar(x) {
                     <Button
                         as={LinkHref}
                         color="primary"
-                        href="/federico_gentili.pdf"
+                        href={x.isIT ? "/it/Curriculum.pdf" : "/Resume.pdf"}
                         variant="flat"
                         isExternal
                     >
@@ -143,7 +143,7 @@ export default function CustomNavbar(x) {
                             as={LinkHref}
                             size="lg"
                             color="primary"
-                            href="/federico_gentili.pdf"
+                            href={x.isIT ? "/it/Curriculum.pdf" : "/Resume.pdf"}
                             variant="flat"
                             isExternal
                         >
