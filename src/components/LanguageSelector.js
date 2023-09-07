@@ -8,13 +8,17 @@ import {
 } from "@nextui-org/react";
 import { IoLanguage } from "react-icons/io5";
 import { useLocation, useNavigate } from "react-router-dom";
+import { SiteConfig } from "../data/SiteConfig";
 
 export default function LanguageSelector(x) {
     const now = useLocation().pathname;
     const navigate = useNavigate();
-    const location = x.isIT
-        ? "/" + now.slice(1).split("/")[1]
-        : "/it/" + now.slice(1).split("/")[0];
+
+    const indexOfNow = SiteConfig.navItems.findIndex(
+        x.isIT
+            ? (i) => i.hrefIT.replaceAll("/", "") === now.replaceAll("/", "")
+            : (i) => i.href.replaceAll("/", "") === now.replaceAll("/", "")
+    );
 
     const [selectedKeys, setSelectedKeys] = useState(
         new Set([x.isIT ? "it" : "en"])
@@ -51,20 +55,24 @@ export default function LanguageSelector(x) {
                 >
                     <DropdownItem
                         key="it"
-                        onPress={() => navigate(x.isIT ? now : location)}
+                        onPress={() =>
+                            navigate(SiteConfig.navItems[indexOfNow].hrefIT)
+                        }
                         onKeyDown={(event) =>
                             event.key === "Enter" &&
-                            navigate(x.isIT ? now : location)
+                            navigate(SiteConfig.navItems[indexOfNow].hrefIT)
                         }
                     >
                         Italiano
                     </DropdownItem>
                     <DropdownItem
                         key="en"
-                        onPress={() => navigate(x.isIT ? location : now)}
+                        onPress={() =>
+                            navigate(SiteConfig.navItems[indexOfNow].href)
+                        }
                         onKeyDown={(event) =>
                             event.key === "Enter" &&
-                            navigate(x.isIT ? location : now)
+                            navigate(SiteConfig.navItems[indexOfNow].href)
                         }
                     >
                         English
