@@ -21,58 +21,18 @@ module.exports = {
             themes: {
                 light: {
                     colors: {
-                        background: {
-                            DEFAULT: "#ffffff",
-                            900: "#f8f8f8",
-                        },
                         primary: {
-                            DEFAULT: "#647C64",
-                            foreground: "#ecedee",
-                        },
-                        secondary: {
-                            DEFAULT: "#6d31A8",
-                            foreground: "#ecedee",
-                        },
-                        danger: {
-                            DEFAULT: "#ce2b37",
-                            foreground: "#ecedee",
-                        },
-                        warning: {
-                            DEFAULT: "#fc9535",
-                            foreground: "#ecedee",
-                        },
-                        success: {
-                            DEFAULT: "#53bd5a",
-                            foreground: "#ecedee",
+                            DEFAULT: "#647c64",
+                            foreground: "#ffffff",
                         },
                         focus: "#647c64",
                     },
                 },
                 dark: {
                     colors: {
-                        background: {
-                            DEFAULT: "#000000",
-                            900: "#08080b",
-                        },
                         primary: {
                             DEFAULT: "#647c64",
-                            foreground: "#ecedee",
-                        },
-                        secondary: {
-                            DEFAULT: "#893dd4",
-                            foreground: "#ecedee",
-                        },
-                        danger: {
-                            DEFAULT: "#ce2b37",
-                            foreground: "#ecedee",
-                        },
-                        warning: {
-                            DEFAULT: "#fc9535",
-                            foreground: "#ecedee",
-                        },
-                        success: {
-                            DEFAULT: "#53bd5a",
-                            foreground: "#ecedee",
+                            foreground: "#ffffff",
                         },
                         focus: "#647c64",
                     },
