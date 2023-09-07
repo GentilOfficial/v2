@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { Image } from "@nextui-org/react";
+import { Image } from "@nextui-org/image";
 import { motion } from "framer-motion";
 import Fly from "../../assets/images/fly.webp";
 import Hello from "../../assets/images/hello.webp";

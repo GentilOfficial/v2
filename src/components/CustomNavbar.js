@@ -7,11 +7,8 @@ import {
     NavbarMenu,
     NavbarMenuItem,
     NavbarItem,
-    Button,
-    Image,
-    Link as LinkHref,
-    Divider,
-} from "@nextui-org/react";
+} from "@nextui-org/navbar";
+import { Button, Image, Link as LinkHref, Divider } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import Avatar from "../assets/images/avatar.webp";

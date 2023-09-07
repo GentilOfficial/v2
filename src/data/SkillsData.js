@@ -1,34 +1,34 @@
 export const SkillsData = [
     {
-        heading: "html",
+        heading: "HTML",
         percent: 92,
     },
     {
-        heading: "css",
+        heading: "CSS",
         percent: 80,
     },
     {
-        heading: "javascript",
+        heading: "JavaScript",
         percent: 88,
     },
     {
-        heading: "node.js",
+        heading: "Node.js",
         percent: 75,
     },
     {
-        heading: "php",
+        heading: "PHP",
         percent: 78,
     },
     {
-        heading: "mysql",
+        heading: "MySQL",
         percent: 83,
     },
     {
-        heading: "react",
+        heading: "React",
         percent: 72,
     },
     {
-        heading: "git",
+        heading: "Git",
         percent: 69,
     },
 ];
