@@ -23,6 +23,28 @@ export default function PagesPath({ isIT, isPlaying }) {
                 ? "Federico Gentili - " +
                   SiteConfig.navItems[indexOfNow].labelIT
                 : "Federico Gentili - " + SiteConfig.navItems[indexOfNow].label;
+
+        Array.from(document.getElementsByTagName("META")).forEach(
+            (meta, index) => {
+                if (meta.name === "description") {
+                    document.getElementsByTagName("META")[index].content = isIT
+                        ? SiteConfig.navItems[indexOfNow].descriptionIT
+                        : SiteConfig.navItems[indexOfNow].description;
+                }
+
+                if (meta.name === "og:description") {
+                    document.getElementsByTagName("META")[index].content = isIT
+                        ? SiteConfig.navItems[indexOfNow].descriptionIT
+                        : SiteConfig.navItems[indexOfNow].description;
+                }
+
+                if (meta.name === "twitter:description") {
+                    document.getElementsByTagName("META")[index].content = isIT
+                        ? SiteConfig.navItems[indexOfNow].descriptionIT
+                        : SiteConfig.navItems[indexOfNow].description;
+                }
+            }
+        );
     }, [pathname, indexOfNow, isIT]);
 
     return (
