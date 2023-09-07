@@ -7,7 +7,7 @@ import Chilling from "../assets/images/chilling.webp";
 export default function NotFound(x) {
     return (
         <div className="flex items-center justify-center">
-            <div className="flex items-center py-16 mx-auto">
+            <section className="flex items-center py-16 mx-auto">
                 <div className="flex flex-col items-center justify-center text-center">
                     <p className="text-sm font-medium text-primary">
                         {x.isIT ? "Codice errore: 404" : "Error code: 404"}
@@ -22,11 +22,14 @@ export default function NotFound(x) {
                     </p>
 
                     <div className="flex items-center mt-4 gap-x-3">
-                        <Link to={x.isIT ? "/it/" : "/"}>
-                            <Button variant="bordered" color="primary">
-                                {x.isIT ? "Vai alla Home" : "Go Home"}
-                            </Button>
-                        </Link>
+                        <Button
+                            as={Link}
+                            to={x.isIT ? "/it/" : "/"}
+                            variant="bordered"
+                            color="primary"
+                        >
+                            {x.isIT ? "Vai alla Home" : "Go Home"}
+                        </Button>
                     </div>
                     <motion.div
                         className="flex justify-center"
@@ -49,7 +52,7 @@ export default function NotFound(x) {
                         />
                     </motion.div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 }

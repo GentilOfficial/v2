@@ -5,6 +5,7 @@ import Projects from "../pages/Projects";
 import About from "../pages/About";
 
 export const SiteConfig = {
+    domain: "https://www.fgentili.it/",
     email: "federicogentili05@gmail.com",
     navItems: [
         {

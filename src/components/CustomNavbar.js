@@ -30,7 +30,7 @@ export default function CustomNavbar(x) {
             <NavbarContent>
                 <NavbarBrand className="select-none">
                     <LinkHref
-                        href={x.href}
+                        href={SiteConfig.domain}
                         color="foreground"
                         className="flex gap-1 items-center rounded"
                     >
@@ -63,21 +63,26 @@ export default function CustomNavbar(x) {
                                 ? true
                                 : false
                         }
-                        className={
-                            x.isIT
-                                ? location.replaceAll("/", "") ===
-                                  item.hrefIT.replaceAll("/", "")
-                                    ? "text-primary"
-                                    : "text-foreground-600 hover:text-foreground-500 duration-75"
-                                : location.replaceAll("/", "") ===
-                                  item.href.replaceAll("/", "")
-                                ? "text-primary"
-                                : "text-foreground-600 hover:text-foreground-500 duration-75"
-                        }
                     >
-                        <Link to={x.isIT ? item.hrefIT : item.href}>
+                        <LinkHref
+                            as={Link}
+                            to={x.isIT ? item.hrefIT : item.href}
+                            className={`rounded
+                                ${
+                                    x.isIT
+                                        ? location.replaceAll("/", "") ===
+                                          item.hrefIT.replaceAll("/", "")
+                                            ? "text-primary"
+                                            : "text-foreground-600 hover:text-foreground-500 duration-75"
+                                        : location.replaceAll("/", "") ===
+                                          item.href.replaceAll("/", "")
+                                        ? "text-primary"
+                                        : "text-foreground-600 hover:text-foreground-500 duration-75"
+                                }
+                            `}
+                        >
                             {x.isIT ? item.labelIT : item.label}
-                        </Link>
+                        </LinkHref>
                     </NavbarItem>
                 ))}
             </NavbarContent>
@@ -111,27 +116,27 @@ export default function CustomNavbar(x) {
                     transition={{ duration: 0.4, ease: [0, 0.71, 0.2, 1.01] }}
                 >
                     {SiteConfig.navItems.map((item, index) => (
-                        <NavbarMenuItem
-                            key={`${item}-${index}`}
-                            className={`${index === 0 ? "mt-5" : ""} ${
-                                x.isIT
-                                    ? location.replaceAll("/", "") ===
-                                      item.hrefIT.replaceAll("/", "")
-                                        ? "text-primary font-bold text-4xl"
-                                        : "text-foreground text-2xl"
-                                    : location.replaceAll("/", "") ===
-                                      item.href.replaceAll("/", "")
-                                    ? "text-primary font-bold text-4xl"
-                                    : "text-foreground text-2xl"
-                            }`}
-                        >
-                            <Link
-                                className="w-full"
+                        <NavbarMenuItem key={`${item}-${index}`}>
+                            <LinkHref
+                                as={Link}
                                 to={x.isIT ? item.hrefIT : item.href}
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
+                                className={`rounded ${
+                                    index === 0 ? "mt-5" : ""
+                                } ${
+                                    x.isIT
+                                        ? location.replaceAll("/", "") ===
+                                          item.hrefIT.replaceAll("/", "")
+                                            ? "text-primary font-bold text-4xl"
+                                            : "text-foreground text-2xl"
+                                        : location.replaceAll("/", "") ===
+                                          item.href.replaceAll("/", "")
+                                        ? "text-primary font-bold text-4xl"
+                                        : "text-foreground text-2xl"
+                                }`}
                             >
                                 {x.isIT ? item.labelIT : item.label}
-                            </Link>
+                            </LinkHref>
                         </NavbarMenuItem>
                     ))}
                     <NavbarItem className="w-full gap-4 flex flex-col items-center">

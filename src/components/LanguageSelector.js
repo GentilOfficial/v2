@@ -8,12 +8,11 @@ import {
     DropdownSection,
 } from "@nextui-org/react";
 import { IoLanguage } from "react-icons/io5";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { SiteConfig } from "../data/SiteConfig";
 
 export default function LanguageSelector(x) {
     const now = useLocation().pathname;
-    const navigate = useNavigate();
 
     const indexOfNow = SiteConfig.navItems.findIndex(
         x.isIT
@@ -60,48 +59,26 @@ export default function LanguageSelector(x) {
                 >
                     <DropdownItem
                         key="it"
-                        onPress={() =>
-                            navigate(
-                                indexOfNow === -1
-                                    ? x.isIT
-                                        ? now
-                                        : `/it${now}`
-                                    : SiteConfig.navItems[indexOfNow].hrefIT
-                            )
-                        }
-                        onKeyDown={(event) =>
-                            event.key === "Enter" &&
-                            navigate(
-                                indexOfNow === -1
-                                    ? x.isIT
-                                        ? now
-                                        : `/it${now}`
-                                    : SiteConfig.navItems[indexOfNow].hrefIT
-                            )
+                        as={Link}
+                        to={
+                            indexOfNow === -1
+                                ? x.isIT
+                                    ? now
+                                    : `/it${now}`
+                                : SiteConfig.navItems[indexOfNow].hrefIT
                         }
                     >
                         Italiano
                     </DropdownItem>
                     <DropdownItem
                         key="en"
-                        onPress={() =>
-                            navigate(
-                                indexOfNow === -1
-                                    ? x.isIT
-                                        ? now.slice(3)
-                                        : now
-                                    : SiteConfig.navItems[indexOfNow].href
-                            )
-                        }
-                        onKeyDown={(event) =>
-                            event.key === "Enter" &&
-                            navigate(
-                                indexOfNow === -1
-                                    ? x.isIT
-                                        ? now.slice(3)
-                                        : now
-                                    : SiteConfig.navItems[indexOfNow].href
-                            )
+                        as={Link}
+                        to={
+                            indexOfNow === -1
+                                ? x.isIT
+                                    ? now.slice(3)
+                                    : now
+                                : SiteConfig.navItems[indexOfNow].href
                         }
                     >
                         English
