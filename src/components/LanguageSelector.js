@@ -24,6 +24,31 @@ export default function LanguageSelector(x) {
         new Set([x.isIT ? "it" : "en"])
     );
 
+    const descriptionIT =
+        "Federico Gentili è uno sviluppatore web fullstack con sede in Italia. La sua passione per la tecnologia e la creatività lo hanno portato a intraprendere un viaggio nel campo delle applicazioni web, dove esplora costantemente nuove sfide e opportunità per imparare e crescere.";
+    const descriptionEN =
+        "Federico Gentili is a fullstack web developer based in Italy. His passion for technology and creativity led him to embark on a journey in the field of web applications, where he is constantly exploring new challenges and opportunities to learn and grow.";
+
+    Array.from(document.getElementsByTagName("META")).forEach((meta, index) => {
+        if (meta.name === "description") {
+            document.getElementsByTagName("META")[index].content = x.isIT
+                ? descriptionIT
+                : descriptionEN;
+        }
+
+        if (meta.name === "og:description") {
+            document.getElementsByTagName("META")[index].content = x.isIT
+                ? descriptionIT
+                : descriptionEN;
+        }
+
+        if (meta.name === "twitter:description") {
+            document.getElementsByTagName("META")[index].content = x.isIT
+                ? descriptionIT
+                : descriptionEN;
+        }
+    });
+
     return (
         <Dropdown showArrow>
             <DropdownTrigger>
