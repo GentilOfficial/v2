@@ -26,19 +26,19 @@ export default function PagesPath({ isIT, isPlaying }) {
 
         Array.from(document.getElementsByTagName("META")).forEach(
             (meta, index) => {
-                if (meta.name === "description") {
+                if (meta.name === "description" && indexOfNow !== -1) {
                     document.getElementsByTagName("META")[index].content = isIT
                         ? SiteConfig.navItems[indexOfNow].descriptionIT
                         : SiteConfig.navItems[indexOfNow].description;
                 }
 
-                if (meta.name === "og:description") {
+                if (meta.name === "og:description" && indexOfNow !== -1) {
                     document.getElementsByTagName("META")[index].content = isIT
                         ? SiteConfig.navItems[indexOfNow].descriptionIT
                         : SiteConfig.navItems[indexOfNow].description;
                 }
 
-                if (meta.name === "twitter:description") {
+                if (meta.name === "twitter:description" && indexOfNow !== -1) {
                     document.getElementsByTagName("META")[index].content = isIT
                         ? SiteConfig.navItems[indexOfNow].descriptionIT
                         : SiteConfig.navItems[indexOfNow].description;
