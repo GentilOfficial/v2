@@ -1,28 +1,57 @@
-import { useRef } from "react";
-import { useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { useInView, useAnimation, motion } from "framer-motion";
 import HomeFeatureSectionCard from "./HomeFeatureSectionCard";
 
 export default function HomeFeatureSection(x) {
-    const featureTitle = useRef(null);
-    const featureSubs = useRef(null);
+    const feature = useRef(null);
 
-    const featureTitleIsInView = useInView(featureTitle, { once: true });
-    const featureSubsAreInView = useInView(featureSubs, { once: true });
+    const featureSectionIsInView = useInView(feature, { once: true });
+
+    const featureSectionAnimation = useAnimation();
+
+    const featureContainer = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const featureItem = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+            },
+        },
+    };
+
+    useEffect(() => {
+        if (featureSectionIsInView) {
+            featureSectionAnimation.start("visible");
+        } else {
+            featureSectionAnimation.start("hidden");
+        }
+    });
 
     return (
-        <section className="flex flex-col gap-2">
-            <h2
-                ref={featureTitle}
+        <motion.section
+            ref={feature}
+            variants={featureContainer}
+            initial="hidden"
+            animate={featureSectionAnimation}
+            className="flex flex-col gap-2"
+        >
+            <motion.h2
+                variants={featureItem}
                 className="font-semibold text-4xl"
-                style={{
-                    transform: featureTitleIsInView
-                        ? "none"
-                        : "translateX(-200px)",
-                    opacity: featureTitleIsInView ? 1 : 0,
-                    transitionProperty: "transform, opacity",
-                    transitionDuration: "0.9s",
-                    ease: "cubic-bezier(0.17, 0.55, 0.55, 1)",
-                }}
             >
                 {x.isIT ? (
                     <span>
@@ -33,26 +62,18 @@ export default function HomeFeatureSection(x) {
                         Use this <span className="text-primary">feature</span>
                     </span>
                 )}
-            </h2>
-            <p
-                ref={featureSubs}
+            </motion.h2>
+            <motion.p
+                variants={featureItem}
                 className="font-normal text-sm text-default-500 w-full md:w-2/3"
-                style={{
-                    transform: featureSubsAreInView
-                        ? "none"
-                        : "translateX(-200px)",
-                    opacity: featureSubsAreInView ? 1 : 0,
-                    transitionProperty: "transform, opacity",
-                    transitionDuration: "0.9s",
-                    ease: "cubic-bezier(0.17, 0.55, 0.55, 1)",
-                    transitionDelay: "0.2s",
-                }}
             >
                 {x.isIT
                     ? "Per semplificare la navigazione, c'è una feature che permette di spostarsi fra le varie sezioni."
                     : "To simplify navigation, there are a feature that allow to move between sections."}
-            </p>
-            <HomeFeatureSectionCard isIT={x.isIT} />
-        </section>
+            </motion.p>
+            <motion.div variants={featureItem}>
+                <HomeFeatureSectionCard isIT={x.isIT} />
+            </motion.div>
+        </motion.section>
     );
 }

@@ -44,7 +44,7 @@ export default function Footer(x) {
 
     return (
         <footer className="max-w-screen-lg mx-auto p-5 mt-5">
-            <div className="flex flex-col items-center gap-4 text-default-500/75 text-sm text-center">
+            <div className="flex flex-col items-center gap-4 text-foreground-500 text-sm text-center">
                 <Link
                     ref={mail}
                     variant="bordered"

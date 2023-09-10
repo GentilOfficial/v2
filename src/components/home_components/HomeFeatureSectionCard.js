@@ -1,6 +1,5 @@
-import { useRef } from "react";
 import { Card, CardBody, Divider } from "@nextui-org/react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import {
     TbSquareRoundedChevronRightFilled,
     TbSquareRoundedChevronLeftFilled,
@@ -14,39 +13,14 @@ import {
 } from "react-icons/hi";
 
 export default function HomeFeatureSectionCard(x) {
-    const featureCard = useRef(null);
-    const featureCardBody = useRef(null);
-
-    const featureCardIsInView = useInView(featureCard, { once: true });
-    const featureCardBodyIsInView = useInView(featureCardBody, { once: true });
-
     return (
         <Card
-            ref={featureCard}
             shadow="md"
-            className="text-primary w-full max-w-screen-lg mx-auto bg-white/5 dark:bg-default-400/10 mb-10"
-            style={{
-                transform: featureCardIsInView ? "none" : "translateX(200px)",
-                opacity: featureCardIsInView ? 1 : 0,
-                transitionProperty: "transform, opacity",
-                transitionDuration: "0.9s",
-                ease: "cubic-bezier(0.17, 0.55, 0.55, 1)",
-                transitionDelay: "0.4s",
-            }}
+            className="text-primary w-full mx-auto bg-white/5 dark:bg-default-400/10 mb-10"
         >
-            <CardBody
-                ref={featureCardBody}
-                className="flex flex-col sm:flex-row justify-between"
-                style={{
-                    opacity: featureCardBodyIsInView ? 1 : 0,
-                    transitionProperty: "opacity",
-                    transitionDuration: "0.5s",
-                    ease: "cubic-bezier(0.17, 0.55, 0.55, 1)",
-                    transitionDelay: "0.4s",
-                }}
-            >
+            <CardBody className="flex flex-col sm:flex-row justify-between">
                 <div className="gap-2 flex flex-col sm:w-2/5">
-                    <div className="text-center text-xl text-default-500 font-caveat">
+                    <div className="text-center text-xl text-foreground-500 font-caveat">
                         {x.isIT ? (
                             <p>
                                 Usa le{" "}
@@ -102,20 +76,20 @@ export default function HomeFeatureSectionCard(x) {
                 </div>
                 <div className="hidden sm:flex flex-col items-center gap-2 justify-center">
                     <Divider className="h-1/3" orientation="vertical" />
-                    <p className="text-default-500">
+                    <p className="text-foreground-500">
                         {x.isIT ? "OPPURE" : "OR"}
                     </p>
                     <Divider className="h-1/3" orientation="vertical" />
                 </div>
                 <div className="flex items-center gap-2 justify-center sm:hidden my-6">
                     <Divider className="w-1/3" />
-                    <p className="text-default-500">
+                    <p className="text-foreground-500">
                         {x.isIT ? "OPPURE" : "OR"}
                     </p>
                     <Divider className="w-1/3" />
                 </div>
                 <div className="gap-3 flex flex-col sm:w-2/5">
-                    <div className="text-center text-xl text-default-500 font-caveat">
+                    <div className="text-center text-xl text-foreground-500 font-caveat">
                         {x.isIT ? (
                             <p>
                                 <span className="text-primary font-bold">
