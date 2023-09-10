@@ -15,7 +15,7 @@ export default function Footer(x) {
     const linkContainerAnimation = useAnimation();
 
     const linkContainer = {
-        hidden: { opacity: 1, scale: 0 },
+        hidden: { opacity: 0, scale: 0 },
         visible: {
             opacity: 1,
             scale: 1,
