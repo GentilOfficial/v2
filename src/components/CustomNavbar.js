@@ -21,9 +21,43 @@ export default function CustomNavbar(x) {
 
     const location = useLocation().pathname;
 
+    const navbarContainer = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const navbarItemAnimation = {
+        hidden: { y: -20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen} isMenuOpen={isMenuOpen}>
-            <NavbarBrand className="select-none">
+        <Navbar
+            as={motion.nav}
+            variants={navbarContainer}
+            initial="hidden"
+            animate="visible"
+            onMenuOpenChange={setIsMenuOpen}
+            isMenuOpen={isMenuOpen}
+        >
+            <NavbarBrand
+                as={motion.div}
+                variants={navbarItemAnimation}
+                className="select-none"
+            >
                 <LinkHref
                     href={SiteConfig.domain}
                     color="foreground"
@@ -42,9 +76,16 @@ export default function CustomNavbar(x) {
                 </LinkHref>
             </NavbarBrand>
 
-            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+            <NavbarContent
+                as={motion.ul}
+                variants={navbarItemAnimation}
+                className="hidden sm:flex gap-4"
+                justify="center"
+            >
                 {SiteConfig.navItems.map((item, index) => (
                     <NavbarItem
+                        as={motion.li}
+                        variants={navbarItemAnimation}
                         key={`${item}-${index}`}
                         isActive={
                             x.isIT
@@ -81,7 +122,11 @@ export default function CustomNavbar(x) {
                 ))}
             </NavbarContent>
 
-            <NavbarContent justify="end">
+            <NavbarContent
+                as={motion.ul}
+                variants={navbarItemAnimation}
+                justify="end"
+            >
                 <NavbarItem>
                     <ThemeSwitcher />
                 </NavbarItem>
