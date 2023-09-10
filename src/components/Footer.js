@@ -107,9 +107,7 @@ export default function Footer(x) {
                     {x.isIT
                         ? "Progettato e Realizzato da "
                         : "Designed & Built by "}
-                    <p className="text-primary cursor-pointer">
-                        Federico Gentili
-                    </p>
+                    <p className="text-primary">Federico Gentili</p>
                 </section>
             </div>
         </footer>
