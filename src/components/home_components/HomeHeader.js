@@ -19,8 +19,8 @@ export default function HomeHeader(x) {
             ></motion.div>
             <section className="flex flex-col gap-6 items-center md:items-start md:justify-center w-full md:w-1/2 z-10">
                 <motion.div
-                    initial={{ x: -200, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                    initial={{ y: 200, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
                     transition={{
                         type: "spring",
                         stiffness: 260,
@@ -49,8 +49,8 @@ export default function HomeHeader(x) {
                     </h3>
                 </motion.div>
                 <motion.p
-                    initial={{ x: 200, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                    initial={{ y: 200, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
                     transition={{
                         type: "spring",
                         stiffness: 260,
@@ -66,8 +66,8 @@ export default function HomeHeader(x) {
             </section>
             <section className="hidden md:flex w-1/2 items-center">
                 <motion.div
-                    initial={{ x: 1000, y: -1000, scale: 0.5, opacity: 0.5 }}
-                    animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
                     transition={{
                         type: "spring",
                         stiffness: 260,
