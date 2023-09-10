@@ -1,5 +1,5 @@
 import { Image } from "@nextui-org/image";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Fly from "../../assets/images/fly.webp";
 import Hello from "../../assets/images/hello.webp";
 
