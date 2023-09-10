@@ -108,14 +108,14 @@ export default function CustomNavbar(x) {
                 />
             </NavbarContent>
 
-            <NavbarMenu className="text-center gap-6">
+            <NavbarMenu className="text-center gap-6 py-0">
                 {SiteConfig.navItems.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <LinkHref
                             as={Link}
                             to={x.isIT ? item.hrefIT : item.href}
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className={`rounded ${index === 0 ? "mt-5" : ""} ${
+                            className={`rounded ${index === 0 ? "mt-6" : ""} ${
                                 x.isIT
                                     ? location.replaceAll("/", "") ===
                                       item.hrefIT.replaceAll("/", "")
@@ -131,7 +131,7 @@ export default function CustomNavbar(x) {
                         </LinkHref>
                     </NavbarMenuItem>
                 ))}
-                <NavbarMenuItem className="w-full gap-6 flex flex-col items-center">
+                <NavbarMenuItem className="w-full gap-6 flex flex-col items-center mb-6">
                     <Divider className="w-3/5" />
                     <Button
                         as={LinkHref}
