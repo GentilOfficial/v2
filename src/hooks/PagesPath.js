@@ -53,18 +53,14 @@ export default function PagesPath({ isIT, isPlaying }) {
                 <Route
                     key={`${item}-${index}`}
                     path={item.href}
-                    element={
-                        <item.component isIT={isIT} isPlaying={isPlaying} />
-                    }
+                    element={<item.component isIT={isIT} />}
                 />
             ))}
             {SiteConfig.navItems.map((item, index) => (
                 <Route
                     key={`${item}-${index}`}
                     path={item.hrefIT}
-                    element={
-                        <item.component isIT={isIT} isPlaying={isPlaying} />
-                    }
+                    element={<item.component isIT={isIT} />}
                 />
             ))}
             <Route

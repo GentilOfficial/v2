@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { SiteConfig } from "../data/SiteConfig";
 
-export default function NavigationGesture({ children, isPlaying, isIT }) {
+export default function NavigationGesture({ children, isIT }) {
     const navigate = useNavigate();
 
     const now = useLocation().pathname;
@@ -21,7 +21,7 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
 
     const handlers = useSwipeable({
         onSwipedRight: () => {
-            if (!isPlaying && indexOfNow - 1 > -1 && indexOfNow !== -1) {
+            if (indexOfNow - 1 > -1 && indexOfNow !== -1) {
                 navigate(
                     isIT
                         ? SiteConfig.navItems[indexOfNow - 1].hrefIT
@@ -31,7 +31,6 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
         },
         onSwipedLeft: () => {
             if (
-                !isPlaying &&
                 indexOfNow + 1 < SiteConfig.navItems.length &&
                 indexOfNow !== -1
             ) {
@@ -49,7 +48,6 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
     const handleKeyPress = (event) => {
         if (
             event.key === "ArrowLeft" &&
-            !isPlaying &&
             indexOfNow - 1 > -1 &&
             indexOfNow !== -1
         ) {
@@ -61,7 +59,6 @@ export default function NavigationGesture({ children, isPlaying, isIT }) {
         }
         if (
             event.key === "ArrowRight" &&
-            !isPlaying &&
             indexOfNow + 1 < SiteConfig.navItems.length &&
             indexOfNow !== -1
         ) {

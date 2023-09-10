@@ -107,15 +107,7 @@ export default function Footer(x) {
                     {x.isIT
                         ? "Progettato e Realizzato da "
                         : "Designed & Built by "}
-                    <p
-                        className="text-primary cursor-pointer"
-                        onClick={() => {
-                            x.toggleEasterEgg(!x.isEasterEggPlaying);
-                            !x.isEasterEggPlaying
-                                ? (document.body.style.overflow = "hidden")
-                                : (document.body.style.overflow = "unset");
-                        }}
-                    >
+                    <p className="text-primary cursor-pointer">
                         Federico Gentili
                     </p>
                 </section>
