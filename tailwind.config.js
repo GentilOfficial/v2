@@ -22,19 +22,19 @@ module.exports = {
                 light: {
                     colors: {
                         primary: {
-                            DEFAULT: "#647c64",
+                            DEFAULT: "#548267",
                             foreground: "#ffffff",
                         },
-                        focus: "#647c64",
+                        focus: "#548267",
                     },
                 },
                 dark: {
                     colors: {
                         primary: {
-                            DEFAULT: "#647c64",
+                            DEFAULT: "#548267",
                             foreground: "#ffffff",
                         },
-                        focus: "#647c64",
+                        focus: "#548267",
                     },
                 },
             },

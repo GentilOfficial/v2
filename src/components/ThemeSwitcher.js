@@ -11,11 +11,11 @@ export default function ThemeSwitcher() {
         }
         if (meta.name === "theme-color") {
             document.getElementsByTagName("META")[index].content =
-                theme === "dark" ? "#000000" : "#647c64";
+                theme === "dark" ? "#000000" : "#548267";
         }
         if (meta.name === "apple-mobile-web-app-status-bar") {
             document.getElementsByTagName("META")[index].content =
-                theme === "dark" ? "#000000" : "#647c64";
+                theme === "dark" ? "#000000" : "#548267";
         }
     });
     return (
