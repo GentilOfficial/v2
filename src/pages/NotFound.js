@@ -30,7 +30,7 @@ export default function NotFound(x) {
                 isBlurred
                 width={300}
                 className="mx-auto"
-                alt="Error me image"
+                alt="Error"
                 src={NotFoundImage}
             />
         </section>
