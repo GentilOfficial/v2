@@ -26,7 +26,10 @@ export default function CustomNavbar(x) {
         visible: {
             opacity: 1,
             transition: {
-                delayChildren: 0.3,
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+                delayChildren: 0.2,
                 staggerChildren: 0.2,
             },
         },
@@ -38,7 +41,10 @@ export default function CustomNavbar(x) {
             y: 0,
             opacity: 1,
             transition: {
-                delayChildren: 0.3,
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+                duration: 0.2,
                 staggerChildren: 0.2,
             },
         },
