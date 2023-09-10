@@ -1,17 +1,9 @@
-import { useRef } from "react";
-import { useInView } from "framer-motion";
 import { Image } from "@nextui-org/image";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import Fly from "../../assets/images/fly.webp";
 import Hello from "../../assets/images/hello.webp";
 
 export default function HomeHeader(x) {
-    const headerTitle = useRef(null);
-    const headerSubs = useRef(null);
-
-    const headerTitleIsInView = useInView(headerTitle, { once: true });
-    const headerSubsAreInView = useInView(headerSubs, { once: true });
-
     return (
         <section className="py-16 relative flex min-h-[calc(100vh-12.7rem)] md:min-h-[calc(100vh-12rem)]">
             <motion.div
@@ -21,20 +13,19 @@ export default function HomeHeader(x) {
                     type: "spring",
                     stiffness: 260,
                     damping: 20,
+                    delay: 2,
                 }}
                 className="absolute w-[calc(100%+20rem)] -translate-x-6 h-full top-20 left-0 bg-looper-pattern bg-center bg-no-repeat bg-cover md:bg-contain"
             ></motion.div>
             <section className="flex flex-col gap-6 items-center md:items-start md:justify-center w-full md:w-1/2 z-10">
-                <div
-                    ref={headerTitle}
-                    style={{
-                        transform: headerTitleIsInView
-                            ? "none"
-                            : "translateX(-200px)",
-                        opacity: headerTitleIsInView ? 1 : 0,
-                        transitionProperty: "opacity, transform",
-                        transitionDuration: "0.9s",
-                        ease: "cubic-bezier(0.17, 0.55, 0.55, 1)",
+                <motion.div
+                    initial={{ x: -200, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 1,
                     }}
                     className="flex flex-col gap-1 items-center"
                 >
@@ -56,35 +47,32 @@ export default function HomeHeader(x) {
                             PORTFOLIO
                         </span>
                     </h3>
-                </div>
-                <p
-                    ref={headerSubs}
-                    style={{
-                        transform: headerSubsAreInView
-                            ? "none"
-                            : "translateX(200px)",
-                        opacity: headerSubsAreInView ? 1 : 0,
-                        transitionProperty: "opacity, transform",
-                        transitionDuration: "0.9s",
-                        transitionDelay: "0.2s",
-                        ease: "cubic-bezier(0.17, 0.55, 0.55, 1)",
+                </motion.div>
+                <motion.p
+                    initial={{ x: 200, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 20,
+                        delay: 1.5,
                     }}
                     className="text-xl md:text-2xl text-default-500 font-caveat text-center md:text-start max-w-sm"
                 >
                     {x.isIT
                         ? "Sono uno sviluppatore web fullstack, proveniente da Ferrara, Italia."
                         : "I'm an italian fullstack web developer, based near Ferrara, Italy."}
-                </p>
+                </motion.p>
             </section>
             <section className="hidden md:flex w-1/2 items-center">
                 <motion.div
                     initial={{ x: 1000, y: -1000, scale: 0.5, opacity: 0.5 }}
                     animate={{ x: 0, y: 0, scale: 1, opacity: 1 }}
                     transition={{
-                        duration: 8,
                         type: "spring",
                         stiffness: 260,
                         damping: 20,
+                        delay: 2,
                     }}
                 >
                     <motion.div
@@ -93,7 +81,7 @@ export default function HomeHeader(x) {
                             rotate: [0, -5, 2, 0],
                         }}
                         transition={{
-                            delay: 1,
+                            delay: 2,
                             y: {
                                 duration: 4,
                                 repeat: Infinity,
