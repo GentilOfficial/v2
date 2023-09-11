@@ -31,7 +31,7 @@ export default function HomeHeader(x) {
             variants={headerContainer}
             initial="hidden"
             animate="visible"
-            className="flex flex-col justify-center min-h-[calc(100vh-4rem)]"
+            className="flex flex-col justify-center items-center min-h-[calc(100vh-4rem)]"
         >
             <motion.h1
                 variants={headerItem}
@@ -61,10 +61,7 @@ export default function HomeHeader(x) {
                     ? "Sono uno sviluppatore web fullstack, proveniente da Ferrara, Italia."
                     : "I'm an italian fullstack web developer, based near Ferrara, Italy."}
             </motion.p>
-            <motion.div
-                variants={headerItem}
-                className="flex items-center justify-center"
-            >
+            <motion.div variants={headerItem}>
                 <Image
                     isBlurred
                     alt="Welcome"
