@@ -35,7 +35,7 @@ export default function HomeHeader(x) {
         >
             <motion.h1
                 variants={headerItem}
-                className="font-bold text-center font-caveat select-none tracking-widest text-lg sm:text-xl md:text-2xl lg:text-3xl mt-6"
+                className="font-bold text-center font-caveat tracking-widest text-lg sm:text-xl md:text-2xl lg:text-3xl mt-6"
             >
                 {x.isIT ? "Hey, io sono" : "Hey, I’m"}
             </motion.h1>
