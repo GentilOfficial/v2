@@ -23,7 +23,7 @@ export const SiteConfig = {
             label: "Skills",
             labelIT: "Abilità",
             href: "/skills",
-            hrefIT: "/it/abilita",
+            hrefIT: "/it/skills",
             component: Skills,
             description:
                 "A list of all my skills divided by section: frontend, backend, frameworks and toolkits.",
@@ -34,7 +34,7 @@ export const SiteConfig = {
             label: "Projects",
             labelIT: "Progetti",
             href: "/projects",
-            hrefIT: "/it/progetti",
+            hrefIT: "/it/projects",
             component: Projects,
             description: "Selection of my projects featured on github.",
             descriptionIT: "Selezione dei miei progetti presenti su github.",
@@ -43,7 +43,7 @@ export const SiteConfig = {
             label: "About",
             labelIT: "Info",
             href: "/about",
-            hrefIT: "/it/info",
+            hrefIT: "/it/about",
             component: About,
             description:
                 "Get to know me better, read my bio and find out who I am.",
