@@ -18,6 +18,7 @@ export const SiteConfig = {
                 "Hi, I'm Federico, a fullstack web developer based in Italy and welcome to my digital space, where I transform lines of code into engaging experiences and innovative functionalities.",
             descriptionIT:
                 "Ciao, sono Federico, uno sviluppatore web fullstack con sede in Italia e benvenuto nel mio spazio digitale, dove trasformo linee di codice in esperienze coinvolgenti e funzionalità innovative.",
+            priority: 1,
         },
         {
             label: "Skills",
@@ -29,6 +30,7 @@ export const SiteConfig = {
                 "A list of all my skills divided by section: frontend, backend, frameworks and toolkits.",
             descriptionIT:
                 "Una lista di tutte le mie abilità divise per sezione: frontend, backend, frameworks e toolkits.",
+            priority: 0.8,
         },
         {
             label: "Projects",
@@ -38,6 +40,7 @@ export const SiteConfig = {
             component: Projects,
             description: "Selection of my projects featured on github.",
             descriptionIT: "Selezione dei miei progetti presenti su github.",
+            priority: 0.8,
         },
         {
             label: "About",
@@ -49,6 +52,7 @@ export const SiteConfig = {
                 "Get to know me better, read my bio and find out who I am.",
             descriptionIT:
                 "Conoscimi meglio, leggi la mia biografia e scopri chi sono.",
+            priority: 0.8,
         },
     ],
     links: [
