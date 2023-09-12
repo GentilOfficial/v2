@@ -49,7 +49,7 @@ export default function Footer(x) {
                     variant="bordered"
                     showAnchorIcon
                     target="_blank"
-                    href={"mailto:" + x.mail}
+                    href={"mailto:" + SiteConfig.email}
                     className="text-sm text-foreground"
                     style={{
                         opacity: mailIsInView ? 1 : 0,
