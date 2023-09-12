@@ -11,17 +11,17 @@ import { IoLanguage } from "react-icons/io5";
 import { useLocation, Link } from "react-router-dom";
 import { SiteConfig } from "../data/SiteConfig";
 
-export default function LanguageSelector(x) {
+export default function LanguageSelector({ isIT }) {
     const now = useLocation().pathname;
 
     const indexOfNow = SiteConfig.navItems.findIndex(
-        x.isIT
+        isIT
             ? (i) => i.hrefIT.replaceAll("/", "") === now.replaceAll("/", "")
             : (i) => i.href.replaceAll("/", "") === now.replaceAll("/", "")
     );
 
     const [selectedKeys, setSelectedKeys] = useState(
-        new Set([x.isIT ? "it" : "en"])
+        new Set([isIT ? "it" : "en"])
     );
 
     return (
@@ -31,8 +31,8 @@ export default function LanguageSelector(x) {
                     isIconOnly
                     variant="light"
                     size="sm"
-                    aria-label={x.isIT ? "Cambia lingua" : "Change language"}
-                    title={x.isIT ? "Cambia lingua" : "Change language"}
+                    aria-label={isIT ? "Cambia lingua" : "Change language"}
+                    title={isIT ? "Cambia lingua" : "Change language"}
                     className="text-2xl"
                 >
                     <IoLanguage />
@@ -40,9 +40,7 @@ export default function LanguageSelector(x) {
             </DropdownTrigger>
             <DropdownMenu
                 aria-label={
-                    x.isIT
-                        ? "Scegli un'altra lingua"
-                        : "Choose another language"
+                    isIT ? "Scegli un'altra lingua" : "Choose another language"
                 }
                 variant="flat"
                 disallowEmptySelection
@@ -52,7 +50,7 @@ export default function LanguageSelector(x) {
             >
                 <DropdownSection
                     title={
-                        x.isIT
+                        isIT
                             ? "Scegli un'altra lingua"
                             : "Choose another language"
                     }
@@ -62,7 +60,7 @@ export default function LanguageSelector(x) {
                         as={Link}
                         to={
                             indexOfNow === -1
-                                ? x.isIT
+                                ? isIT
                                     ? now
                                     : `/it${now}`
                                 : SiteConfig.navItems[indexOfNow].hrefIT
@@ -75,7 +73,7 @@ export default function LanguageSelector(x) {
                         as={Link}
                         to={
                             indexOfNow === -1
-                                ? x.isIT
+                                ? isIT
                                     ? now.slice(3)
                                     : now
                                 : SiteConfig.navItems[indexOfNow].href

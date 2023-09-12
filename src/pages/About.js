@@ -1,4 +1,4 @@
-export default function About(x) {
+export default function About({ isIT }) {
     return (
         <section>
             <p>ABOUT</p>

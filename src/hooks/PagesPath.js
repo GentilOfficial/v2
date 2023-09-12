@@ -3,7 +3,7 @@ import NotFound from "../pages/NotFound";
 import { SiteConfig } from "../data/SiteConfig";
 import { useEffect } from "react";
 
-export default function PagesPath({ isIT, isPlaying }) {
+export default function PagesPath({ isIT }) {
     const { pathname } = useLocation();
 
     const indexOfNow = SiteConfig.navItems.findIndex(
@@ -63,10 +63,7 @@ export default function PagesPath({ isIT, isPlaying }) {
                     element={<item.component isIT={isIT} />}
                 />
             ))}
-            <Route
-                path="*"
-                element={<NotFound isIT={isIT} isPlaying={isPlaying} />}
-            />
+            <Route path="*" element={<NotFound isIT={isIT} />} />
         </Routes>
     );
 }

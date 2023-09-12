@@ -3,7 +3,7 @@ import { Link, Button } from "@nextui-org/react";
 import { useInView, useAnimation, motion } from "framer-motion";
 import { SiteConfig } from "../data/SiteConfig";
 
-export default function Footer(x) {
+export default function Footer({ isIT }) {
     const mail = useRef(null);
     const links = useRef(null);
     const credits = useRef(null);
@@ -103,7 +103,7 @@ export default function Footer(x) {
                         ease: "cubic-bezier(1.01, 0.2, 0.71, 0)",
                     }}
                 >
-                    {x.isIT
+                    {isIT
                         ? "Progettato e Realizzato da "
                         : "Designed & Built by "}
                     <p className="text-primary">Federico Gentili</p>

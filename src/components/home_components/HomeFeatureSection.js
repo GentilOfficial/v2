@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { useInView, useAnimation, motion } from "framer-motion";
 import HomeFeatureSectionCard from "./HomeFeatureSectionCard";
 
-export default function HomeFeatureSection(x) {
+export default function HomeFeatureSection({ isIT }) {
     const feature = useRef(null);
 
     const featureSectionIsInView = useInView(feature, { once: true });
@@ -53,7 +53,7 @@ export default function HomeFeatureSection(x) {
                 variants={featureItem}
                 className="font-semibold text-4xl"
             >
-                {x.isIT ? (
+                {isIT ? (
                     <span>
                         Usa queste <span className="text-primary">feature</span>
                     </span>
@@ -67,12 +67,12 @@ export default function HomeFeatureSection(x) {
                 variants={featureItem}
                 className="font-normal text-sm text-default-500 w-full md:w-2/3"
             >
-                {x.isIT
+                {isIT
                     ? "Per semplificare la navigazione, c'è una feature che permette di spostarsi fra le varie sezioni."
                     : "To simplify navigation, there are a feature that allow to move between sections."}
             </motion.p>
             <motion.div variants={featureItem}>
-                <HomeFeatureSectionCard isIT={x.isIT} />
+                <HomeFeatureSectionCard isIT={isIT} />
             </motion.div>
         </motion.section>
     );

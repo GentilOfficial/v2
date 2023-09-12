@@ -12,7 +12,7 @@ import {
     HiOutlineArrowNarrowRight,
 } from "react-icons/hi";
 
-export default function HomeFeatureSectionCard(x) {
+export default function HomeFeatureSectionCard({ isIT }) {
     return (
         <Card
             shadow="md"
@@ -21,7 +21,7 @@ export default function HomeFeatureSectionCard(x) {
             <CardBody className="flex flex-col sm:flex-row justify-between">
                 <div className="gap-2 flex flex-col sm:w-2/5">
                     <div className="text-center text-xl text-foreground-500 font-caveat">
-                        {x.isIT ? (
+                        {isIT ? (
                             <p>
                                 Usa le{" "}
                                 <span className="text-primary font-bold">
@@ -77,20 +77,20 @@ export default function HomeFeatureSectionCard(x) {
                 <div className="hidden sm:flex flex-col items-center gap-2 justify-center">
                     <Divider className="h-1/3" orientation="vertical" />
                     <p className="text-foreground-500">
-                        {x.isIT ? "OPPURE" : "OR"}
+                        {isIT ? "OPPURE" : "OR"}
                     </p>
                     <Divider className="h-1/3" orientation="vertical" />
                 </div>
                 <div className="flex items-center gap-2 justify-center sm:hidden my-6">
                     <Divider className="w-1/3" />
                     <p className="text-foreground-500">
-                        {x.isIT ? "OPPURE" : "OR"}
+                        {isIT ? "OPPURE" : "OR"}
                     </p>
                     <Divider className="w-1/3" />
                 </div>
                 <div className="gap-3 flex flex-col sm:w-2/5">
                     <div className="text-center text-xl text-foreground-500 font-caveat">
-                        {x.isIT ? (
+                        {isIT ? (
                             <p>
                                 <span className="text-primary font-bold">
                                     Scorri

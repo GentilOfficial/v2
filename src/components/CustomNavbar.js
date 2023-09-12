@@ -16,7 +16,7 @@ import LanguageSelector from "./LanguageSelector";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { SiteConfig } from "../data/SiteConfig";
 
-export default function CustomNavbar(x) {
+export default function CustomNavbar({ isIT }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const location = useLocation().pathname;
@@ -94,7 +94,7 @@ export default function CustomNavbar(x) {
                         variants={navbarItemAnimation}
                         key={`${item}-${index}`}
                         isActive={
-                            x.isIT
+                            isIT
                                 ? location.replaceAll("/", "") ===
                                   item.hrefIT.replaceAll("/", "")
                                     ? true
@@ -107,10 +107,10 @@ export default function CustomNavbar(x) {
                     >
                         <LinkHref
                             as={Link}
-                            to={x.isIT ? item.hrefIT : item.href}
+                            to={isIT ? item.hrefIT : item.href}
                             className={`rounded
                                 ${
-                                    x.isIT
+                                    isIT
                                         ? location.replaceAll("/", "") ===
                                           item.hrefIT.replaceAll("/", "")
                                             ? "text-primary"
@@ -122,7 +122,7 @@ export default function CustomNavbar(x) {
                                 }
                             `}
                         >
-                            {x.isIT ? item.labelIT : item.label}
+                            {isIT ? item.labelIT : item.label}
                         </LinkHref>
                     </NavbarItem>
                 ))}
@@ -137,17 +137,17 @@ export default function CustomNavbar(x) {
                     <ThemeSwitcher />
                 </NavbarItem>
                 <NavbarItem>
-                    <LanguageSelector isIT={x.isIT} />
+                    <LanguageSelector isIT={isIT} />
                 </NavbarItem>
                 <NavbarItem className="hidden sm:block">
                     <Button
                         as={LinkHref}
                         color="primary"
-                        href={x.isIT ? "/it/Curriculum.pdf" : "/Resume.pdf"}
+                        href={isIT ? "/it/Curriculum.pdf" : "/Resume.pdf"}
                         variant="flat"
                         isExternal
                     >
-                        {x.isIT ? "Curriculum" : "Resume"}
+                        {isIT ? "Curriculum" : "Resume"}
                     </Button>
                 </NavbarItem>
                 <Button
@@ -164,10 +164,10 @@ export default function CustomNavbar(x) {
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <LinkHref
                             as={Link}
-                            to={x.isIT ? item.hrefIT : item.href}
+                            to={isIT ? item.hrefIT : item.href}
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className={`rounded ${index === 0 ? "mt-6" : ""} ${
-                                x.isIT
+                                isIT
                                     ? location.replaceAll("/", "") ===
                                       item.hrefIT.replaceAll("/", "")
                                         ? "text-primary font-bold text-4xl"
@@ -178,7 +178,7 @@ export default function CustomNavbar(x) {
                                     : "text-foreground text-2xl"
                             }`}
                         >
-                            {x.isIT ? item.labelIT : item.label}
+                            {isIT ? item.labelIT : item.label}
                         </LinkHref>
                     </NavbarMenuItem>
                 ))}
@@ -188,11 +188,11 @@ export default function CustomNavbar(x) {
                         as={LinkHref}
                         size="lg"
                         color="primary"
-                        href={x.isIT ? "/it/Curriculum.pdf" : "/Resume.pdf"}
+                        href={isIT ? "/it/Curriculum.pdf" : "/Resume.pdf"}
                         variant="flat"
                         isExternal
                     >
-                        {x.isIT ? "Curriculum" : "Resume"}
+                        {isIT ? "Curriculum" : "Resume"}
                     </Button>
                 </NavbarMenuItem>
             </NavbarMenu>

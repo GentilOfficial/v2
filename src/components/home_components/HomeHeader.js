@@ -2,7 +2,7 @@ import { Image } from "@nextui-org/image";
 import { motion } from "framer-motion";
 import Welcome from "../../assets/images/welcome.webp";
 
-export default function HomeHeader(x) {
+export default function HomeHeader({ isIT }) {
     const headerContainer = {
         hidden: { opacity: 0 },
         visible: {
@@ -37,7 +37,7 @@ export default function HomeHeader(x) {
                 variants={headerItem}
                 className="drop-shadow-lg font-bold text-center text-primary font-caveat tracking-widest text-xl md:text-2xl lg:text-3xl mt-6"
             >
-                {x.isIT ? "Hey, io sono" : "Hey, I’m"}
+                {isIT ? "Hey, io sono" : "Hey, I’m"}
             </motion.h1>
             <motion.h2
                 variants={headerItem}
@@ -49,7 +49,7 @@ export default function HomeHeader(x) {
                 variants={headerItem}
                 className="drop-shadow-lg font-bold text-center font-caveat mt-1 mb-1 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground-500"
             >
-                {x.isIT
+                {isIT
                     ? "Benvenuto nel mio spazio digitale"
                     : "Welcome to my digital space"}
             </motion.h3>
@@ -57,7 +57,7 @@ export default function HomeHeader(x) {
                 variants={headerItem}
                 className="drop-shadow-lg text-center text-xl md:text-2xl lg:text-3xl font-caveat mt-5 text-foreground-500"
             >
-                {x.isIT ? (
+                {isIT ? (
                     <>
                         Sono uno{" "}
                         <span className="text-primary font-bold">
