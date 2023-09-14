@@ -38,6 +38,11 @@ export default function PagesPath({ isIT }) {
                 <meta name="description" content={description} />
                 <meta property="og:title" content={title} />
                 <meta property="og:description" content={description} />
+                <meta
+                    property="og:url"
+                    content={SiteConfig.domain + pathname.slice(1)}
+                    data-react-helmet="true"
+                />
                 <meta name="twitter:title" content={title} />
                 <meta name="twitter:description" content={description} />
             </Helmet>
