@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import NotFound from "../pages/NotFound";
 import { SiteConfig } from "../data/SiteConfig";
-import { useEffect } from "react";
 
 export default function PagesPath({ isIT }) {
     const { pathname } = useLocation();
@@ -13,57 +13,51 @@ export default function PagesPath({ isIT }) {
             : (i) => i.href.replaceAll("/", "") === pathname.replaceAll("/", "")
     );
 
-    useEffect(() => {
-        document.title =
-            indexOfNow === -1
-                ? "Federico Gentili - 404"
-                : SiteConfig.navItems[indexOfNow].href === "/"
-                ? "Federico Gentili"
-                : isIT
-                ? "Federico Gentili - " +
-                  SiteConfig.navItems[indexOfNow].labelIT
-                : "Federico Gentili - " + SiteConfig.navItems[indexOfNow].label;
+    const title =
+        indexOfNow === -1
+            ? "Federico Gentili - 404"
+            : SiteConfig.navItems[indexOfNow].href === "/"
+            ? "Federico Gentili"
+            : isIT
+            ? "Federico Gentili - " + SiteConfig.navItems[indexOfNow].labelIT
+            : "Federico Gentili - " + SiteConfig.navItems[indexOfNow].label;
 
-        Array.from(document.getElementsByTagName("META")).forEach(
-            (meta, index) => {
-                if (meta.name === "description" && indexOfNow !== -1) {
-                    document.getElementsByTagName("META")[index].content = isIT
-                        ? SiteConfig.navItems[indexOfNow].descriptionIT
-                        : SiteConfig.navItems[indexOfNow].description;
-                }
-
-                if (meta.name === "og:description" && indexOfNow !== -1) {
-                    document.getElementsByTagName("META")[index].content = isIT
-                        ? SiteConfig.navItems[indexOfNow].descriptionIT
-                        : SiteConfig.navItems[indexOfNow].description;
-                }
-
-                if (meta.name === "twitter:description" && indexOfNow !== -1) {
-                    document.getElementsByTagName("META")[index].content = isIT
-                        ? SiteConfig.navItems[indexOfNow].descriptionIT
-                        : SiteConfig.navItems[indexOfNow].description;
-                }
-            }
-        );
-    }, [pathname, indexOfNow, isIT]);
+    const description =
+        indexOfNow === -1
+            ? isIT
+                ? "Mi spiace, la pagina che stai cercando non esiste oppure è stata spostata."
+                : "Sorry, the page you are looking for doesn't exist or has been moved."
+            : isIT
+            ? SiteConfig.navItems[indexOfNow].descriptionIT
+            : SiteConfig.navItems[indexOfNow].description;
 
     return (
-        <Routes>
-            {SiteConfig.navItems.map((item, index) => (
-                <Route
-                    key={`${item}-${index}`}
-                    path={item.href}
-                    element={<item.component isIT={isIT} />}
-                />
-            ))}
-            {SiteConfig.navItems.map((item, index) => (
-                <Route
-                    key={`${item}-${index}`}
-                    path={item.hrefIT}
-                    element={<item.component isIT={isIT} />}
-                />
-            ))}
-            <Route path="*" element={<NotFound isIT={isIT} />} />
-        </Routes>
+        <>
+            <Helmet>
+                <title>{title}</title>
+                <meta name="description" content={description} />
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta name="twitter:title" content={title} />
+                <meta name="twitter:description" content={description} />
+            </Helmet>
+            <Routes>
+                {SiteConfig.navItems.map((item, index) => (
+                    <Route
+                        key={`${item}-${index}`}
+                        path={item.href}
+                        element={<item.component isIT={isIT} />}
+                    />
+                ))}
+                {SiteConfig.navItems.map((item, index) => (
+                    <Route
+                        key={`${item}-${index}`}
+                        path={item.hrefIT}
+                        element={<item.component isIT={isIT} />}
+                    />
+                ))}
+                <Route path="*" element={<NotFound isIT={isIT} />} />
+            </Routes>
+        </>
     );
 }
