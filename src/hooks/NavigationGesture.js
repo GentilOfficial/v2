@@ -3,6 +3,7 @@ import { useSwipeable } from "react-swipeable";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@nextui-org/react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { SiteConfig } from "../data/SiteConfig";
 
@@ -80,7 +81,9 @@ export default function NavigationGesture({ children, isIT }) {
     return (
         <main {...handlers}>
             {children}
-            <section
+            <motion.section
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 className={`flex ${
                     indexOfNow - 1 < 0 ? "justify-end" : "justify-between"
                 } mx-auto max-w-5xl ${
@@ -126,7 +129,7 @@ export default function NavigationGesture({ children, isIT }) {
                         <IoIosArrowForward className="text-primary" />
                     </Button>
                 )}
-            </section>
+            </motion.section>
         </main>
     );
 }
