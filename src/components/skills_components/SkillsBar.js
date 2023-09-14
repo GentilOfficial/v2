@@ -7,6 +7,7 @@ export default function SkillsBar({ heading, percent }) {
             value={percent}
             maxValue={100}
             showValueLabel={true}
+            className="drop-shadow-lg"
         />
     );
 }
