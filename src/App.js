@@ -26,8 +26,10 @@ export default function App() {
             <div className="scroll-smooth text-foreground bg-background">
                 <CustomNavbar url="https://www.fgentili.it/" isIT={isIT} />
                 <NavigationGesture isIT={isIT}>
-                    <div className="mx-auto max-w-5xl px-6 min-h-[calc(100vh-21rem)] sm:min-h-[calc(100vh-18rem)]">
-                        <PagesPath isIT={isIT} />
+                    <div className="mx-auto max-w-5xl px-6 min-h-[calc(100vh-21rem)] sm:min-h-[calc(100vh-18rem)] flex items-center">
+                        <section className="w-full">
+                            <PagesPath isIT={isIT} />
+                        </section>
                     </div>
                 </NavigationGesture>
                 <Footer isIT={isIT} />
