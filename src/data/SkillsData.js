@@ -52,6 +52,17 @@ export const SkillsData = [
         icon: AiFillDatabase,
     },
     {
+        title: "Frameworks",
+        items: [
+            {
+                heading: "React",
+                percent: 72,
+                icon: BiLogoReact,
+            },
+        ],
+        icon: LuBoxes,
+    },
+    {
         title: "Toolkits",
         items: [
             {
@@ -66,16 +77,5 @@ export const SkillsData = [
             },
         ],
         icon: BsTools,
-    },
-    {
-        title: "Frameworks",
-        items: [
-            {
-                heading: "React",
-                percent: 72,
-                icon: BiLogoReact,
-            },
-        ],
-        icon: LuBoxes,
     },
 ];
