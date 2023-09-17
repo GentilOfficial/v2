@@ -17,6 +17,14 @@ export default function Home() {
                     url: `https://fgentili.it${
                         locale !== defaultLocale ? "/it/skills" : "/skills"
                     }`,
+                    images: [
+                        {
+                            url: `https://fgentili.it/api/og?title=${title}`,
+                            width: 1200,
+                            height: 630,
+                            alt: "Federico Gentili Open Graph",
+                        },
+                    ],
                 }}
                 additionalMetaTags={[
                     { property: "twitter:description", content: description },

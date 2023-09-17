@@ -2,14 +2,6 @@ export default {
     openGraph: {
         type: "website",
         locale: "en",
-        images: [
-            {
-                url: "https://fgentili.it/images/og.png",
-                width: 1200,
-                height: 630,
-                alt: "Federico Gentili Logo",
-            },
-        ],
         siteName: "Federico Gentili",
     },
     additionalLinkTags: [
