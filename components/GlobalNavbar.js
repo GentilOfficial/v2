@@ -15,11 +15,12 @@ import { useRouter } from "next/router";
 import ThemeChanger from "./ThemeChanger";
 import LanguageChanger from "./LanguageChanger";
 import AvatarIcon from "@/images/avatar.webp";
+import { routes, resume } from "@/data/site.config";
 
 const caveat = Caveat({ subsets: ["latin"] });
 
 export default function GlobalNavbar() {
-    const router = useRouter();
+    const { pathname, locale } = useRouter();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
@@ -38,64 +39,24 @@ export default function GlobalNavbar() {
             </NavbarBrand>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                <NavbarItem isActive={router.pathname === "/" ? true : false}>
-                    <LinkUI
-                        as={Link}
-                        href="/"
-                        className={`rounded-md ${
-                            router.pathname === "/"
-                                ? "text-primary"
-                                : "text-foreground/80"
-                        }`}
+                {routes.map((route, index) => (
+                    <NavbarItem
+                        key={`${route}-${index}`}
+                        isActive={pathname === route.url ? true : false}
                     >
-                        Home
-                    </LinkUI>
-                </NavbarItem>
-                <NavbarItem
-                    isActive={router.pathname === "/skills" ? true : false}
-                >
-                    <LinkUI
-                        as={Link}
-                        href="/skills"
-                        className={`rounded-md ${
-                            router.pathname === "/skills"
-                                ? "text-primary"
-                                : "text-foreground/80"
-                        }`}
-                    >
-                        Skills
-                    </LinkUI>
-                </NavbarItem>
-                <NavbarItem
-                    isActive={router.pathname === "/projects" ? true : false}
-                >
-                    <LinkUI
-                        as={Link}
-                        href="/projects"
-                        className={`rounded-md ${
-                            router.pathname === "/projects"
-                                ? "text-primary"
-                                : "text-foreground/80"
-                        }`}
-                    >
-                        Projects
-                    </LinkUI>
-                </NavbarItem>
-                <NavbarItem
-                    isActive={router.pathname === "/about" ? true : false}
-                >
-                    <LinkUI
-                        as={Link}
-                        href="/about"
-                        className={`rounded-md ${
-                            router.pathname === "/about"
-                                ? "text-primary"
-                                : "text-foreground/80"
-                        }`}
-                    >
-                        About
-                    </LinkUI>
-                </NavbarItem>
+                        <LinkUI
+                            as={Link}
+                            href={route.url}
+                            className={`rounded-md ${
+                                pathname === route.url
+                                    ? "text-primary"
+                                    : "text-foreground/80"
+                            }`}
+                        >
+                            {route.title[locale]}
+                        </LinkUI>
+                    </NavbarItem>
+                ))}
             </NavbarContent>
 
             <NavbarContent justify="end">
@@ -106,8 +67,13 @@ export default function GlobalNavbar() {
                     <LanguageChanger />
                 </NavbarItem>
                 <NavbarItem className="hidden sm:block">
-                    <Button color="primary" variant="flat">
-                        Resume
+                    <Button
+                        as={Link}
+                        href={resume[locale].url}
+                        color="primary"
+                        variant="flat"
+                    >
+                        {resume[locale].title}
                     </Button>
                 </NavbarItem>
                 <Button
@@ -120,67 +86,35 @@ export default function GlobalNavbar() {
             </NavbarContent>
 
             <NavbarMenu className="text-center gap-6 py-0">
-                <NavbarItem>
-                    <LinkUI
-                        as={Link}
-                        href="/"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className={`rounded-md mt-6 ${
-                            router.pathname === "/"
-                                ? "text-primary font-semibold text-4xl"
-                                : "text-foreground/80 text-2xl"
-                        }`}
-                    >
-                        Home
-                    </LinkUI>
-                </NavbarItem>
-                <NavbarItem>
-                    <LinkUI
-                        as={Link}
-                        href="/skills"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className={`rounded-md ${
-                            router.pathname === "/skills"
-                                ? "text-primary font-semibold text-4xl"
-                                : "text-foreground/80 text-2xl"
-                        }`}
-                    >
-                        Skills
-                    </LinkUI>
-                </NavbarItem>
-                <NavbarItem>
-                    <LinkUI
-                        as={Link}
-                        href="/projects"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className={`rounded-md ${
-                            router.pathname === "/projects"
-                                ? "text-primary font-semibold text-4xl"
-                                : "text-foreground/80 text-2xl"
-                        }`}
-                    >
-                        Projects
-                    </LinkUI>
-                </NavbarItem>
-                <NavbarItem>
-                    <LinkUI
-                        as={Link}
-                        href="/about"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className={`rounded-md ${
-                            router.pathname === "/about"
-                                ? "text-primary font-semibold text-4xl"
-                                : "text-foreground/80 text-2xl"
-                        }`}
-                    >
-                        About
-                    </LinkUI>
-                </NavbarItem>
+                {routes.map((route, index) => (
+                    <NavbarMenuItem key={`${route}-${index}`}>
+                        <LinkUI
+                            as={Link}
+                            href={route.url}
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            className={`${
+                                index === 0 ? "rounded-md mt-12" : "rounded-md"
+                            } ${
+                                pathname === route.url
+                                    ? "text-primary font-semibold text-4xl"
+                                    : "text-foreground/80 text-2xl"
+                            }`}
+                        >
+                            {route.title[locale]}
+                        </LinkUI>
+                    </NavbarMenuItem>
+                ))}
 
                 <NavbarMenuItem className="w-full gap-6 flex flex-col items-center mb-6">
                     <Divider className="w-3/5" />
-                    <Button size="lg" color="primary" variant="flat">
-                        Resume
+                    <Button
+                        as={Link}
+                        href={resume[locale].url}
+                        size="lg"
+                        color="primary"
+                        variant="flat"
+                    >
+                        {resume[locale].title}
                     </Button>
                 </NavbarMenuItem>
             </NavbarMenu>
