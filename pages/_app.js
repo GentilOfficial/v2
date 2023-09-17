@@ -11,6 +11,11 @@ import GAnalytics from "@/components/GAnalytics";
 
 const red_hat_text = Red_Hat_Text({ subsets: ["latin"] });
 
+console.log.apply(console, [
+    "%c Designed & Built by Federico Gentili ",
+    "background: #548267; color: #ffffff; padding: 2px; border-radius: 9999px;",
+]);
+
 export default function App({ Component, pageProps }) {
     return (
         <NextUIProvider>

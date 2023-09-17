@@ -1,4 +1,5 @@
 import { Link, Button } from "@nextui-org/react";
+import { translate, links } from "@/data/site.config";
 
 export default function Footer() {
     return (
@@ -13,36 +14,26 @@ export default function Footer() {
                     federicogentili05@gmail.com
                 </Link>
                 <section className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center justify-center">
-                    <Button
-                        size="sm"
-                        as={Link}
-                        showAnchorIcon
-                        href=""
-                        isExternal
-                        className="col-span-1 bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none w-full"
-                    >
-                        Instagram
-                    </Button>
-                    <Button
-                        size="sm"
-                        as={Link}
-                        showAnchorIcon
-                        href=""
-                        isExternal
-                        className="col-span-1 bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none w-full"
-                    >
-                        Telegram
-                    </Button>
-                    <Button
-                        size="sm"
-                        as={Link}
-                        showAnchorIcon
-                        href=""
-                        isExternal
-                        className="col-span-2 sm:col-span-1 bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none w-full"
-                    >
-                        Github
-                    </Button>
+                    {links.map((link, index) => (
+                        <Button
+                            key={`${link}-${index}`}
+                            size="sm"
+                            as={Link}
+                            showAnchorIcon
+                            href={link.url}
+                            isExternal
+                            className={`${
+                                links.length % 2 === 0
+                                    ? "col-span-1"
+                                    : links.length === index + 1
+                                    ? "col-span-2 sm:col-span-1"
+                                    : "col-span-1"
+                            } bg-white/5 dark:bg-default-400/10 backdrop-blur shadow border dark:border-none w-full`}
+                        >
+                            <link.icon />
+                            {link.title}
+                        </Button>
+                    ))}
                 </section>
                 <section className="w-44">
                     Designed & Built by
