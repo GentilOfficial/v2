@@ -1,12 +1,12 @@
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { Button } from "@nextui-org/react";
-import content from "@/locale/common";
+import { translate } from "@/data/site.config";
 
 export default function Home() {
     const { locale, defaultLocale } = useRouter();
 
-    const { title, description } = content[locale].home;
+    const { title, description } = translate[locale].home;
 
     return (
         <>

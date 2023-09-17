@@ -10,11 +10,14 @@ import {
 import { IoLanguage } from "react-icons/io5";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { translate } from "@/data/site.config";
 
 export default function LanguageChanger() {
-    const router = useRouter();
+    const { locale, pathname } = useRouter();
 
-    const [selectedKeys, setSelectedKeys] = useState(new Set([router.locale]));
+    const [selectedKeys, setSelectedKeys] = useState(new Set([locale]));
+
+    const { title } = translate[locale].languageChanger;
 
     return (
         <Dropdown showArrow>
@@ -23,26 +26,26 @@ export default function LanguageChanger() {
                     isIconOnly
                     variant="light"
                     size="sm"
-                    aria-label="Change language"
-                    title="Change language"
+                    aria-label={title}
+                    title={title}
                     className="text-2xl"
                 >
                     <IoLanguage />
                 </Button>
             </DropdownTrigger>
             <DropdownMenu
-                aria-label="Choose another language"
+                aria-label={title}
                 variant="flat"
                 disallowEmptySelection
                 selectionMode="single"
                 selectedKeys={selectedKeys}
                 onSelectionChange={setSelectedKeys}
             >
-                <DropdownSection title="Choose another language">
+                <DropdownSection title={title}>
                     <DropdownItem
                         key="it"
                         as={Link}
-                        href={router.pathname}
+                        href={pathname}
                         locale="it"
                     >
                         Italiano
@@ -50,7 +53,7 @@ export default function LanguageChanger() {
                     <DropdownItem
                         key="en"
                         as={Link}
-                        href={router.pathname}
+                        href={pathname}
                         locale="en"
                     >
                         English

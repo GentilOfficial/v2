@@ -2,15 +2,15 @@ import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
-import content from "@/locale/common";
 import { Caveat } from "next/font/google";
+import { translate } from "@/data/site.config";
 
 const caveat = Caveat({ subsets: ["latin"] });
 
 export default function Error404() {
     const { locale, defaultLocale } = useRouter();
 
-    const { h1, h2, p, button } = content[locale].error;
+    const { h1, h2, p, button } = translate[locale].error;
 
     return (
         <>
