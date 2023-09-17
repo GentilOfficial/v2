@@ -44,7 +44,7 @@ export default {
     ],
     additionalMetaTags: [
         { property: "color-scheme", content: "light" },
-        { property: "theme-color", content: "#548267" },
+        { name: "theme-color", content: "#548267" },
         { name: "apple-mobile-web-app-status-bar", content: "#548267" },
         {
             name: "google-site-verification",

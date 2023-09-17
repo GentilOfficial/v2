@@ -21,7 +21,7 @@ export default function ThemeChanger() {
                 additionalMetaTags={[
                     { property: "color-scheme", content: theme },
                     {
-                        property: "theme-color",
+                        name: "theme-color",
                         content: theme === "dark" ? "#000000" : "#548267",
                     },
                     {
