@@ -14,7 +14,7 @@ export default function Home() {
                 title={`Federico Gentili - ${title}`}
                 description={description}
                 openGraph={{
-                    url: `https://www.fgentili.it${
+                    url: `https://fgentili.it${
                         locale !== defaultLocale ? "/it/projects" : "/projects"
                     }`,
                 }}

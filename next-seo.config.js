@@ -4,7 +4,7 @@ export default {
         locale: "en",
         images: [
             {
-                url: "https://www.fgentili.it/images/og.png",
+                url: "https://fgentili.it/images/og.png",
                 width: 1200,
                 height: 630,
                 alt: "Federico Gentili Logo",
@@ -29,12 +29,12 @@ export default {
         {
             rel: "alternate",
             hrefLang: "en",
-            href: "https://www.fgentili.it/",
+            href: "https://fgentili.it/",
         },
         {
             rel: "alternate",
             hrefLang: "it",
-            href: "https://www.fgentili.it/it/",
+            href: "https://fgentili.it/it/",
         },
         {
             rel: "sitemap",
