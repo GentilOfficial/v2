@@ -17,7 +17,7 @@ export default function LanguageChanger() {
 
     const [selectedKeys, setSelectedKeys] = useState(new Set([locale]));
 
-    const { title } = translate[locale].languageChanger;
+    const languageChanger = translate[locale].languageChanger;
 
     return (
         <Dropdown showArrow>
@@ -26,22 +26,22 @@ export default function LanguageChanger() {
                     isIconOnly
                     variant="light"
                     size="sm"
-                    aria-label={title}
-                    title={title}
+                    aria-label={languageChanger}
+                    title={languageChanger}
                     className="text-2xl"
                 >
                     <IoLanguage />
                 </Button>
             </DropdownTrigger>
             <DropdownMenu
-                aria-label={title}
+                aria-label={languageChanger}
                 variant="flat"
                 disallowEmptySelection
                 selectionMode="single"
                 selectedKeys={selectedKeys}
                 onSelectionChange={setSelectedKeys}
             >
-                <DropdownSection title={title}>
+                <DropdownSection title={languageChanger}>
                     <DropdownItem
                         key="it"
                         as={Link}

@@ -89,9 +89,8 @@ export const translate = {
             p: "Sorry, the page you are looking for doesn't exist or has been moved.",
             button: "Go Home",
         },
-        languageChanger: {
-            title: "Choose another language",
-        },
+        languageChanger: "Choose another language",
+        credits: "Designed & Built by",
     },
     it: {
         home: {
@@ -119,8 +118,7 @@ export const translate = {
             p: "Mi spiace, la pagina che stai cercando non esiste oppure è stata spostata.",
             button: "Vai alla Home",
         },
-        languageChanger: {
-            title: "Scegli un'altra lingua",
-        },
+        languageChanger: "Scegli un'altra lingua",
+        credits: "Progettato & Realizzato da",
     },
 };
