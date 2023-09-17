@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { Red_Hat_Text } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
@@ -24,6 +25,7 @@ export default function App({ Component, pageProps }) {
                 </div>
             </NextThemesProvider>
             <GAnalytics />
+            <Analytics />
         </NextUIProvider>
     );
 }
