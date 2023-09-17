@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Caveat } from "next/font/google";
 import {
     Navbar,
     NavbarBrand,
@@ -15,6 +16,8 @@ import ThemeChanger from "./ThemeChanger";
 import LanguageChanger from "./LanguageChanger";
 import AvatarIcon from "@/images/avatar.webp";
 
+const caveat = Caveat({ subsets: ["latin"] });
+
 export default function GlobalNavbar() {
     const router = useRouter();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,7 +32,7 @@ export default function GlobalNavbar() {
                     classNames="m-5"
                     alt="Site logo"
                 />
-                <p className="font-caveat text-lg font-bold mx-1">
+                <p className={`text-lg font-bold mx-1 ${caveat.className}`}>
                     Federico Gentili
                 </p>
             </NavbarBrand>
