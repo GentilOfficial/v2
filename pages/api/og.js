@@ -12,7 +12,7 @@ export default async function handler(request) {
             new URL("./assets/images/logo.png", import.meta.url)
         ).then((res) => res.arrayBuffer());
 
-        const fontData = await fetch(
+        const fontDataCaveat = await fetch(
             new URL("./assets/fonts/Caveat.ttf", import.meta.url)
         ).then((res) => res.arrayBuffer());
 
@@ -41,43 +41,50 @@ export default async function handler(request) {
                             alignItems: "center",
                             justifyContent: "center",
                             justifyItems: "center",
-                            fontSize: 80,
-                            fontFamily: '"Caveat"',
-                            fontWeight: "bold",
-                            letterSpacing: "-0.025em",
-                            color: "white",
-                            textShadow: "5px 5px 7px rgba(0, 0, 0, 0.7)",
+                            flexDirection: "column",
+                            background: "rgba(255, 255, 255, 0.75)",
+                            width: "90%",
+                            height: "80%",
+                            borderRadius: "30px",
+                            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.8)",
                         }}
                     >
-                        <img
-                            alt="Logo"
-                            width={130}
-                            height={130}
-                            src={imageData}
+                        <div
                             style={{
-                                margin: "0 12px",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                justifyItems: "center",
+                                fontSize: 100,
+                                fontFamily: '"Caveat"',
+                                fontWeight: "bold",
+                                letterSpacing: "-0.025em",
+                                color: "rgba(0, 0, 0, 1)",
+                                textShadow:
+                                    "5px 5px 5px rgba(255, 255, 255, 0.5)",
                             }}
-                        />
-                        Federico Gentili
-                    </div>
-                    <div
-                        style={{
-                            fontSize: 40,
-                            fontFamily: '"Caveat"',
-                            fontWeight: "bold",
-                            letterSpacing: "-0.025em",
-                            lineHeight: 1.4,
-                            whiteSpace: "pre-wrap",
-                            padding: "0 40px",
-                            margin: searchParams.has("title") ? "25px" : "0",
-                            backgroundColor: "rgba(255, 255, 255, 0.5)",
-                            borderRadius: "9999px",
-                            color: "rgba(0, 0, 0, 0.8)",
-                            textShadow: "5px 5px 10px rgba(0, 0, 0, 0.7)",
-                            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.7)",
-                        }}
-                    >
-                        {title}
+                        >
+                            <img
+                                alt="Logo"
+                                width={180}
+                                height={180}
+                                src={imageData}
+                            />
+                            Federico Gentili
+                        </div>
+                        <div
+                            style={{
+                                fontSize: 80,
+                                fontFamily: '"Caveat"',
+                                fontWeight: "bold",
+                                letterSpacing: "-0.025em",
+                                color: "rgba(0, 0, 0, 0.8)",
+                                textShadow:
+                                    "5px 5px 5px rgba(255, 255, 255, 0.5)",
+                            }}
+                        >
+                            {title}
+                        </div>
                     </div>
                 </div>
             ),
@@ -87,7 +94,7 @@ export default async function handler(request) {
                 fonts: [
                     {
                         name: "Caveat",
-                        data: fontData,
+                        data: fontDataCaveat,
                         style: "normal",
                     },
                 ],
