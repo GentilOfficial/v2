@@ -42,11 +42,6 @@ export default async function handler(request) {
                             justifyContent: "center",
                             justifyItems: "center",
                             flexDirection: "column",
-                            background: "rgba(255, 255, 255, 0.75)",
-                            width: "90%",
-                            height: "80%",
-                            borderRadius: "30px",
-                            boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.8)",
                         }}
                     >
                         <div
@@ -59,9 +54,8 @@ export default async function handler(request) {
                                 fontFamily: '"Caveat"',
                                 fontWeight: "bold",
                                 letterSpacing: "-0.025em",
-                                color: "rgba(0, 0, 0, 1)",
-                                textShadow:
-                                    "5px 5px 5px rgba(255, 255, 255, 0.5)",
+                                color: "rgba(255, 255, 255, 1)",
+                                textShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)",
                             }}
                         >
                             <img
@@ -78,9 +72,8 @@ export default async function handler(request) {
                                 fontFamily: '"Caveat"',
                                 fontWeight: "bold",
                                 letterSpacing: "-0.025em",
-                                color: "rgba(0, 0, 0, 0.8)",
-                                textShadow:
-                                    "5px 5px 5px rgba(255, 255, 255, 0.5)",
+                                color: "rgba(255, 255, 255, 0.8)",
+                                textShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)",
                             }}
                         >
                             {title}
