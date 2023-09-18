@@ -8,7 +8,7 @@ import { translate } from "@/data/site.config";
 const caveat = Caveat({ subsets: ["latin"] });
 
 export default function Error404() {
-    const { locale, defaultLocale } = useRouter();
+    const { locale } = useRouter();
 
     const { h1, h2, p, button } = translate[locale].error;
 
@@ -25,7 +25,7 @@ export default function Error404() {
                 </p>
                 <Button
                     as={Link}
-                    href={locale === defaultLocale ? "/" : `/${locale}`}
+                    href="/"
                     variant="flat"
                     color="primary"
                     size="lg"
