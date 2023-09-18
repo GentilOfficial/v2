@@ -1,7 +1,6 @@
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { translate } from "@/data/site.config";
-import { progress } from "framer-motion";
 
 export default function Home() {
     const { locale, defaultLocale } = useRouter();
