@@ -1,7 +1,5 @@
 import { FaInstagram, FaGithub, FaTelegramPlane } from "react-icons/fa";
 
-export const email = "federicogentili05@gmail.com";
-
 export const routes = [
     {
         title: {
@@ -36,17 +34,17 @@ export const routes = [
 export const links = [
     {
         title: "Instagram",
-        url: "https://www.instagram.com/federico.gnt",
+        url: process.env.NEXT_PUBLIC_INSTAGRAM_LINK,
         icon: FaInstagram,
     },
     {
         title: "Telegram",
-        url: "https://t.me/gentil104",
+        url: process.env.NEXT_PUBLIC_TELEGRAM_LINK,
         icon: FaTelegramPlane,
     },
     {
         title: "Github",
-        url: "https://github.com/GentilOfficial",
+        url: process.env.NEXT_PUBLIC_GITHUB_LINK,
         icon: FaGithub,
     },
 ];

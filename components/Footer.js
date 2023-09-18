@@ -1,10 +1,14 @@
 import { Link, Button } from "@nextui-org/react";
 import { useRouter } from "next/router";
-import { translate, links, email } from "@/data/site.config";
+import { translate, links } from "@/data/site.config";
 
 export default function Footer() {
     const { locale } = useRouter();
+
+    const email = process.env.NEXT_PUBLIC_EMAIL;
+
     const credits = translate[locale].credits;
+
     return (
         <footer className="max-w-screen-lg mx-auto p-5 mt-5">
             <div className="flex flex-col items-center gap-4 text-foreground-500 text-sm text-center">
@@ -39,7 +43,7 @@ export default function Footer() {
                     ))}
                 </section>
                 <section className="w-44">
-                    {credits}
+                    <p>{credits}</p>
                     <p className="text-primary">Federico Gentili</p>
                 </section>
             </div>

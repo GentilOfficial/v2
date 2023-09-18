@@ -1,9 +1,12 @@
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import { translate } from "@/data/site.config";
+import { progress } from "framer-motion";
 
 export default function Home() {
     const { locale, defaultLocale } = useRouter();
+
+    const domain = process.env.NEXT_PUBLIC_DOMAIN;
 
     const { title, description } = translate[locale].home;
 
@@ -13,12 +16,12 @@ export default function Home() {
                 title="Federico Gentili"
                 description={description}
                 openGraph={{
-                    url: `https://fgentili.it${
+                    url: `https://${domain}${
                         locale !== defaultLocale ? "/it/" : "/"
                     }`,
                     images: [
                         {
-                            url: "https://fgentili.it/api/og",
+                            url: "https://${domain}/api/og",
                             width: 1200,
                             height: 630,
                             alt: "Federico Gentili Open Graph",

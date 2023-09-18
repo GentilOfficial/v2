@@ -1,3 +1,6 @@
+const domain = process.env.NEXT_PUBLIC_DOMAIN;
+const gSiteVerification = process.env.NEXT_PUBLIC_G_SITE_VERIFICATION;
+
 export default {
     openGraph: {
         type: "website",
@@ -21,12 +24,12 @@ export default {
         {
             rel: "alternate",
             hrefLang: "en",
-            href: "https://fgentili.it/",
+            href: `https://${domain}/`,
         },
         {
             rel: "alternate",
             hrefLang: "it",
-            href: "https://fgentili.it/it/",
+            href: `https://${domain}/it/`,
         },
         {
             rel: "sitemap",
@@ -40,7 +43,7 @@ export default {
         { name: "apple-mobile-web-app-status-bar", content: "#548267" },
         {
             name: "google-site-verification",
-            content: "onsZqPWSdeqaD41sJ2P1cvrFBBTSL6MI_uLkJ8lLAC8",
+            content: gSiteVerification,
         },
         { property: "og:locale:alternate", content: "it" },
     ],

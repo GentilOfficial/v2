@@ -5,6 +5,8 @@ import { translate } from "@/data/site.config";
 export default function Home() {
     const { locale, defaultLocale } = useRouter();
 
+    const domain = process.env.NEXT_PUBLIC_DOMAIN;
+
     const { title, description } = translate[locale].about;
 
     return (
@@ -13,12 +15,12 @@ export default function Home() {
                 title={`Federico Gentili - ${title}`}
                 description={description}
                 openGraph={{
-                    url: `https://fgentili.it${
+                    url: `https://${domain}${
                         locale !== defaultLocale ? "/it/about" : "/about"
                     }`,
                     images: [
                         {
-                            url: `https://fgentili.it/api/og?title=${title}`,
+                            url: `https://${domain}/api/og?title=${title}`,
                             width: 1200,
                             height: 630,
                             alt: "Federico Gentili Open Graph",
