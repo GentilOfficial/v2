@@ -17,7 +17,7 @@ export default function LanguageChanger() {
 
     const [selectedKeys, setSelectedKeys] = useState(new Set([locale]));
 
-    const languageChanger = translate[locale].languageChanger;
+    const languageChanger = translate.languageChanger[locale];
 
     return (
         <Dropdown showArrow>

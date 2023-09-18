@@ -1,20 +1,20 @@
-import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
 import { Caveat } from "next/font/google";
 import { translate } from "@/data/site.config";
+import SEO from "@/components/SEO";
 
 const caveat = Caveat({ subsets: ["latin"] });
 
 export default function Error404() {
     const { locale } = useRouter();
 
-    const { h1, h2, p, button } = translate[locale].error;
+    const { h1, h2, p, button } = translate.error[locale];
 
     return (
         <>
-            <NextSeo title={`Federico Gentili - ${h1}`} />
+            <SEO title={h1} description={p} />
             <main className="min-h-screen flex flex-col items-center justify-center text-center p-5">
                 <h1 className="text-xl font-medium text-primary mt-6">{h1}</h1>
                 <h2 className="mt-3 text-4xl font-semibold">{h2}</h2>

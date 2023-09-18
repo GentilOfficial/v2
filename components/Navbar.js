@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Caveat } from "next/font/google";
 import {
-    Navbar,
+    Navbar as NextNavbar,
     NavbarBrand,
     NavbarContent,
     NavbarMenuToggle,
@@ -19,12 +19,12 @@ import { routes, resume } from "@/data/site.config";
 
 const caveat = Caveat({ subsets: ["latin"] });
 
-export default function GlobalNavbar() {
+export default function Navbar() {
     const { pathname, locale } = useRouter();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen} isMenuOpen={isMenuOpen}>
+        <NextNavbar onMenuOpenChange={setIsMenuOpen} isMenuOpen={isMenuOpen}>
             <NavbarBrand className="select-none">
                 <Image
                     width={36}
@@ -110,7 +110,6 @@ export default function GlobalNavbar() {
                     <Button
                         as={Link}
                         href={resume[locale].url}
-                        size="lg"
                         color="primary"
                         variant="flat"
                     >
@@ -118,6 +117,6 @@ export default function GlobalNavbar() {
                     </Button>
                 </NavbarMenuItem>
             </NavbarMenu>
-        </Navbar>
+        </NextNavbar>
     );
 }

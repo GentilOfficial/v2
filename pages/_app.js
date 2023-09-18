@@ -5,7 +5,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
-import GlobalNavbar from "@/components/GlobalNavbar";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GAnalytics from "@/components/GAnalytics";
 
@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }) {
                 <div
                     className={`bg-background text-foreground ${red_hat_text.className}`}
                 >
-                    <GlobalNavbar />
+                    <Navbar />
                     <Component {...pageProps} />
                     <Footer />
                 </div>

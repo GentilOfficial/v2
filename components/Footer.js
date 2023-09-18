@@ -7,7 +7,7 @@ export default function Footer() {
 
     const email = process.env.NEXT_PUBLIC_EMAIL;
 
-    const credits = translate[locale].credits;
+    const credits = translate.credits[locale];
 
     return (
         <footer className="max-w-screen-lg mx-auto p-5 mt-5">
