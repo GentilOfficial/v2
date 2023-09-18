@@ -21,7 +21,7 @@ export default function Home() {
                     }`,
                     images: [
                         {
-                            url: "https://${domain}/api/og",
+                            url: `https://${domain}/api/og`,
                             width: 1200,
                             height: 630,
                             alt: "Federico Gentili Open Graph",
