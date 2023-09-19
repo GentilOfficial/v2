@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
                 additionalLinkTags={[
                     {
                         rel: "icon",
-                        href: `/images/${getFaviconName()}`,
+                        href: `/favicons/${getFaviconName()}`,
                     },
                 ]}
             />

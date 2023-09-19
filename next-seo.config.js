@@ -14,7 +14,7 @@ export default {
         },
         {
             rel: "icon",
-            href: "/images/favicon.png",
+            href: "/favicons/favicon.ico",
         },
         {
             rel: "apple-touch-icon",
@@ -39,8 +39,8 @@ export default {
     ],
     additionalMetaTags: [
         { property: "color-scheme", content: "light" },
-        { name: "theme-color", content: "#548267" },
-        { name: "apple-mobile-web-app-status-bar", content: "#548267" },
+        { name: "theme-color", content: "#FFFFFF" },
+        { name: "apple-mobile-web-app-status-bar", content: "#FFFFFF" },
         {
             name: "google-site-verification",
             content: gSiteVerification,
