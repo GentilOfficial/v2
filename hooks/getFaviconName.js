@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import Head from "next/head";
 
-export default function Favicon() {
+export const getFaviconName = () => {
     const [faviconHref, setFaviconHref] = useState("favicon.png");
 
     const getFaviconPath = (isDarkMode = false) => {
@@ -16,9 +15,5 @@ export default function Favicon() {
             setFaviconHref(getFaviconPath(matcher.matches));
     }, [faviconHref]);
 
-    return (
-        <Head>
-            <link rel="icon" href={`/images/${faviconHref}`} />
-        </Head>
-    );
-}
+    return faviconHref;
+};
