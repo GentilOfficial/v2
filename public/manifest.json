@@ -1,13 +1,12 @@
 {
-    "short_name": "Federico Gentili",
     "name": "Federico Gentili",
-    "description": "Federico Gentili's personal website",
-    "display": "standalone",
-    "orientation": "portrait",
+    "short_name": "Federico",
     "id": "/",
+    "lang": "en",
+    "description": "Federico Gentili's personal website",
     "start_url": "/",
-    "theme_color": "#548267",
-    "background_color": "#548267",
+    "scope": "/",
+    "orientation": "portrait",
     "icons": [
         {
             "src": "/icons/logo-192.png",
@@ -33,5 +32,8 @@
             "type": "image/png",
             "purpose": "maskable"
         }
-    ]
+    ],
+    "theme_color": "#548267",
+    "background_color": "#548267",
+    "display": "standalone"
 }

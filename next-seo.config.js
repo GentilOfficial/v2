@@ -13,10 +13,6 @@ export default {
             href: "/manifest.json",
         },
         {
-            rel: "icon",
-            href: "/images/favicon.ico",
-        },
-        {
             rel: "apple-touch-icon",
             href: "/icons/apple-touch-icon.png",
             sizes: "180x180",

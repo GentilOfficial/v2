@@ -9,33 +9,31 @@ import {
     NavbarMenuItem,
     NavbarItem,
 } from "@nextui-org/navbar";
-import { Button, Image, Link as LinkUI, Divider } from "@nextui-org/react";
+import { Button, Link as LinkUI, Divider } from "@nextui-org/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import ThemeChanger from "./ThemeChanger";
 import LanguageChanger from "./LanguageChanger";
-import AvatarIcon from "@/images/avatar.webp";
 import { routes, resume } from "@/data/site.config";
 
 const caveat = Caveat({ subsets: ["latin"] });
 
 export default function Navbar() {
     const { pathname, locale } = useRouter();
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const domain = process.env.NEXT_PUBLIC_DOMAIN;
 
     return (
         <NextNavbar onMenuOpenChange={setIsMenuOpen} isMenuOpen={isMenuOpen}>
             <NavbarBrand className="select-none">
-                <Image
-                    width={36}
-                    height={36}
-                    src={AvatarIcon.src}
-                    classNames="m-5"
-                    alt="Site logo"
-                />
-                <p className={`text-lg font-bold mx-1 ${caveat.className}`}>
+                <Link
+                    href={`https://${domain}`}
+                    className={`text-2xl font-bold mx-1 ${caveat.className}`}
+                >
                     Federico Gentili
-                </p>
+                </Link>
             </NavbarBrand>
 
             <NavbarContent className="hidden sm:flex gap-4" justify="center">

@@ -22,11 +22,11 @@ export default function ThemeChanger() {
                     { property: "color-scheme", content: theme },
                     {
                         name: "theme-color",
-                        content: theme === "dark" ? "#000000" : "#548267",
+                        content: theme === "dark" ? "#000000" : "#FFFFFF",
                     },
                     {
                         name: "apple-mobile-web-app-status-bar",
-                        content: theme === "dark" ? "#000000" : "#548267",
+                        content: theme === "dark" ? "#000000" : "#FFFFFF",
                     },
                 ]}
             />

@@ -8,10 +8,6 @@ export default async function handler(request) {
     try {
         const { searchParams } = new URL(request.url);
 
-        const imageData = await fetch(
-            new URL("./assets/images/logo.png", import.meta.url)
-        ).then((res) => res.arrayBuffer());
-
         const fontDataCaveat = await fetch(
             new URL("./assets/fonts/Caveat.ttf", import.meta.url)
         ).then((res) => res.arrayBuffer());
@@ -50,7 +46,7 @@ export default async function handler(request) {
                                 alignItems: "center",
                                 justifyContent: "center",
                                 justifyItems: "center",
-                                fontSize: 100,
+                                fontSize: 130,
                                 fontFamily: '"Caveat"',
                                 fontWeight: "bold",
                                 letterSpacing: "-0.025em",
@@ -58,12 +54,6 @@ export default async function handler(request) {
                                 textShadow: "5px 5px 5px rgba(0, 0, 0, 0.5)",
                             }}
                         >
-                            <img
-                                alt="Logo"
-                                width={180}
-                                height={180}
-                                src={imageData}
-                            />
                             Federico Gentili
                         </div>
                         <div
