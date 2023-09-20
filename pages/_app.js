@@ -5,7 +5,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
-import Favicon from "@/components/Favicon";
+import Favicon from "@/hooks/Favicon";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GAnalytics from "@/components/GAnalytics";
