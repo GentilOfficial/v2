@@ -60,7 +60,10 @@ export default function Gestures({ children }) {
     });
 
     return (
-        <div {...handlers}>
+        <div
+            {...handlers}
+            className="flex flex-col min-h-full min-w-full justify-between"
+        >
             {children}
             {exsist ? (
                 <section

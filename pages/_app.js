@@ -26,9 +26,11 @@ export default function App({ Component, pageProps }) {
                     className={`bg-background text-foreground ${red_hat_text.className}`}
                 >
                     <Navbar />
-                    <Gestures>
-                        <Component {...pageProps} />
-                    </Gestures>
+                    <main className="flex mx-auto max-w-screen-lg min-h-[calc(100vh-18.5rem)] sm:min-h-[calc(100vh-15.5rem)] p-6">
+                        <Gestures>
+                            <Component {...pageProps} />
+                        </Gestures>
+                    </main>
                     <Footer />
                 </div>
             </NextThemesProvider>

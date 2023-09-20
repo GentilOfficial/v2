@@ -10,11 +10,11 @@ export default function SkillsPage() {
     return (
         <>
             <SEO title={title} description={description} />
-            <main
-                className={`flex min-h-screen flex-col items-center justify-between p-24`}
+            <section
+                className={`flex h-full flex-col items-center justify-center`}
             >
                 <h1>{title}</h1>
-            </main>
+            </section>
         </>
     );
 }

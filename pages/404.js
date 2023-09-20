@@ -15,8 +15,8 @@ export default function Error404() {
     return (
         <>
             <SEO title={h1} description={p} />
-            <main className="min-h-screen flex flex-col items-center justify-center text-center p-5">
-                <h1 className="text-xl font-medium text-primary mt-6">{h1}</h1>
+            <section className="h-full flex flex-col items-center justify-center text-center">
+                <h1 className="text-xl font-medium text-primary">{h1}</h1>
                 <h2 className="mt-3 text-4xl font-semibold">{h2}</h2>
                 <p
                     className={`mt-2 text-xl text-foreground/80 ${caveat.className}`}
@@ -29,11 +29,11 @@ export default function Error404() {
                     variant="flat"
                     color="primary"
                     size="lg"
-                    className="mx-auto mt-5 mb-10"
+                    className="mx-auto mt-5"
                 >
                     {button}
                 </Button>
-            </main>
+            </section>
         </>
     );
 }
