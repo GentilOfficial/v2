@@ -4,7 +4,6 @@ import { Red_Hat_Text } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { DefaultSeo, NextSeo } from "next-seo";
-import { getFaviconName } from "@/hooks/getFaviconName";
 import SEO from "../next-seo.config";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -21,14 +20,6 @@ export default function App({ Component, pageProps }) {
     return (
         <NextUIProvider>
             <DefaultSeo {...SEO} />
-            <NextSeo
-                additionalLinkTags={[
-                    {
-                        rel: "shortcut icon",
-                        href: `/images/${getFaviconName()}`,
-                    },
-                ]}
-            />
             <NextThemesProvider attribute="class">
                 <div
                     className={`bg-background text-foreground ${red_hat_text.className}`}
