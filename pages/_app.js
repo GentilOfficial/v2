@@ -5,6 +5,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
+import Favicon from "@/components/Favicon";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GAnalytics from "@/components/GAnalytics";
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }) {
     return (
         <NextUIProvider>
             <DefaultSeo {...SEO} />
+            <Favicon />
             <NextThemesProvider attribute="class">
                 <div
                     className={`bg-background text-foreground ${red_hat_text.className}`}

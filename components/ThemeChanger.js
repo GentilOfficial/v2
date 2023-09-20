@@ -18,15 +18,6 @@ export default function ThemeChanger() {
     return (
         <>
             <NextSeo
-                additionalLinkTags={[
-                    {
-                        rel: "shortcut icon",
-                        href:
-                            theme === "dark"
-                                ? "/images/favicon_dark.ico"
-                                : "/images/favicon.ico",
-                    },
-                ]}
                 additionalMetaTags={[
                     { property: "color-scheme", content: theme },
                     {
