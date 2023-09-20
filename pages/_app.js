@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Red_Hat_Text } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo, NextSeo } from "next-seo";
 import { getFaviconName } from "@/hooks/getFaviconName";
 import SEO from "../next-seo.config";
 import Navbar from "@/components/Navbar";
@@ -20,12 +20,12 @@ console.log.apply(console, [
 export default function App({ Component, pageProps }) {
     return (
         <NextUIProvider>
-            <DefaultSeo
-                {...SEO}
+            <DefaultSeo {...SEO} />
+            <NextSeo
                 additionalLinkTags={[
                     {
-                        rel: "icon",
-                        href: `/favicons/${getFaviconName()}`,
+                        rel: "shortcut icon",
+                        href: `/images/${getFaviconName()}`,
                     },
                 ]}
             />

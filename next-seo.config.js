@@ -7,29 +7,25 @@ export default {
         locale: "en",
         siteName: "Federico Gentili",
     },
+    languageAlternates: [
+        {
+            hrefLang: "en",
+            href: `https://${domain}/`,
+        },
+        {
+            hrefLang: "it",
+            href: `https://${domain}/it/`,
+        },
+    ],
     additionalLinkTags: [
         {
             rel: "manifest",
             href: "/manifest.json",
         },
         {
-            rel: "icon",
-            href: "/favicons/favicon.ico",
-        },
-        {
             rel: "apple-touch-icon",
             href: "/icons/apple-touch-icon.png",
             sizes: "180x180",
-        },
-        {
-            rel: "alternate",
-            hrefLang: "en",
-            href: `https://${domain}/`,
-        },
-        {
-            rel: "alternate",
-            hrefLang: "it",
-            href: `https://${domain}/it/`,
         },
         {
             rel: "sitemap",
