@@ -8,6 +8,7 @@ import SEO from "../next-seo.config";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GAnalytics from "@/components/GAnalytics";
+import Gestures from "@/hooks/Gestures";
 
 const red_hat_text = Red_Hat_Text({ subsets: ["latin"] });
 
@@ -25,7 +26,9 @@ export default function App({ Component, pageProps }) {
                     className={`bg-background text-foreground ${red_hat_text.className}`}
                 >
                     <Navbar />
-                    <Component {...pageProps} />
+                    <Gestures>
+                        <Component {...pageProps} />
+                    </Gestures>
                     <Footer />
                 </div>
             </NextThemesProvider>
