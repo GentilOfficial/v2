@@ -33,10 +33,12 @@ export default function Gestures({ children }) {
 
     const handlers = useSwipeable({
         onSwipedRight: () => {
-            if (exsist && !isFirts) router.push(preElement.url);
+            if (exsist && !isFirts)
+                router.push(preElement.url, { scroll: false });
         },
         onSwipedLeft: () => {
-            if (exsist && !isLast) router.push(nextElement.url);
+            if (exsist && !isLast)
+                router.push(nextElement.url, { scroll: false });
         },
         swipeDuration: 500,
         preventScrollOnSwipe: true,
@@ -45,9 +47,9 @@ export default function Gestures({ children }) {
     const handleKeyPress = (event) => {
         if (exsist) {
             if (event.key === "ArrowLeft") {
-                router.push(preElement.url);
+                router.push(preElement.url, { scroll: false });
             } else if (event.key === "ArrowRight") {
-                router.push(nextElement.url);
+                router.push(nextElement.url, { scroll: false });
             }
         }
     };
