@@ -10,10 +10,10 @@ import {
 import { IoLanguage } from "react-icons/io5";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { translate } from "@/data/site.config";
+import { translate, languageName } from "@/data/site.config";
 
 export default function LanguageChanger() {
-    const { locale, pathname } = useRouter();
+    const { locale, pathname, locales } = useRouter();
 
     const [selectedKeys, setSelectedKeys] = useState(new Set([locale]));
 
@@ -42,22 +42,16 @@ export default function LanguageChanger() {
                 onSelectionChange={setSelectedKeys}
             >
                 <DropdownSection title={languageChanger}>
-                    <DropdownItem
-                        key="it"
-                        as={Link}
-                        href={pathname}
-                        locale="it"
-                    >
-                        Italiano
-                    </DropdownItem>
-                    <DropdownItem
-                        key="en"
-                        as={Link}
-                        href={pathname}
-                        locale="en"
-                    >
-                        English
-                    </DropdownItem>
+                    {locales.map((loc) => (
+                        <DropdownItem
+                            key={loc}
+                            as={Link}
+                            href={pathname}
+                            locale={loc}
+                        >
+                            {languageName[loc]}
+                        </DropdownItem>
+                    ))}
                 </DropdownSection>
             </DropdownMenu>
         </Dropdown>

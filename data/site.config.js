@@ -1,5 +1,10 @@
 import { FaInstagram, FaGithub, FaTelegramPlane } from "react-icons/fa";
 
+export const languageName = {
+    en: "English",
+    it: "Italiano",
+};
+
 export const routes = [
     {
         title: {
