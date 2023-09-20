@@ -46,9 +46,9 @@ export default function Gestures({ children }) {
 
     const handleKeyPress = (event) => {
         if (exsist) {
-            if (event.key === "ArrowLeft") {
+            if (event.key === "ArrowLeft" && !isFirts) {
                 router.push(preElement.url, { scroll: false });
-            } else if (event.key === "ArrowRight") {
+            } else if (event.key === "ArrowRight" && !isLast) {
                 router.push(nextElement.url, { scroll: false });
             }
         }
