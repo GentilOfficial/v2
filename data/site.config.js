@@ -70,12 +70,12 @@ export const translate = {
         en: {
             title: "Home",
             description:
-                "Hi, I'm Federico, a fullstack web developer based in Italy and welcome to my digital space, where I transform lines of code into engaging experiences and innovative functionalities.",
+                "Hi, I'm Federico, a fullstack web developer based in Italy and welcome to my digital space.",
         },
         it: {
             title: "Casa",
             description:
-                "Ciao, sono Federico, uno sviluppatore web fullstack con sede in Italia e benvenuto nel mio spazio digitale, dove trasformo linee di codice in esperienze coinvolgenti e funzionalità innovative.",
+                "Ciao, sono Federico, uno sviluppatore web fullstack con sede in Italia e benvenuto nel mio spazio digitale.",
         },
     },
     skills: {
