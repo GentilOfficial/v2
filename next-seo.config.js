@@ -24,7 +24,7 @@ export default {
         },
         {
             rel: "shortcut icon",
-            href: "/favicon.ico",
+            href: "/images/favicon.ico",
         },
         {
             rel: "apple-touch-icon",

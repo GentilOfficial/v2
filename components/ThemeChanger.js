@@ -23,8 +23,8 @@ export default function ThemeChanger() {
                         rel: "shortcut icon",
                         href:
                             theme === "dark"
-                                ? "/favicon_dark.ico"
-                                : "/favicon.ico",
+                                ? "/images/favicon_dark.ico"
+                                : "/images/favicon.ico",
                     },
                 ]}
                 additionalMetaTags={[
