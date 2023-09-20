@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 export const getFaviconName = () => {
-    const [faviconHref, setFaviconHref] = useState("favicon-testState.png");
+    const [faviconHref, setFaviconHref] = useState("favicon.ico");
 
     const getFaviconPath = (isDarkMode = false) => {
-        return isDarkMode ? "favicon-dark.png" : "favicon-textFunc.png";
+        return isDarkMode ? "favicon-dark.ico" : "favicon.ico";
     };
 
     useEffect(() => {
