@@ -68,14 +68,18 @@ export const resume = {
 export const translate = {
     home: {
         en: {
-            title: "Home",
             description:
                 "Hi, I'm Federico, a fullstack web developer based in Italy and welcome to my digital space.",
+            h1: "Hey, I’m",
+            h3: "Welcome to my digital space",
+            p: "I'm an italian fullstack web developer based near Ferrara, Italy.",
         },
         it: {
-            title: "Casa",
             description:
                 "Ciao, sono Federico, uno sviluppatore web fullstack con sede in Italia e benvenuto nel mio spazio digitale.",
+            h1: "Hey, sono",
+            h3: "Benvenuto nel mio spazio digitale",
+            p: "Sono uno sviluppatore web fullstack proveniente da Ferrara, Italia.",
         },
     },
     skills: {

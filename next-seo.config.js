@@ -24,8 +24,18 @@ export default {
         },
         {
             rel: "apple-touch-icon",
-            href: "/icons/apple-touch-icon.png",
             sizes: "180x180",
+            href: "/icons/apple-touch-icon.png",
+        },
+        {
+            rel: "apple-touch-startup-image",
+            sizes: "192x192",
+            href: "/icons/logo-192.png",
+        },
+        {
+            rel: "apple-touch-startup-image",
+            sizes: "512x512",
+            href: "/icons/logo-512.png",
         },
         {
             rel: "sitemap",
@@ -42,6 +52,8 @@ export default {
             content: gSiteVerification,
         },
         { property: "og:locale:alternate", content: "it" },
+        { name: "HandheldFriendly", content: "true" },
+        { name: "MobileOptimized", content: "320" },
     ],
     twitter: {
         cardType: "summary_large_image",
