@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Red_Hat_Text } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { DefaultSeo, NextSeo } from "next-seo";
+import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
