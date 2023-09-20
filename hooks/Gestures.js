@@ -79,11 +79,14 @@ export default function Gestures({ children }) {
                 >
                     {isFirts ? null : (
                         <LinkUI
-                            as={Link}
-                            href={preElement.url}
+                            onClick={() => {
+                                router.push(preElement.url, {
+                                    scroll: false,
+                                });
+                            }}
                             isBlock
                             color="foreground"
-                            className="gap-1.5"
+                            className="gap-1.5 cursor-pointer"
                         >
                             <SlArrowLeft className="text-primary h-3.5" />
                             {preElement.title[locale]}
@@ -91,11 +94,14 @@ export default function Gestures({ children }) {
                     )}
                     {isLast ? null : (
                         <LinkUI
-                            as={Link}
-                            href={nextElement.url}
+                            onClick={() => {
+                                router.push(nextElement.url, {
+                                    scroll: false,
+                                });
+                            }}
                             isBlock
                             color="foreground"
-                            className="gap-1.5"
+                            className="gap-1.5 cursor-pointer"
                         >
                             {nextElement.title[locale]}
                             <SlArrowRight className="text-primary h-3.5" />
