@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { useSwipeable } from "react-swipeable";
 import { Link as LinkUI } from "@nextui-org/react";
 import { Link } from "next/link";
-import { ChevronLeftIcon, ChevronRightIcon } from "@primer/octicons-react";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { routes } from "@/data/site.config";
 
 export default function Gestures({ children }) {
@@ -80,10 +80,7 @@ export default function Gestures({ children }) {
                             color="foreground"
                             className="gap-1.5"
                         >
-                            <ChevronLeftIcon
-                                size={24}
-                                className="text-primary"
-                            />
+                            <SlArrowLeft className="text-primary h-3.5" />
                             {preElement.title[locale]}
                         </LinkUI>
                     )}
@@ -96,10 +93,7 @@ export default function Gestures({ children }) {
                             className="gap-1.5"
                         >
                             {nextElement.title[locale]}
-                            <ChevronRightIcon
-                                size={24}
-                                className="text-primary"
-                            />
+                            <SlArrowRight className="text-primary h-3.5" />
                         </LinkUI>
                     )}
                 </section>
