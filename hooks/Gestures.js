@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSwipeable } from "react-swipeable";
 import { Link as LinkUI } from "@nextui-org/react";
-import { Link } from "next/link";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { routes } from "@/data/site.config";
 
@@ -33,12 +32,10 @@ export default function Gestures({ children }) {
 
     const handlers = useSwipeable({
         onSwipedRight: () => {
-            if (exsist && !isFirts)
-                router.push(preElement.url, { scroll: false });
+            if (exsist && !isFirts) router.push(preElement.url);
         },
         onSwipedLeft: () => {
-            if (exsist && !isLast)
-                router.push(nextElement.url, { scroll: false });
+            if (exsist && !isLast) router.push(nextElement.url);
         },
         swipeDuration: 500,
         preventScrollOnSwipe: true,
@@ -47,9 +44,9 @@ export default function Gestures({ children }) {
     const handleKeyPress = (event) => {
         if (exsist) {
             if (event.key === "ArrowLeft" && !isFirts) {
-                router.push(preElement.url, { scroll: false });
+                router.push(preElement.url);
             } else if (event.key === "ArrowRight" && !isLast) {
-                router.push(nextElement.url, { scroll: false });
+                router.push(nextElement.url);
             }
         }
     };
