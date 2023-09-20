@@ -10,6 +10,7 @@ export default function SEO({ title, description }) {
         <NextSeo
             title={`Federico Gentili${title ? ` - ${title}` : ""}`}
             description={description}
+            canonical={`https://${domain + pathname}`}
             openGraph={{
                 url: `https://${domain}${
                     locale !== defaultLocale ? `/it${pathname}` : pathname
