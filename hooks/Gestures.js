@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSwipeable } from "react-swipeable";
-import { Link as LinkUI } from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
+import NextLink from "next/link";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import { routes } from "@/data/site.config";
 
@@ -75,34 +76,28 @@ export default function Gestures({ children }) {
                     }`}
                 >
                     {isFirts ? null : (
-                        <LinkUI
-                            onClick={() => {
-                                router.push(preElement.url, {
-                                    scroll: false,
-                                });
-                            }}
+                        <Link
+                            as={NextLink}
+                            href={preElement.url}
                             isBlock
                             color="foreground"
-                            className="gap-1.5 cursor-pointer"
+                            className="gap-1.5"
                         >
                             <SlArrowLeft className="text-primary h-3.5" />
                             {preElement.title[locale]}
-                        </LinkUI>
+                        </Link>
                     )}
                     {isLast ? null : (
-                        <LinkUI
-                            onClick={() => {
-                                router.push(nextElement.url, {
-                                    scroll: false,
-                                });
-                            }}
+                        <Link
+                            as={NextLink}
+                            href={nextElement.url}
                             isBlock
                             color="foreground"
-                            className="gap-1.5 cursor-pointer"
+                            className="gap-1.5"
                         >
                             {nextElement.title[locale]}
                             <SlArrowRight className="text-primary h-3.5" />
-                        </LinkUI>
+                        </Link>
                     )}
                 </section>
             ) : null}
