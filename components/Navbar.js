@@ -45,11 +45,11 @@ export default function Navbar() {
                         <LinkUI
                             as={Link}
                             href={route.url}
-                            className={`rounded-md ${
+                            className={
                                 pathname === route.url
                                     ? "text-primary"
                                     : "text-foreground/80"
-                            }`}
+                            }
                         >
                             {route.title[locale]}
                         </LinkUI>
@@ -90,9 +90,7 @@ export default function Navbar() {
                             as={Link}
                             href={route.url}
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className={`${
-                                index === 0 ? "rounded-md mt-12" : "rounded-md"
-                            } ${
+                            className={`${index === 0 ? "mt-12" : ""} ${
                                 pathname === route.url
                                     ? "text-primary font-semibold text-4xl"
                                     : "text-foreground/80 text-2xl"
