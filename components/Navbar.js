@@ -36,7 +36,7 @@ export default function Navbar() {
                 </Link>
             </NavbarBrand>
 
-            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+            <NavbarContent className="hidden md:flex gap-4" justify="center">
                 {routes.map((route, index) => (
                     <NavbarItem
                         key={`${route}-${index}`}
@@ -64,7 +64,7 @@ export default function Navbar() {
                 <NavbarItem>
                     <LanguageChanger />
                 </NavbarItem>
-                <NavbarItem className="hidden sm:block">
+                <NavbarItem className="hidden md:block">
                     <Button
                         as={Link}
                         href={resume[locale].url}
@@ -79,7 +79,7 @@ export default function Navbar() {
                     isIconOnly
                     size="sm"
                     variant="light"
-                    className="block sm:hidden"
+                    className="block md:hidden"
                 />
             </NavbarContent>
 

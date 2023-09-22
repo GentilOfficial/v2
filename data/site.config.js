@@ -34,6 +34,13 @@ export const routes = [
         },
         url: "/about",
     },
+    {
+        title: {
+            en: "Contact",
+            it: "Contattami",
+        },
+        url: "/contact",
+    },
 ];
 
 export const links = [
@@ -114,6 +121,18 @@ export const translate = {
             title: "Info",
             description:
                 "Conoscimi meglio, leggi la mia biografia e scopri chi sono.",
+        },
+    },
+    contact: {
+        en: {
+            title: "Contact",
+            description:
+                "Feel free to reach out if you'd like to collaborate or just say hello.",
+        },
+        it: {
+            title: "Contattami",
+            description:
+                "Non esitate a contattarmi se vuoi collaborare o semplicemente salutarmi.",
         },
     },
     error: {
