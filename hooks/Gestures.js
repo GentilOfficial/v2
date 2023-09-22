@@ -1,15 +1,17 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSwipeable } from "react-swipeable";
-import { Link } from "@nextui-org/react";
-import NextLink from "next/link";
+import { Button } from "@nextui-org/react";
 import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import { useAnimate, motion } from "framer-motion";
 import { routes } from "@/data/site.config";
 
 export default function Gestures({ children }) {
     const router = useRouter();
 
     const { pathname, locale } = useRouter();
+
+    const [mainElement, animateMain] = useAnimate();
 
     const indexOfNowPath = routes.findIndex((e) => e.url === pathname);
 
@@ -31,12 +33,36 @@ export default function Gestures({ children }) {
             : routes[indexOfNowPath + 1]
         : null;
 
+    const goToPreElement = () => {
+        router.push(preElement.url);
+        animateMain(
+            mainElement.current,
+            {
+                x: ["100%", "-100%", "0%"],
+                scale: [0, 0, 1],
+            },
+            { duration: 0.3 }
+        );
+    };
+
+    const goToNextElement = () => {
+        router.push(nextElement.url);
+        animateMain(
+            mainElement.current,
+            {
+                x: ["100%", "100%", "0%"],
+                scale: [0, 0, 1],
+            },
+            { duration: 0.3 }
+        );
+    };
+
     const handlers = useSwipeable({
         onSwipedRight: () => {
-            if (exsist && !isFirts) router.push(preElement.url);
+            if (exsist && !isFirts) goToPreElement();
         },
         onSwipedLeft: () => {
-            if (exsist && !isLast) router.push(nextElement.url);
+            if (exsist && !isLast) goToNextElement();
         },
         swipeDuration: 500,
         preventScrollOnSwipe: true,
@@ -45,9 +71,9 @@ export default function Gestures({ children }) {
     const handleKeyPress = (event) => {
         if (exsist) {
             if (event.key === "ArrowLeft" && !isFirts) {
-                router.push(preElement.url);
+                goToPreElement();
             } else if (event.key === "ArrowRight" && !isLast) {
-                router.push(nextElement.url);
+                goToNextElement();
             }
         }
     };
@@ -62,11 +88,15 @@ export default function Gestures({ children }) {
     return (
         <div
             {...handlers}
-            className="flex flex-col min-h-full min-w-full justify-between"
+            className="flex flex-col min-h-full min-w-full justify-between overflow-x-hidden"
         >
-            {children}
+            <div ref={mainElement} className="h-full">
+                {children}
+            </div>
             {exsist ? (
-                <section
+                <motion.section
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     className={`flex items-center ${
                         isFirts
                             ? "justify-end"
@@ -76,30 +106,30 @@ export default function Gestures({ children }) {
                     }`}
                 >
                     {isFirts ? null : (
-                        <Link
-                            as={NextLink}
-                            href={preElement.url}
-                            isBlock
-                            color="foreground"
-                            className="gap-1.5"
+                        <Button
+                            variant="light"
+                            color="default"
+                            startContent={
+                                <SlArrowLeft className="text-primary" />
+                            }
+                            onPress={goToPreElement}
                         >
-                            <SlArrowLeft className="text-primary h-3.5" />
                             {preElement.title[locale]}
-                        </Link>
+                        </Button>
                     )}
                     {isLast ? null : (
-                        <Link
-                            as={NextLink}
-                            href={nextElement.url}
-                            isBlock
-                            color="foreground"
-                            className="gap-1.5"
+                        <Button
+                            variant="light"
+                            color="default"
+                            endContent={
+                                <SlArrowRight className="text-primary" />
+                            }
+                            onPress={goToNextElement}
                         >
                             {nextElement.title[locale]}
-                            <SlArrowRight className="text-primary h-3.5" />
-                        </Link>
+                        </Button>
                     )}
-                </section>
+                </motion.section>
             ) : null}
         </div>
     );
