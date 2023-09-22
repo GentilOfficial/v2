@@ -23,13 +23,13 @@ export default function Gestures({ children }) {
 
     const preElement = exsist
         ? isFirts
-            ? null
+            ? routes[routes.length - 1]
             : routes[indexOfNowPath - 1]
         : null;
 
     const nextElement = exsist
         ? isLast
-            ? null
+            ? routes[0]
             : routes[indexOfNowPath + 1]
         : null;
 
@@ -70,9 +70,9 @@ export default function Gestures({ children }) {
 
     const handleKeyPress = (event) => {
         if (exsist) {
-            if (event.key === "ArrowLeft" && !isFirts) {
+            if (event.key === "ArrowLeft") {
                 goToPreElement();
-            } else if (event.key === "ArrowRight" && !isLast) {
+            } else if (event.key === "ArrowRight") {
                 goToNextElement();
             }
         }
@@ -97,38 +97,24 @@ export default function Gestures({ children }) {
                 <motion.section
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className={`flex items-center ${
-                        isFirts
-                            ? "justify-end"
-                            : isLast
-                            ? "justify-start"
-                            : "justify-between"
-                    }`}
+                    className="flex items-center justify-between"
                 >
-                    {isFirts ? null : (
-                        <Button
-                            variant="light"
-                            color="default"
-                            startContent={
-                                <SlArrowLeft className="text-primary" />
-                            }
-                            onPress={goToPreElement}
-                        >
-                            {preElement.title[locale]}
-                        </Button>
-                    )}
-                    {isLast ? null : (
-                        <Button
-                            variant="light"
-                            color="default"
-                            endContent={
-                                <SlArrowRight className="text-primary" />
-                            }
-                            onPress={goToNextElement}
-                        >
-                            {nextElement.title[locale]}
-                        </Button>
-                    )}
+                    <Button
+                        variant="light"
+                        color="default"
+                        startContent={<SlArrowLeft className="text-primary" />}
+                        onPress={goToPreElement}
+                    >
+                        {preElement.title[locale]}
+                    </Button>
+                    <Button
+                        variant="light"
+                        color="default"
+                        endContent={<SlArrowRight className="text-primary" />}
+                        onPress={goToNextElement}
+                    >
+                        {nextElement.title[locale]}
+                    </Button>
                 </motion.section>
             ) : null}
         </div>
