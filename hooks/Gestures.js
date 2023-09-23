@@ -101,7 +101,7 @@ export default function Gestures({ children }) {
             {...handlers}
             className="flex flex-col min-h-full w-full justify-between"
         >
-            <div className="overflow-hidden h-full">
+            <div className="overflow-hidden h-full p-1">
                 <div ref={mainElement} className="h-full">
                     {children}
                 </div>
