@@ -128,11 +128,59 @@ export const translate = {
             title: "Contact",
             description:
                 "Feel free to reach out if you'd like to collaborate or just say hello.",
+            formTitle: "Get In Touch",
+            inputs: {
+                firstName: {
+                    label: "First Name",
+                    placeholder: "John",
+                },
+                lastName: {
+                    label: "Last Name",
+                    placeholder: "Doe",
+                },
+                email: {
+                    label: "Email",
+                    placeholder: "example@email.com",
+                    errorMessage: "Please enter a valid email",
+                },
+                message: {
+                    label: "Message",
+                    placeholder: "I, I'm....",
+                },
+            },
+            submit: "Submit",
+            wasSent: "Sent",
+            wasNotSent: "Error",
+            cancel: "Clear",
         },
         it: {
             title: "Contattami",
             description:
                 "Non esitate a contattarmi se vuoi collaborare o semplicemente salutarmi.",
+            formTitle: "Contattami Ora",
+            inputs: {
+                firstName: {
+                    label: "Nome",
+                    placeholder: "Mario",
+                },
+                lastName: {
+                    label: "Cognome",
+                    placeholder: "Rossi",
+                },
+                email: {
+                    label: "Email",
+                    placeholder: "esempio@email.com",
+                    errorMessage: "Inserisci un'email valida",
+                },
+                message: {
+                    label: "Messaggio",
+                    placeholder: "Ciao, sono....",
+                },
+            },
+            submit: "Invia",
+            wasSent: "Inviato",
+            wasNotSent: "Errore",
+            cancel: "Cancella",
         },
     },
     error: {
