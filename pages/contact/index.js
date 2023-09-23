@@ -2,7 +2,11 @@ import { useState, useMemo } from "react";
 import { useRouter } from "next/router";
 import { Input, Textarea, Button } from "@nextui-org/react";
 import { AiFillCloseCircle } from "react-icons/ai";
-import { BiSolidMessageCheck, BiSolidMessageError } from "react-icons/bi";
+import {
+    BiSolidSend,
+    BiSolidMessageCheck,
+    BiSolidMessageError,
+} from "react-icons/bi";
 import SEO from "@/components/SEO";
 import ContactImage from "@/images/ContactImage";
 import { translate } from "@/data/site.config";
@@ -148,7 +152,9 @@ export default function ContactPage() {
                                     ) : (
                                         <BiSolidMessageError />
                                     )
-                                ) : null
+                                ) : (
+                                    <BiSolidSend />
+                                )
                             }
                         >
                             {isSubmitted
