@@ -72,7 +72,7 @@ export default function ContactPage() {
         description,
         formTitle,
         inputs,
-        submit,
+        send,
         wasSent,
         wasNotSent,
         cancel,
@@ -134,7 +134,15 @@ export default function ContactPage() {
                         value={message}
                         onValueChange={setMessage}
                     />
-                    <div className="mx-auto flex gap-3">
+                    <div className="mx-auto w-full flex items-center justify-between gap-3">
+                        <Button
+                            variant="light"
+                            size="sm"
+                            endContent={<AiFillCloseCircle />}
+                            onPress={clearFields}
+                        >
+                            {cancel}
+                        </Button>
                         <Button
                             type="submit"
                             color={
@@ -144,7 +152,6 @@ export default function ContactPage() {
                                         : "danger"
                                     : "primary"
                             }
-                            className="w-36"
                             endContent={
                                 isSubmitted ? (
                                     messageWasSent ? (
@@ -161,14 +168,7 @@ export default function ContactPage() {
                                 ? messageWasSent
                                     ? wasSent
                                     : wasNotSent
-                                : submit}
-                        </Button>
-                        <Button
-                            variant="light"
-                            endContent={<AiFillCloseCircle />}
-                            onPress={clearFields}
-                        >
-                            {cancel}
+                                : send}
                         </Button>
                     </div>
                 </form>
