@@ -32,7 +32,7 @@ export default function HomePage() {
                     </h3>
                 </div>
                 <p
-                    className={`text-center mx-auto max-w-xs sm:max-w-sm lg:max-w-lg text-xl md:text-2xl lg:text-3xl mt-5 text-foreground/60 ${caveat.className}`}
+                    className={`text-center mx-auto max-w-xs sm:max-w-sm lg:max-w-lg text-xl md:text-2xl lg:text-3xl mt-5 text-foreground/60 mb-6 ${caveat.className}`}
                 >
                     {p}
                 </p>
