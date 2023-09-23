@@ -108,12 +108,10 @@ export default function Gestures({ children }) {
     return (
         <div
             {...handlers}
-            className="flex flex-col min-h-full min-w-full justify-between"
+            className="flex flex-col min-h-full min-w-full justify-between overflow-hidden"
         >
-            <div className="h-full w-full overflow-hidden">
-                <div ref={mainElement} className="h-full w-full flex flex-col">
-                    {children}
-                </div>
+            <div ref={mainElement} className="h-full w-full">
+                {children}
             </div>
             {exsist ? (
                 <motion.section
