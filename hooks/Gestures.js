@@ -15,19 +15,19 @@ export default function Gestures({ children }) {
 
     const indexOfNowPath = routes.findIndex((e) => e.url === pathname);
 
-    const exsist = indexOfNowPath > -1 ? true : false;
+    const exist = indexOfNowPath > -1 ? true : false;
 
     const isFirts = indexOfNowPath === 0 ? true : false;
 
     const isLast = indexOfNowPath + 1 === routes.length ? true : false;
 
-    const preElement = exsist
+    const preElement = exist
         ? isFirts
             ? routes[routes.length - 1]
             : routes[indexOfNowPath - 1]
         : null;
 
-    const nextElement = exsist
+    const nextElement = exist
         ? isLast
             ? routes[0]
             : routes[indexOfNowPath + 1]
@@ -79,17 +79,17 @@ export default function Gestures({ children }) {
 
     const handlers = useSwipeable({
         onSwipedRight: () => {
-            if (exsist) goToPreElement();
+            if (exist) goToPreElement();
         },
         onSwipedLeft: () => {
-            if (exsist) goToNextElement();
+            if (exist) goToNextElement();
         },
         swipeDuration: 500,
         preventScrollOnSwipe: true,
     });
 
     const handleKeyPress = (event) => {
-        if (exsist) {
+        if (exist) {
             if (event.key === "ArrowLeft") {
                 goToPreElement();
             } else if (event.key === "ArrowRight") {
@@ -113,7 +113,7 @@ export default function Gestures({ children }) {
             <div ref={mainElement} className="h-full w-full">
                 {children}
             </div>
-            {exsist ? (
+            {exist ? (
                 <motion.section
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
