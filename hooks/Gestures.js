@@ -128,7 +128,7 @@ export default function Gestures({ children }) {
                 <motion.section
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="flex items-center justify-between"
+                    className="flex z-40 w-full h-16 items-center justify-between sticky bottom-0 inset-x-0 backdrop-blur-lg backdrop-saturate-150 bg-background/70"
                 >
                     <Button
                         variant="light"
