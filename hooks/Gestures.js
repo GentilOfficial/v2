@@ -33,27 +33,47 @@ export default function Gestures({ children }) {
             : routes[indexOfNowPath + 1]
         : null;
 
-    const goToPreElement = () => {
+    const goToPreElement = async () => {
+        await animateMain(
+            mainElement.current,
+            {
+                x: "100%",
+                opacity: 0,
+                scale: 0,
+            },
+            { duration: 0.1 }
+        );
         router.push(preElement.url);
         animateMain(
             mainElement.current,
             {
-                x: ["100%", "-100%", "0%"],
-                scale: [0, 0, 1],
+                x: ["-100%", "0%"],
+                opacity: [null, 1],
+                scale: [null, null, 1],
             },
-            { duration: 0.3 }
+            { duration: 0.2 }
         );
     };
 
-    const goToNextElement = () => {
+    const goToNextElement = async () => {
+        await animateMain(
+            mainElement.current,
+            {
+                x: "-100%",
+                opacity: 0,
+                scale: 0,
+            },
+            { duration: 0.1 }
+        );
         router.push(nextElement.url);
         animateMain(
             mainElement.current,
             {
-                x: ["100%", "100%", "0%"],
-                scale: [0, 0, 1],
+                x: ["100%", "0%"],
+                opacity: [null, 1],
+                scale: [null, null, 1],
             },
-            { duration: 0.3 }
+            { duration: 0.2 }
         );
     };
 
@@ -88,10 +108,12 @@ export default function Gestures({ children }) {
     return (
         <div
             {...handlers}
-            className="flex flex-col min-h-full min-w-full justify-between overflow-x-hidden"
+            className="flex flex-col min-h-full min-w-full justify-between"
         >
-            <div ref={mainElement} className="h-full">
-                {children}
+            <div className="h-full w-full overflow-hidden">
+                <div ref={mainElement} className="h-full w-full flex flex-col">
+                    {children}
+                </div>
             </div>
             {exsist ? (
                 <motion.section
