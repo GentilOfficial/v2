@@ -59,10 +59,10 @@ export default function Gestures({ children }) {
 
     const handlers = useSwipeable({
         onSwipedRight: () => {
-            if (exsist && !isFirts) goToPreElement();
+            if (exsist) goToPreElement();
         },
         onSwipedLeft: () => {
-            if (exsist && !isLast) goToNextElement();
+            if (exsist) goToNextElement();
         },
         swipeDuration: 500,
         preventScrollOnSwipe: true,
