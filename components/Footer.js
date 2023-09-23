@@ -10,7 +10,7 @@ export default function Footer() {
     const credits = translate.credits[locale];
 
     return (
-        <footer className="max-w-screen-lg mx-auto p-5 mt-5">
+        <footer className="max-w-screen-lg mx-auto p-5">
             <div className="flex flex-col items-center gap-4 text-foreground-500 text-sm text-center">
                 <Link
                     showAnchorIcon

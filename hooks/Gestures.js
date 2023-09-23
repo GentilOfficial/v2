@@ -33,26 +33,36 @@ export default function Gestures({ children }) {
             : routes[indexOfNowPath + 1]
         : null;
 
+    const showMainElement = () => {
+        animateMain(
+            mainElement.current,
+            {
+                x: 0,
+                opacity: 1,
+            },
+            { type: "spring", stiffness: 300, damping: 28 }
+        );
+    };
+
     const goToPreElement = async () => {
         await animateMain(
             mainElement.current,
             {
                 x: "100%",
                 opacity: 0,
-                scale: 0,
             },
-            { duration: 0.1 }
+            { duration: 0.01 }
         );
-        router.push(preElement.url);
-        animateMain(
+
+        await animateMain(
             mainElement.current,
-            {
-                x: ["-100%", "0%"],
-                opacity: [null, 1],
-                scale: [null, null, 1],
-            },
-            { duration: 0.2 }
+            { x: "-100%" },
+            { duration: 0.01 }
         );
+
+        await router.push(preElement.url);
+
+        showMainElement();
     };
 
     const goToNextElement = async () => {
@@ -61,20 +71,19 @@ export default function Gestures({ children }) {
             {
                 x: "-100%",
                 opacity: 0,
-                scale: 0,
             },
             { duration: 0.1 }
         );
-        router.push(nextElement.url);
-        animateMain(
+
+        await animateMain(
             mainElement.current,
-            {
-                x: ["100%", "0%"],
-                opacity: [null, 1],
-                scale: [null, null, 1],
-            },
-            { duration: 0.2 }
+            { x: "100%" },
+            { duration: 0.1 }
         );
+
+        await router.push(nextElement.url);
+
+        showMainElement();
     };
 
     const handlers = useSwipeable({
@@ -108,10 +117,12 @@ export default function Gestures({ children }) {
     return (
         <div
             {...handlers}
-            className="flex flex-col min-h-full min-w-full justify-between overflow-hidden"
+            className="flex flex-col min-h-full w-full justify-between"
         >
-            <div ref={mainElement} className="h-full w-full">
-                {children}
+            <div className="overflow-hidden h-full">
+                <div ref={mainElement} className="h-full">
+                    {children}
+                </div>
             </div>
             {exist ? (
                 <motion.section
