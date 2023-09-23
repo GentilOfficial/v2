@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSwipeable } from "react-swipeable";
 import { Button } from "@nextui-org/react";
@@ -95,23 +94,6 @@ export default function Gestures({ children }) {
         },
         swipeDuration: 500,
         preventScrollOnSwipe: true,
-    });
-
-    const handleKeyPress = (event) => {
-        if (exist) {
-            if (event.key === "ArrowLeft") {
-                goToPreElement();
-            } else if (event.key === "ArrowRight") {
-                goToNextElement();
-            }
-        }
-    };
-
-    useEffect(() => {
-        document.addEventListener("keydown", handleKeyPress);
-        return () => {
-            document.removeEventListener("keydown", handleKeyPress);
-        };
     });
 
     return (
