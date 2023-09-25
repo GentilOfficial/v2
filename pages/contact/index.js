@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef } from "react";
 import { useRouter } from "next/router";
-import { useAnimate } from "framer-motion";
+import { motion, useAnimate } from "framer-motion";
 import { Input, Textarea, Button } from "@nextui-org/react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import {
@@ -100,6 +100,26 @@ export default function ContactPage() {
         }
     };
 
+    const formContainer = {
+        hidden: { opacity: 1, scale: 0 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const formChild = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+        },
+    };
+
     const {
         title,
         description,
@@ -118,14 +138,20 @@ export default function ContactPage() {
                 className={`flex flex-col md:flex-row h-full items-center justify-start md:justify-center`}
             >
                 <ContactImage className="text-primary w-1/2" />
-                <form
+                <motion.form
                     onSubmit={handleSubmit}
-                    className="flex flex-col w-full md:w-1/2 max-w-screen-sm gap-2 my-6"
+                    variants={formContainer}
+                    initial="hidden"
+                    animate="visible"
+                    className="grid grid-cols-2 w-full md:w-1/2 max-w-screen-sm gap-2 my-6"
                 >
-                    <h1 className="uppercase font-bold text-2xl text-center md:text-start">
+                    <motion.h1
+                        variants={formChild}
+                        className="uppercase font-bold text-2xl text-center md:text-start col-span-2"
+                    >
                         {formTitle}
-                    </h1>
-                    <div className="flex gap-2">
+                    </motion.h1>
+                    <motion.div variants={formChild}>
                         <Input
                             isRequired
                             variant="faded"
@@ -134,6 +160,8 @@ export default function ContactPage() {
                             value={firstName}
                             onValueChange={setFirstName}
                         />
+                    </motion.div>
+                    <motion.div variants={formChild}>
                         <Input
                             isRequired
                             variant="faded"
@@ -142,32 +170,40 @@ export default function ContactPage() {
                             value={lastName}
                             onValueChange={setLastName}
                         />
-                    </div>
-                    <Input
-                        isRequired
-                        variant="faded"
-                        type="email"
-                        label={inputs.email.label}
-                        placeholder={inputs.email.placeholder}
-                        value={email}
-                        onValueChange={setEmail}
-                        color={isEmailInvalid ? "danger" : "foreground"}
-                        errorMessage={
-                            isEmailInvalid && inputs.email.errorMessage
-                        }
-                        isInvalid={isEmailInvalid}
-                    />
-                    <Textarea
-                        isRequired
-                        variant="faded"
-                        label={inputs.message.label}
-                        placeholder={inputs.message.placeholder}
-                        minRows={5}
-                        maxRows={5}
-                        value={message}
-                        onValueChange={setMessage}
-                    />
-                    <div className="mx-auto w-full flex items-center justify-between gap-3">
+                    </motion.div>
+                    <motion.div variants={formChild} className="col-span-2">
+                        <Input
+                            isRequired
+                            variant="faded"
+                            type="email"
+                            label={inputs.email.label}
+                            placeholder={inputs.email.placeholder}
+                            value={email}
+                            onValueChange={setEmail}
+                            color={isEmailInvalid ? "danger" : "foreground"}
+                            errorMessage={
+                                isEmailInvalid && inputs.email.errorMessage
+                            }
+                            isInvalid={isEmailInvalid}
+                        />
+                    </motion.div>
+                    <motion.div variants={formChild} className="col-span-2">
+                        <Textarea
+                            isRequired
+                            variant="faded"
+                            label={inputs.message.label}
+                            placeholder={inputs.message.placeholder}
+                            minRows={5}
+                            maxRows={5}
+                            value={message}
+                            onValueChange={setMessage}
+                        />
+                    </motion.div>
+
+                    <motion.div
+                        variants={formChild}
+                        className="mx-auto w-full flex items-center justify-between gap-3 col-span-2"
+                    >
                         <Button
                             variant="light"
                             size="sm"
@@ -197,6 +233,7 @@ export default function ContactPage() {
                                     <BiSolidSend />
                                 )
                             }
+                            className="w-28"
                         >
                             {isSubmitted
                                 ? messageWasSent
@@ -204,8 +241,8 @@ export default function ContactPage() {
                                     : wasNotSent
                                 : send}
                         </Button>
-                    </div>
-                </form>
+                    </motion.div>
+                </motion.form>
             </section>
         </>
     );
