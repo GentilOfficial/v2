@@ -39,7 +39,7 @@ export default function Gestures({ children }) {
                 x: 0,
                 opacity: 1,
             },
-            { type: "spring", stiffness: 300, damping: 28 }
+            { type: "spring", stiffness: 300, damping: 30 }
         );
     };
 
