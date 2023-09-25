@@ -1,5 +1,6 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { useRouter } from "next/router";
+import { useAnimate } from "framer-motion";
 import { Input, Textarea, Button } from "@nextui-org/react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import {
@@ -7,6 +8,7 @@ import {
     BiSolidMessageCheck,
     BiSolidMessageError,
 } from "react-icons/bi";
+import confetti from "canvas-confetti";
 import SEO from "@/components/SEO";
 import ContactImage from "@/images/ContactImage";
 import { translate } from "@/data/site.config";
@@ -20,6 +22,33 @@ export default function ContactPage() {
     const [message, setMessage] = useState("");
     const [messageWasSent, setMessageWasSent] = useState(false);
     const [isSubmitted, setSubmitted] = useState(false);
+
+    const [submitButton, animateButton] = useAnimate();
+
+    const startConfetti = () => {
+        const el = submitButton.current.getBoundingClientRect();
+
+        confetti({
+            particleCount: 100,
+            startVelocity: 40,
+            angle: 90,
+            spread: 50,
+            origin: {
+                x: (el.left + el.width / 2) / window.innerWidth,
+                y: (el.top + el.height / 2) / window.innerHeight,
+            },
+        });
+    };
+
+    const startShaking = () => {
+        animateButton(
+            submitButton.current,
+            {
+                x: [-20, 20, -20, 20, -20, 0],
+            },
+            { duration: 0.3 }
+        );
+    };
 
     const clearFields = () => {
         setFirstName("");
@@ -54,8 +83,12 @@ export default function ContactPage() {
                 });
                 if (res.ok) {
                     setMessageWasSent(true);
+                    startConfetti();
                     clearFields();
-                } else setMessageWasSent(false);
+                } else {
+                    startShaking();
+                    setMessageWasSent(false);
+                }
             } catch (error) {
                 setMessageWasSent(false);
                 console.error("Error sending message:", error);
@@ -144,11 +177,12 @@ export default function ContactPage() {
                             {cancel}
                         </Button>
                         <Button
+                            ref={submitButton}
                             type="submit"
                             color={
                                 isSubmitted
                                     ? messageWasSent
-                                        ? "primary"
+                                        ? "secondary"
                                         : "danger"
                                     : "primary"
                             }
