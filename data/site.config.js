@@ -136,7 +136,7 @@ export const translate = {
                 },
                 lastName: {
                     label: "Last Name",
-                    placeholder: "Doe",
+                    placeholder: "Smith",
                 },
                 email: {
                     label: "Email",
