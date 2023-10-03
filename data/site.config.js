@@ -1,4 +1,7 @@
 import { FaInstagram, FaGithub, FaTelegramPlane } from "react-icons/fa";
+import ReactLogo from "@/images/ReactLogo";
+import NodeLogo from "@/images/NodeLogo";
+import TailwindLogo from "@/images/TailwindLogo";
 
 export const languageName = {
     en: "English",
@@ -72,24 +75,58 @@ export const resume = {
     },
 };
 
-export const skillsList = [
-    {
-        title: "A",
-        percentage: 100,
-    },
-    {
-        title: "B",
-        percentage: 30,
-    },
-    {
-        title: "C",
-        percentage: 75,
-    },
-    {
-        title: "D",
-        percentage: 0,
-    },
-];
+export const skillsList = {
+    top: [
+        {
+            title: "React",
+            logo: ReactLogo,
+        },
+        {
+            title: "Node JS",
+            logo: NodeLogo,
+        },
+        {
+            title: "Tailwind CSS",
+            logo: TailwindLogo,
+        },
+    ],
+    technical: [
+        {
+            title: "At",
+            percentage: 100,
+        },
+        {
+            title: "Bt",
+            percentage: 30,
+        },
+        {
+            title: "Ct",
+            percentage: 75,
+        },
+        {
+            title: "Dt",
+            percentage: 10,
+        },
+    ],
+    professional: [
+        {
+            title: "Ap",
+            percentage: 100,
+        },
+        {
+            title: "Bp",
+            percentage: 30,
+        },
+        {
+            title: "Cp",
+            percentage: 75,
+        },
+        {
+            title: "Dp",
+            percentage: 10,
+        },
+    ],
+};
 
 export const translate = {
     home: {
