@@ -72,6 +72,25 @@ export const resume = {
     },
 };
 
+export const skillsList = [
+    {
+        title: "A",
+        percentage: 100,
+    },
+    {
+        title: "B",
+        percentage: 30,
+    },
+    {
+        title: "C",
+        percentage: 75,
+    },
+    {
+        title: "D",
+        percentage: 0,
+    },
+];
+
 export const translate = {
     home: {
         en: {
