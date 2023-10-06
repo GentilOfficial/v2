@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function NodeLogo({ className }) {
+export default function NodeLogoSVG({ className }) {
     const path = {
         hidden: {
             opacity: 0,
@@ -20,7 +20,7 @@ export default function NodeLogo({ className }) {
                 viewBox="0 0 32 32"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth={0.2}
+                strokeWidth={0.5}
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 className={className}

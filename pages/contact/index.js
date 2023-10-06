@@ -10,7 +10,7 @@ import {
 } from "react-icons/bi";
 import confetti from "canvas-confetti";
 import SEO from "@/components/SEO";
-import ContactImage from "@/images/ContactImage";
+import ContactImageSVG from "@/images/ContactImageSVG";
 import { translate } from "@/data/site.config";
 
 export default function ContactPage() {
@@ -137,7 +137,7 @@ export default function ContactPage() {
             <section
                 className={`flex flex-col md:flex-row h-full items-center justify-start md:justify-center`}
             >
-                <ContactImage className="text-primary w-1/2" />
+                <ContactImageSVG className="text-primary w-1/2" />
                 <motion.form
                     onSubmit={handleSubmit}
                     variants={formContainer}

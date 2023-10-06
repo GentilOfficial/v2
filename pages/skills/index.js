@@ -17,8 +17,11 @@ export default function SkillsPage() {
                 <h1>{title}</h1>
                 <p>title</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full">
-                    {skillsList.top.map((skill) => (
-                        <div className="text-center flex flex-col items-center justify-center">
+                    {skillsList.top.map((skill, index) => (
+                        <div
+                            key={`${skill}-${index}`}
+                            className="text-center flex flex-col items-center justify-center"
+                        >
                             <skill.logo className="w-1/4 sm:w-1/3 md:w-1/2" />
                             <p>{skill.title}</p>
                         </div>

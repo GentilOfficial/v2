@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function ContactImage({ className }) {
+export default function ContactImageSVG({ className }) {
     const mainPath = {
         hidden: {
             opacity: 0,

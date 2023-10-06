@@ -1,7 +1,7 @@
 import { FaInstagram, FaGithub, FaTelegramPlane } from "react-icons/fa";
-import ReactLogo from "@/images/ReactLogo";
-import NodeLogo from "@/images/NodeLogo";
-import TailwindLogo from "@/images/TailwindLogo";
+import ReactLogoSVG from "@/images/ReactLogoSVG";
+import NodeLogoSVG from "@/images/NodeLogoSVG";
+import GitLogoSVG from "@/images/GitLogoSVG";
 
 export const languageName = {
     en: "English",
@@ -79,15 +79,15 @@ export const skillsList = {
     top: [
         {
             title: "React",
-            logo: ReactLogo,
+            logo: ReactLogoSVG,
+        },
+        {
+            title: "Git",
+            logo: GitLogoSVG,
         },
         {
             title: "Node JS",
-            logo: NodeLogo,
-        },
-        {
-            title: "Tailwind CSS",
-            logo: TailwindLogo,
+            logo: NodeLogoSVG,
         },
     ],
     technical: [
