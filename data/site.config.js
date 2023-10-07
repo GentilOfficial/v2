@@ -92,38 +92,38 @@ export const skillsList = {
     ],
     technical: [
         {
-            title: "At",
-            percentage: 100,
+            title: "HTML",
+            percentage: 95,
         },
         {
-            title: "Bt",
-            percentage: 30,
+            title: "CSS",
+            percentage: 87,
         },
         {
-            title: "Ct",
-            percentage: 75,
+            title: "JavaScript",
+            percentage: 90,
         },
         {
-            title: "Dt",
-            percentage: 10,
+            title: "PHP",
+            percentage: 85,
         },
     ],
     professional: [
         {
-            title: "Ap",
-            percentage: 100,
+            title: "Comunication",
+            percentage: 90,
         },
         {
-            title: "Bp",
-            percentage: 30,
+            title: "Team Working",
+            percentage: 85,
         },
         {
-            title: "Cp",
-            percentage: 75,
+            title: "Project Management",
+            percentage: 80,
         },
         {
-            title: "Dp",
-            percentage: 10,
+            title: "Ceativity",
+            percentage: 85,
         },
     ],
 };

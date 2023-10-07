@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
-import { Progress } from "@nextui-org/react";
+import { Divider, Progress } from "@nextui-org/react";
+import { FaStar, FaGear, FaUser } from "react-icons/fa6";
 import { translate, skillsList } from "@/data/site.config";
 import SEO from "@/components/SEO";
 
@@ -12,42 +13,55 @@ export default function SkillsPage() {
         <>
             <SEO title={title} description={description} />
             <section
-                className={`flex h-full flex-col items-center justify-center gap-12`}
+                className={`flex h-full flex-col items-center justify-center text-center gap-12 mb-36`}
             >
-                <h1>{title}</h1>
-                <p>title</p>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full">
-                    {skillsList.top.map((skill, index) => (
-                        <div
-                            key={`${skill}-${index}`}
-                            className="text-center flex flex-col items-center justify-center"
-                        >
-                            <skill.logo className="w-1/4 sm:w-1/3 md:w-1/2" />
-                            <p>{skill.title}</p>
-                        </div>
-                    ))}
+                <div className="flex flex-col gap-8 w-full">
+                    <h1 className="uppercase font-bold text-2xl flex items-center justify-center gap-2">
+                        top skills <FaStar className="text-amber-400" />
+                    </h1>
+                    <div className="grid grid-cols-3 gap-8">
+                        {skillsList.top.map((skill, index) => (
+                            <div
+                                key={`${skill}-${index}`}
+                                className="text-center flex flex-col items-center justify-center"
+                            >
+                                <skill.logo className="w-1/2" />
+                                <p>{skill.title}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <p>title</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-                    {skillsList.technical.map((skill, index) => (
-                        <Progress
-                            key={`${skill}-${index}`}
-                            label={skill.title}
-                            value={skill.percentage}
-                            showValueLabel
-                        />
-                    ))}
+                <Divider />
+                <div className="flex flex-col gap-8 w-full">
+                    <h2 className="uppercase font-bold text-2xl flex items-center justify-center gap-2">
+                        technical <FaGear />
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {skillsList.technical.map((skill, index) => (
+                            <Progress
+                                key={`${skill}-${index}`}
+                                label={skill.title}
+                                value={skill.percentage}
+                                showValueLabel
+                            />
+                        ))}
+                    </div>
                 </div>
-                <p>title</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-                    {skillsList.professional.map((skill, index) => (
-                        <Progress
-                            key={`${skill}-${index}`}
-                            label={skill.title}
-                            value={skill.percentage}
-                            showValueLabel
-                        />
-                    ))}
+                <Divider />
+                <div className="flex flex-col gap-8 w-full">
+                    <h2 className="uppercase font-bold text-2xl flex items-center justify-center gap-2">
+                        professional <FaUser />
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {skillsList.professional.map((skill, index) => (
+                            <Progress
+                                key={`${skill}-${index}`}
+                                label={skill.title}
+                                value={skill.percentage}
+                                showValueLabel
+                            />
+                        ))}
+                    </div>
                 </div>
             </section>
         </>

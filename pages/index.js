@@ -15,7 +15,7 @@ export default function HomePage() {
         <>
             <SEO description={description} />
             <section
-                className={`flex h-full flex-col items-center justify-center drop-shadow-lg ${red_hat_display.className}`}
+                className={`flex h-full flex-col items-center justify-center ${red_hat_display.className}`}
             >
                 <h1
                     className={`font-bold text-center text-primary tracking-widest text-xl md:text-2xl lg:text-3xl mt-6 ${caveat.className}`}
