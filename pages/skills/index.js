@@ -57,7 +57,7 @@ export default function SkillsPage() {
                         {skillsList.professional.skills.map((skill, index) => (
                             <Progress
                                 key={`${skill}-${index}`}
-                                label={skill.title}
+                                label={skill.title[locale]}
                                 value={skill.percentage}
                                 showValueLabel
                             />

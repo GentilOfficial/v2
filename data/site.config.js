@@ -118,19 +118,22 @@ export const skillsList = {
         title: { en: "Professionals", it: "Professionali" },
         skills: [
             {
-                title: "Comunication",
+                title: { en: "Comunication", it: "Comunicazione" },
                 percentage: 90,
             },
             {
-                title: "Team Working",
+                title: { en: "Team Working", it: "Lavoro di Squadra" },
                 percentage: 85,
             },
             {
-                title: "Project Management",
+                title: {
+                    en: "Project Management",
+                    it: "Gestione dei Progetti",
+                },
                 percentage: 80,
             },
             {
-                title: "Ceativity",
+                title: { en: "Ceativity", it: "Creatività" },
                 percentage: 85,
             },
         ],
