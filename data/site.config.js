@@ -76,56 +76,65 @@ export const resume = {
 };
 
 export const skillsList = {
-    top: [
-        {
-            title: "React",
-            logo: ReactLogoSVG,
-        },
-        {
-            title: "Git",
-            logo: GitLogoSVG,
-        },
-        {
-            title: "Node JS",
-            logo: NodeLogoSVG,
-        },
-    ],
-    technical: [
-        {
-            title: "HTML",
-            percentage: 95,
-        },
-        {
-            title: "CSS",
-            percentage: 87,
-        },
-        {
-            title: "JavaScript",
-            percentage: 90,
-        },
-        {
-            title: "PHP",
-            percentage: 85,
-        },
-    ],
-    professional: [
-        {
-            title: "Comunication",
-            percentage: 90,
-        },
-        {
-            title: "Team Working",
-            percentage: 85,
-        },
-        {
-            title: "Project Management",
-            percentage: 80,
-        },
-        {
-            title: "Ceativity",
-            percentage: 85,
-        },
-    ],
+    top: {
+        title: { en: "Top", it: "Migliori" },
+        skills: [
+            {
+                title: "React",
+                logo: ReactLogoSVG,
+            },
+            {
+                title: "Git",
+                logo: GitLogoSVG,
+            },
+            {
+                title: "Node JS",
+                logo: NodeLogoSVG,
+            },
+        ],
+    },
+    technical: {
+        title: { en: "Technical", it: "Tecniche" },
+        skills: [
+            {
+                title: "HTML",
+                percentage: 95,
+            },
+            {
+                title: "CSS",
+                percentage: 87,
+            },
+            {
+                title: "JavaScript",
+                percentage: 90,
+            },
+            {
+                title: "PHP",
+                percentage: 85,
+            },
+        ],
+    },
+    professional: {
+        title: { en: "Professionals", it: "Professionali" },
+        skills: [
+            {
+                title: "Comunication",
+                percentage: 90,
+            },
+            {
+                title: "Team Working",
+                percentage: 85,
+            },
+            {
+                title: "Project Management",
+                percentage: 80,
+            },
+            {
+                title: "Ceativity",
+                percentage: 85,
+            },
+        ],
+    },
 };
 
 export const translate = {

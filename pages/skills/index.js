@@ -17,10 +17,11 @@ export default function SkillsPage() {
             >
                 <div className="flex flex-col gap-8 w-full">
                     <h1 className="uppercase font-bold text-2xl flex items-center justify-center gap-2">
-                        top skills <FaStar className="text-amber-400" />
+                        {skillsList.top.title[locale]}{" "}
+                        <FaStar className="text-amber-400" />
                     </h1>
                     <div className="grid grid-cols-3 gap-8">
-                        {skillsList.top.map((skill, index) => (
+                        {skillsList.top.skills.map((skill, index) => (
                             <div
                                 key={`${skill}-${index}`}
                                 className="text-center flex flex-col items-center justify-center"
@@ -34,10 +35,10 @@ export default function SkillsPage() {
                 <Divider />
                 <div className="flex flex-col gap-8 w-full">
                     <h2 className="uppercase font-bold text-2xl flex items-center justify-center gap-2">
-                        technical <FaGear />
+                        {skillsList.technical.title[locale]} <FaGear />
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {skillsList.technical.map((skill, index) => (
+                        {skillsList.technical.skills.map((skill, index) => (
                             <Progress
                                 key={`${skill}-${index}`}
                                 label={skill.title}
@@ -50,10 +51,10 @@ export default function SkillsPage() {
                 <Divider />
                 <div className="flex flex-col gap-8 w-full">
                     <h2 className="uppercase font-bold text-2xl flex items-center justify-center gap-2">
-                        professional <FaUser />
+                        {skillsList.professional.title[locale]} <FaUser />
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {skillsList.professional.map((skill, index) => (
+                        {skillsList.professional.skills.map((skill, index) => (
                             <Progress
                                 key={`${skill}-${index}`}
                                 label={skill.title}
