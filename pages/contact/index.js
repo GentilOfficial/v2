@@ -145,7 +145,7 @@ export default function ContactPage() {
                 >
                     {title}
                 </h1>
-                <div className="flex flex-col md:flex-row h-full w-full items-center justify-start md:justify-center">
+                <div className="flex flex-col md:flex-row h-full w-full items-center justify-start md:justify-center mt-12 md:mt-0">
                     <div className="w-2/5 md:w-1/2 mx-auto">
                         <ContactImageSVG className="text-primary" />
                     </div>
