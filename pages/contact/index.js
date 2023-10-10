@@ -2,7 +2,7 @@ import { Caveat } from "next/font/google";
 import { useState, useMemo } from "react";
 import { useRouter } from "next/router";
 import { motion, useAnimate } from "framer-motion";
-import { Input, Textarea, Button, Divider } from "@nextui-org/react";
+import { Input, Textarea, Button } from "@nextui-org/react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import {
     BiSolidSend,
@@ -145,15 +145,16 @@ export default function ContactPage() {
                 >
                     {title}
                 </h1>
-                <Divider className="mt-12" />
                 <div className="flex flex-col md:flex-row h-full w-full items-center justify-start md:justify-center">
-                    <ContactImageSVG className="text-primary w-1/2" />
+                    <div className="w-2/5 md:w-1/2 mx-auto">
+                        <ContactImageSVG className="text-primary" />
+                    </div>
                     <motion.form
                         onSubmit={handleSubmit}
                         variants={formContainer}
                         initial="hidden"
                         animate="visible"
-                        className="grid grid-cols-2 w-full md:w-1/2 max-w-screen-sm gap-2 my-6"
+                        className="grid grid-cols-2 max-w-screen-sm gap-2 my-6 w-full md:w-1/2"
                     >
                         <motion.h2
                             variants={formChild}

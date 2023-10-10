@@ -24,7 +24,6 @@ export default function SkillsPage() {
                     {title}
                 </h1>
                 <div className="flex flex-col gap-12 h-full w-full items-center justify-start md:justify-center mt-12 md:mt-0">
-                    <Divider />
                     <div className="flex flex-col gap-8 w-full">
                         <h2 className="uppercase font-bold text-2xl flex items-center justify-center gap-2">
                             {skillsList.top.title[locale]}{" "}
