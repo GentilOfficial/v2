@@ -1,7 +1,8 @@
-import { useState, useMemo, useRef } from "react";
+import { Caveat } from "next/font/google";
+import { useState, useMemo } from "react";
 import { useRouter } from "next/router";
 import { motion, useAnimate } from "framer-motion";
-import { Input, Textarea, Button } from "@nextui-org/react";
+import { Input, Textarea, Button, Divider } from "@nextui-org/react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import {
     BiSolidSend,
@@ -12,6 +13,8 @@ import confetti from "canvas-confetti";
 import SEO from "@/components/SEO";
 import ContactImageSVG from "@/images/ContactImageSVG";
 import { translate } from "@/data/site.config";
+
+const caveat = Caveat({ subsets: ["latin"] });
 
 export default function ContactPage() {
     const { locale } = useRouter();
@@ -135,114 +138,122 @@ export default function ContactPage() {
         <>
             <SEO title={title} description={description} />
             <section
-                className={`flex flex-col md:flex-row h-full items-center justify-start md:justify-center`}
+                className={`flex h-full flex-col items-center justify-center text-center mb-36`}
             >
-                <ContactImageSVG className="text-primary w-1/2" />
-                <motion.form
-                    onSubmit={handleSubmit}
-                    variants={formContainer}
-                    initial="hidden"
-                    animate="visible"
-                    className="grid grid-cols-2 w-full md:w-1/2 max-w-screen-sm gap-2 my-6"
+                <h1
+                    className={`text-6xl text-primary font-bold ${caveat.className}`}
                 >
-                    <motion.h1
-                        variants={formChild}
-                        className="uppercase font-bold text-2xl text-center md:text-start col-span-2"
+                    {title}
+                </h1>
+                <Divider className="mt-12" />
+                <div className="flex flex-col md:flex-row h-full w-full items-center justify-start md:justify-center">
+                    <ContactImageSVG className="text-primary w-1/2" />
+                    <motion.form
+                        onSubmit={handleSubmit}
+                        variants={formContainer}
+                        initial="hidden"
+                        animate="visible"
+                        className="grid grid-cols-2 w-full md:w-1/2 max-w-screen-sm gap-2 my-6"
                     >
-                        {formTitle}
-                    </motion.h1>
-                    <motion.div variants={formChild}>
-                        <Input
-                            isRequired
-                            variant="faded"
-                            label={inputs.firstName.label}
-                            placeholder={inputs.firstName.placeholder}
-                            value={firstName}
-                            onValueChange={setFirstName}
-                        />
-                    </motion.div>
-                    <motion.div variants={formChild}>
-                        <Input
-                            isRequired
-                            variant="faded"
-                            label={inputs.lastName.label}
-                            placeholder={inputs.lastName.placeholder}
-                            value={lastName}
-                            onValueChange={setLastName}
-                        />
-                    </motion.div>
-                    <motion.div variants={formChild} className="col-span-2">
-                        <Input
-                            isRequired
-                            variant="faded"
-                            type="email"
-                            label={inputs.email.label}
-                            placeholder={inputs.email.placeholder}
-                            value={email}
-                            onValueChange={setEmail}
-                            color={isEmailInvalid ? "danger" : "foreground"}
-                            errorMessage={
-                                isEmailInvalid && inputs.email.errorMessage
-                            }
-                            isInvalid={isEmailInvalid}
-                        />
-                    </motion.div>
-                    <motion.div variants={formChild} className="col-span-2">
-                        <Textarea
-                            isRequired
-                            variant="faded"
-                            label={inputs.message.label}
-                            placeholder={inputs.message.placeholder}
-                            minRows={5}
-                            maxRows={5}
-                            value={message}
-                            onValueChange={setMessage}
-                        />
-                    </motion.div>
+                        <motion.h2
+                            variants={formChild}
+                            className="uppercase font-bold text-2xl text-center md:text-start col-span-2"
+                        >
+                            {formTitle}
+                        </motion.h2>
+                        <motion.div variants={formChild}>
+                            <Input
+                                isRequired
+                                variant="faded"
+                                label={inputs.firstName.label}
+                                placeholder={inputs.firstName.placeholder}
+                                value={firstName}
+                                onValueChange={setFirstName}
+                            />
+                        </motion.div>
+                        <motion.div variants={formChild}>
+                            <Input
+                                isRequired
+                                variant="faded"
+                                label={inputs.lastName.label}
+                                placeholder={inputs.lastName.placeholder}
+                                value={lastName}
+                                onValueChange={setLastName}
+                            />
+                        </motion.div>
+                        <motion.div variants={formChild} className="col-span-2">
+                            <Input
+                                isRequired
+                                variant="faded"
+                                type="email"
+                                label={inputs.email.label}
+                                placeholder={inputs.email.placeholder}
+                                value={email}
+                                onValueChange={setEmail}
+                                color={isEmailInvalid ? "danger" : "foreground"}
+                                errorMessage={
+                                    isEmailInvalid && inputs.email.errorMessage
+                                }
+                                isInvalid={isEmailInvalid}
+                            />
+                        </motion.div>
+                        <motion.div variants={formChild} className="col-span-2">
+                            <Textarea
+                                isRequired
+                                variant="faded"
+                                label={inputs.message.label}
+                                placeholder={inputs.message.placeholder}
+                                minRows={5}
+                                maxRows={5}
+                                value={message}
+                                onValueChange={setMessage}
+                            />
+                        </motion.div>
 
-                    <motion.div
-                        variants={formChild}
-                        className="mx-auto w-full flex items-center justify-between gap-3 col-span-2"
-                    >
-                        <Button
-                            variant="light"
-                            size="sm"
-                            endContent={<AiFillCloseCircle />}
-                            onPress={clearFields}
+                        <motion.div
+                            variants={formChild}
+                            className="mx-auto w-full flex items-center justify-between gap-3 col-span-2"
                         >
-                            {cancel}
-                        </Button>
-                        <Button
-                            ref={submitButton}
-                            type="submit"
-                            color={
-                                isSubmitted
-                                    ? messageWasSent
-                                        ? "secondary"
-                                        : "danger"
-                                    : "primary"
-                            }
-                            endContent={
-                                isSubmitted ? (
-                                    messageWasSent ? (
-                                        <BiSolidMessageCheck />
+                            <Button
+                                variant="light"
+                                size="sm"
+                                endContent={<AiFillCloseCircle />}
+                                onPress={clearFields}
+                            >
+                                {cancel}
+                            </Button>
+                            <Button
+                                ref={submitButton}
+                                type="submit"
+                                color={
+                                    isSubmitted
+                                        ? messageWasSent
+                                            ? "secondary"
+                                            : "danger"
+                                        : "primary"
+                                }
+                                endContent={
+                                    isSubmitted ? (
+                                        messageWasSent ? (
+                                            <BiSolidMessageCheck />
+                                        ) : (
+                                            <BiSolidMessageError />
+                                        )
                                     ) : (
-                                        <BiSolidMessageError />
+                                        <BiSolidSend />
                                     )
-                                ) : (
-                                    <BiSolidSend />
-                                )
-                            }
-                            className="w-28"
-                        >
-                            {isSubmitted
-                                ? messageWasSent
-                                    ? wasSent
-                                    : wasNotSent
-                                : send}
-                        </Button>
-                    </motion.div>
-                </motion.form>
+                                }
+                                className="w-28"
+                            >
+                                {isSubmitted
+                                    ? messageWasSent
+                                        ? wasSent
+                                        : wasNotSent
+                                    : send}
+                            </Button>
+                        </motion.div>
+                    </motion.form>
+                </div>
             </section>
         </>
     );
