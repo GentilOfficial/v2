@@ -15,15 +15,13 @@ export default function SkillsPage() {
     return (
         <>
             <SEO title={title} description={description} />
-            <section
-                className={`flex h-full flex-col items-center justify-center text-center mb-36`}
-            >
+            <section className="flex h-full flex-col items-center justify-center text-center">
                 <h1
                     className={`text-6xl text-primary font-bold ${caveat.className}`}
                 >
                     {title}
                 </h1>
-                <div className="flex flex-col gap-12 h-full w-full items-center justify-start md:justify-center mt-12 md:mt-0">
+                <div className="flex flex-col gap-12 h-full w-full mt-12 mb-20">
                     <div className="flex flex-col gap-8 w-full">
                         <h2 className="uppercase font-bold text-2xl flex items-center justify-center gap-2">
                             {skillsList.top.title[locale]}{" "}

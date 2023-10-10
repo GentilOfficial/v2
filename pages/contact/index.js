@@ -137,9 +137,7 @@ export default function ContactPage() {
     return (
         <>
             <SEO title={title} description={description} />
-            <section
-                className={`flex h-full flex-col items-center justify-center text-center mb-36`}
-            >
+            <section className="flex h-full flex-col items-center justify-center text-center mb-20">
                 <h1
                     className={`text-6xl text-primary font-bold ${caveat.className}`}
                 >

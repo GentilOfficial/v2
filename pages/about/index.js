@@ -14,11 +14,9 @@ export default function AboutPage() {
     return (
         <>
             <SEO title={title} description={description} />
-            <section
-                className={`flex h-full w-full flex-col items-center justify-center`}
-            >
+            <section className="w-full h-full">
                 <h1
-                    className={`text-6xl text-primary font-bold ${caveat.className}`}
+                    className={`text-6xl text-primary font-bold text-center ${caveat.className}`}
                 >
                     {title}
                 </h1>
