@@ -213,7 +213,7 @@ export const translate = {
                 },
                 message: {
                     label: "Message",
-                    placeholder: "I, I'm....",
+                    placeholder: "Write what you want to say to me ...",
                 },
             },
             send: "Send",
@@ -242,7 +242,7 @@ export const translate = {
                 },
                 message: {
                     label: "Messaggio",
-                    placeholder: "Ciao, sono....",
+                    placeholder: "Scrivi quello che mi vuoi dire ...",
                 },
             },
             send: "Invia",
