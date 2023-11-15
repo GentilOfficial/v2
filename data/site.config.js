@@ -184,11 +184,54 @@ export const translate = {
             title: "About",
             description:
                 "Get to know me better, read my bio and find out who I am.",
+            background: {
+                title: "Background",
+                p: "Hi, I'm Federico, a fullstack web developer based in Italy. My passion for technology and creativity has led me along a journey in the field of web applications, where I'm constantly searching new challenges and opportunities to learn and grow. Welcome to my digital space, where I transform lines of code into engaging experiences and innovative functionalities.",
+            },
+            experiences: {
+                title: "Experiences",
+                list: [
+                    {
+                        title: "IIS N.Copernico A.Carpeggiani",
+                        description: "Information Technology degree",
+                        start: "2018",
+                        end: "2023",
+                    },
+                    {
+                        title: "Logikamente S.r.l.",
+                        description: "1 month of stage in an IT company",
+                        start: "2022",
+                        end: "2023",
+                    },
+                ],
+            },
         },
         it: {
             title: "Info",
             description:
                 "Conoscimi meglio, leggi la mia biografia e scopri chi sono.",
+            background: {
+                title: "Formazione",
+                p: "Ciao, sono Federico, uno sviluppatore web fullstack con sede in Italia. La mia passione per la tecnologia e la creatività mi ha portato a intraprendere un viaggio nel campo delle web applications, dove sono costantemente alla ricerca di nuove sfide e opportunità per imparare e crescere. Benvenuto nel mio spazio digitale, dove trasformo linee di codice in esperienze coinvolgenti e funzionalità innovative.",
+            },
+            experiences: {
+                title: "Esperienze",
+                list: [
+                    {
+                        title: "IIS N.Copernico A.Carpeggiani",
+                        description: "Diploma in Informatica",
+                        start: "2018",
+                        end: "2023",
+                    },
+                    {
+                        title: "Logikamente S.r.l.",
+                        description:
+                            "1 mese di stage in un'azienda informatica",
+                        start: "2022",
+                        end: "2023",
+                    },
+                ],
+            },
         },
     },
     contact: {
