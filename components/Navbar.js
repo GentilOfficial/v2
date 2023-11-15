@@ -70,6 +70,7 @@ export default function Navbar() {
                         href={resume[locale].url}
                         color="primary"
                         variant="flat"
+                        target="_blank"
                     >
                         {resume[locale].title}
                     </Button>
@@ -108,6 +109,7 @@ export default function Navbar() {
                         href={resume[locale].url}
                         color="primary"
                         variant="flat"
+                        target="_blank"
                     >
                         {resume[locale].title}
                     </Button>
