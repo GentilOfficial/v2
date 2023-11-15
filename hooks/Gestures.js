@@ -110,11 +110,12 @@ export default function Gestures({ children }) {
                 <motion.section
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="flex z-40 w-full h-16 items-center justify-between sticky bottom-0 inset-x-0 backdrop-blur-lg backdrop-saturate-150 bg-background/70"
+                    className="flex z-40 w-full h-16 items-center justify-between sticky bottom-0 inset-x-0"
                 >
                     <Button
                         variant="light"
                         color="default"
+                        className="backdrop-blur-lg backdrop-saturate-150 bg-background/70"
                         startContent={<SlArrowLeft className="text-primary" />}
                         onPress={goToPreElement}
                     >
@@ -123,6 +124,7 @@ export default function Gestures({ children }) {
                     <Button
                         variant="light"
                         color="default"
+                        className="backdrop-blur-lg backdrop-saturate-150 bg-background/70"
                         endContent={<SlArrowRight className="text-primary" />}
                         onPress={goToNextElement}
                     >
