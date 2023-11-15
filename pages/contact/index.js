@@ -26,6 +26,8 @@ export default function ContactPage() {
     const [messageWasSent, setMessageWasSent] = useState(false);
     const [isSubmitted, setSubmitted] = useState(false);
 
+    const [disableSubmitButton, setDisableSubmitButton] = useState(false);
+
     const [submitButton, animateButton] = useAnimate();
 
     const startConfetti = () => {
@@ -70,6 +72,7 @@ export default function ContactPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setDisableSubmitButton(true);
 
         const data = {
             firstName: firstName,
@@ -99,6 +102,7 @@ export default function ContactPage() {
             setSubmitted(true);
             setTimeout(() => {
                 setSubmitted(false);
+                setDisableSubmitButton(false);
             }, 2000);
         }
     };
@@ -222,6 +226,7 @@ export default function ContactPage() {
                                 {cancel}
                             </Button>
                             <Button
+                                isDisabled={disableSubmitButton}
                                 ref={submitButton}
                                 type="submit"
                                 color={
