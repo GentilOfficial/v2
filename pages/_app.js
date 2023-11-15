@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }) {
                     className={`bg-background text-foreground ${red_hat_text.className}`}
                 >
                     <Navbar />
-                    <main className="flex max-w-screen-lg mx-auto min-h-[calc(100vh-4rem)] p-6">
+                    <main className="flex max-w-screen-lg mx-auto min-h-[calc(100vh-4rem)] px-6">
                         <Gestures>
                             <Component {...pageProps} />
                         </Gestures>
