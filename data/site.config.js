@@ -194,14 +194,23 @@ export const translate = {
                     {
                         title: "IIS N.Copernico A.Carpeggiani",
                         description: "Information Technology degree",
+                        location: "Ferrara, IT",
                         start: "2018",
                         end: "2023",
                     },
                     {
                         title: "Logikamente S.r.l.",
                         description: "1 month of stage in an IT company",
+                        location: "Ferrara, IT",
                         start: "2022",
                         end: "2023",
+                    },
+                    {
+                        title: "Ferrara University",
+                        description: "Bachelor's degree in Computer Science",
+                        location: "Ferrara, IT",
+                        start: "2023",
+                        end: "????",
                     },
                 ],
             },
@@ -220,6 +229,7 @@ export const translate = {
                     {
                         title: "IIS N.Copernico A.Carpeggiani",
                         description: "Diploma in Informatica",
+                        location: "Ferrara, IT",
                         start: "2018",
                         end: "2023",
                     },
@@ -227,8 +237,16 @@ export const translate = {
                         title: "Logikamente S.r.l.",
                         description:
                             "1 mese di stage in un'azienda informatica",
+                        location: "Ferrara, IT",
                         start: "2022",
                         end: "2023",
+                    },
+                    {
+                        title: "Università di Ferrara",
+                        description: "Laurea triennale in Informatica",
+                        location: "Ferrara, IT",
+                        start: "2023",
+                        end: "????",
                     },
                 ],
             },
