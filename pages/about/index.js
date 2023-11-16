@@ -3,6 +3,8 @@ import { Divider, Image } from "@nextui-org/react";
 import { translate } from "@/data/site.config";
 import SEO from "@/components/SEO";
 import { Caveat } from "next/font/google";
+import { FaRegClock, FaLocationDot } from "react-icons/fa6";
+import { RxDividerHorizontal } from "react-icons/rx";
 
 const caveat = Caveat({ subsets: ["latin"] });
 
@@ -21,24 +23,54 @@ export default function AboutPage() {
                 >
                     {title}
                 </h1>
-                <div className="flex w-full h-full mt-20 gap-4">
-                    <div className="w-1/2">
-                        <Image src="https://images.unsplash.com/photo-1600793575654-910699b5e4d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" />
+                <div className="grid lg:grid-cols-2 w-full h-full mt-12 gap-4 ">
+                    <div className="order-last lg:order-none">
+                        <Image src="" />
                     </div>
-                    <div className="flex flex-col w-1/2 gap-4">
-                        <h2 className="text-2xl">{background.title}</h2>
-                        <Divider />
-                        <p>{background.p}</p>
-                        <h2 className="text-2xl">{experiences.title}</h2>
-                        <Divider />
-                        {experiences.list.map((item, index) => (
-                            <div key={`${item}-${index}`}>
-                                <p>{item.title}</p>
-                                <p>{item.description}</p>
-                                <p>{item.start}</p>
-                                <p>{item.end}</p>
-                            </div>
-                        ))}
+                    <div className="flex flex-col gap-5">
+                        <section className="space-y-3">
+                            <h2 className="text-3xl font-bold">
+                                {background.title}
+                            </h2>
+                            <Divider />
+                            <p className="text-justify">{background.p}</p>
+                        </section>
+                        <section className="space-y-3">
+                            <h2 className="text-3xl font-bold">
+                                {experiences.title}
+                            </h2>
+                            <Divider />
+                            {experiences.list.map((item, index) => (
+                                <div key={`${item}-${index}`}>
+                                    <div className="flex justify-between">
+                                        <div className="flex flex-col justify-center col-span-2">
+                                            <h3 className="italic font-semibold">
+                                                {item.description}
+                                            </h3>
+                                            <h4 className="text-sm flex items-center gap-1 ml-2">
+                                                <RxDividerHorizontal className="text-primary" />{" "}
+                                                {item.title}
+                                            </h4>
+                                        </div>
+                                        <div className="space-y-1 font-semibold text-sm">
+                                            <p className="flex gap-2 items-center">
+                                                <FaRegClock className="text-primary" />
+                                                {item.start}-{item.end}
+                                            </p>
+                                            <Divider />
+                                            <p className="flex gap-2 items-center">
+                                                <FaLocationDot className="text-primary" />
+                                                {item.location}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {index ==
+                                    experiences.list.length - 1 ? null : (
+                                        <Divider />
+                                    )}
+                                </div>
+                            ))}
+                        </section>
                     </div>
                 </div>
             </section>
