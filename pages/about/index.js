@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import NextImage from "next/image";
 import { Divider, Image } from "@nextui-org/react";
 import { translate } from "@/data/site.config";
 import SEO from "@/components/SEO";
@@ -27,12 +28,7 @@ export default function AboutPage() {
                 </h1>
                 <div className="grid lg:grid-cols-2 w-full h-full mt-12 gap-4 ">
                     <div className="order-last lg:order-none mx-auto mb-20">
-                        <Image
-                            src={avatar}
-                            alt="avatar"
-                            width="100%"
-                            height="100%"
-                        />
+                        <Image as={NextImage} src={avatar} alt="avatar" />
                     </div>
                     <div className="flex flex-col gap-5">
                         <section className="space-y-3">
