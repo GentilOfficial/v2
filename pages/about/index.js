@@ -11,21 +11,28 @@ const caveat = Caveat({ subsets: ["latin"] });
 export default function AboutPage() {
     const { locale } = useRouter();
 
+    const avatar = process.env.NEXT_PUBLIC_GITHUB_AVATAR;
+
     const { title, description, background, experiences } =
         translate.about[locale];
 
     return (
         <>
             <SEO title={title} description={description} />
-            <section className="w-full h-full">
+            <section className="w-full">
                 <h1
                     className={`text-6xl text-primary font-bold text-center ${caveat.className}`}
                 >
                     {title}
                 </h1>
                 <div className="grid lg:grid-cols-2 w-full h-full mt-12 gap-4 ">
-                    <div className="order-last lg:order-none">
-                        <Image src="" />
+                    <div className="order-last lg:order-none mx-auto mb-20">
+                        <Image
+                            src={avatar}
+                            alt="avatar"
+                            width="100%"
+                            height="100%"
+                        />
                     </div>
                     <div className="flex flex-col gap-5">
                         <section className="space-y-3">
