@@ -28,7 +28,13 @@ export default function AboutPage() {
                 </h1>
                 <div className="grid lg:grid-cols-2 w-full h-full mt-12 gap-4 ">
                     <div className="order-last lg:order-none mx-auto mb-20">
-                        <Image as={NextImage} src={avatar} alt="avatar" />
+                        <Image
+                            as={NextImage}
+                            src={avatar}
+                            alt="avatar"
+                            width={460}
+                            height={460}
+                        />
                     </div>
                     <div className="flex flex-col gap-5">
                         <section className="space-y-3">
