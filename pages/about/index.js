@@ -26,7 +26,7 @@ export default function AboutPage() {
                 >
                     {title}
                 </h1>
-                <div className="grid lg:grid-cols-2 w-full h-full mt-12 gap-4 ">
+                <div className="grid lg:grid-cols-2 w-full h-full mt-12 gap-4">
                     <div className="order-last lg:order-none mx-auto mb-20">
                         <Image
                             as={NextImage}
@@ -36,7 +36,7 @@ export default function AboutPage() {
                             height={460}
                         />
                     </div>
-                    <div className="flex flex-col gap-5">
+                    <div className="flex flex-col gap-5 mb-20">
                         <section className="space-y-3">
                             <h2 className="text-3xl font-bold">
                                 {background.title}
