@@ -26,23 +26,25 @@ export default function AboutPage() {
                 >
                     {title}
                 </h1>
-                <div className="grid lg:grid-cols-2 w-full h-full mt-12 gap-4">
-                    <div className="order-last lg:order-none mx-auto mb-20">
-                        <Image
-                            as={NextImage}
-                            src={avatar}
-                            alt="avatar"
-                            width={460}
-                            height={460}
-                        />
-                    </div>
+                <div className="w-full h-full mt-12 gap-4">
                     <div className="flex flex-col gap-5 mb-20">
-                        <section className="space-y-3">
-                            <h2 className="text-3xl font-bold">
-                                {background.title}
-                            </h2>
-                            <Divider />
-                            <p className="text-justify">{background.p}</p>
+                        <section className="sm:grid grid-cols-5 gap-4 space-y-3">
+                            <div className="col-span-3 space-y-3">
+                                <h2 className="text-3xl font-bold">
+                                    {background.title}
+                                </h2>
+                                <Divider />
+                                <p className="text-justify">{background.p}</p>
+                            </div>
+                            <div className="col-span-2 flex justify-center items-start">
+                                <Image
+                                    as={NextImage}
+                                    src={avatar}
+                                    alt="avatar"
+                                    width={460}
+                                    height={460}
+                                />
+                            </div>
                         </section>
                         <section className="space-y-3">
                             <h2 className="text-3xl font-bold">
@@ -51,28 +53,18 @@ export default function AboutPage() {
                             <Divider />
                             {experiences.list.map((item, index) => (
                                 <div key={`${item}-${index}`}>
-                                    <div className="flex justify-between">
-                                        <div className="flex flex-col justify-center col-span-2">
-                                            <h3 className="italic font-semibold">
-                                                {item.description}
-                                            </h3>
-                                            <h4 className="text-sm flex items-center gap-1 ml-2">
-                                                <RxDividerHorizontal className="text-primary" />{" "}
-                                                {item.title}
-                                            </h4>
-                                        </div>
-                                        <div className="space-y-1 font-semibold text-sm">
-                                            <p className="flex gap-2 items-center">
-                                                <FaRegClock className="text-primary" />
-                                                {item.start}-{item.end}
-                                            </p>
-                                            <Divider />
-                                            <p className="flex gap-2 items-center">
-                                                <FaLocationDot className="text-primary" />
-                                                {item.location}
-                                            </p>
-                                        </div>
-                                    </div>
+                                    <h3 className="italic font-semibold text-lg text-primary">
+                                        {item.title}
+                                    </h3>
+                                    <h4 className="text-md">
+                                        {item.description}
+                                    </h4>
+                                    <p className="text-foreground/80">
+                                        {item.start} - {item.end}
+                                    </p>
+                                    <p className="text-foreground/80 mb-2">
+                                        {item.location}
+                                    </p>
                                     {index ==
                                     experiences.list.length - 1 ? null : (
                                         <Divider />

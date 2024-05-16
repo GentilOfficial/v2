@@ -1,4 +1,9 @@
-import { FaInstagram, FaGithub, FaTelegramPlane } from "react-icons/fa";
+import {
+    FaLinkedin,
+    FaInstagram,
+    FaGithub,
+    FaTelegramPlane,
+} from "react-icons/fa";
 import ReactLogoSVG from "@/images/ReactLogoSVG";
 import NodeLogoSVG from "@/images/NodeLogoSVG";
 import GitLogoSVG from "@/images/GitLogoSVG";
@@ -48,6 +53,11 @@ export const routes = [
 
 export const links = [
     {
+        title: "Linkedin",
+        url: process.env.NEXT_PUBLIC_LINKEDIN_LINK,
+        icon: FaLinkedin,
+    },
+    {
         title: "Instagram",
         url: process.env.NEXT_PUBLIC_INSTAGRAM_LINK,
         icon: FaInstagram,
@@ -63,17 +73,6 @@ export const links = [
         icon: FaGithub,
     },
 ];
-
-export const resume = {
-    en: {
-        title: "Resume",
-        url: "/Resume.pdf",
-    },
-    it: {
-        title: "Curriculum",
-        url: "/it/Curriculum.pdf",
-    },
-};
 
 export const skillsList = {
     top: {
@@ -97,20 +96,28 @@ export const skillsList = {
         title: { en: "Technical", it: "Tecniche" },
         skills: [
             {
+                title: "C",
+                percentage: 100,
+            },
+            {
                 title: "HTML",
-                percentage: 95,
+                percentage: 100,
             },
             {
                 title: "CSS",
-                percentage: 87,
+                percentage: 100,
             },
             {
                 title: "JavaScript",
-                percentage: 90,
+                percentage: 100,
             },
             {
                 title: "PHP",
-                percentage: 85,
+                percentage: 90,
+            },
+            {
+                title: "SQL",
+                percentage: 80,
             },
         ],
     },
@@ -119,7 +126,7 @@ export const skillsList = {
         skills: [
             {
                 title: { en: "Comunication", it: "Comunicazione" },
-                percentage: 90,
+                percentage: 85,
             },
             {
                 title: { en: "Team Working", it: "Lavoro di Squadra" },
@@ -130,7 +137,7 @@ export const skillsList = {
                     en: "Project Management",
                     it: "Gestione dei Progetti",
                 },
-                percentage: 80,
+                percentage: 85,
             },
             {
                 title: { en: "Ceativity", it: "Creatività" },
@@ -192,25 +199,34 @@ export const translate = {
                 title: "Experiences",
                 list: [
                     {
-                        title: "IIS N.Copernico A.Carpeggiani",
-                        description: "IT degree",
+                        title: "IIS N.Copernicus A.Carpeggiani.",
+                        description:
+                            "Technical and Professional Institute Graduation, IT",
                         location: "Ferrara, IT",
-                        start: "2018",
-                        end: "2023",
+                        start: "Sep 2018",
+                        end: "Jun 2023",
                     },
                     {
                         title: "Logikamente S.r.l.",
-                        description: "Stage",
+                        description: "Web Developer - Stage",
                         location: "Ferrara, IT",
-                        start: "2022",
-                        end: "2023",
+                        start: "Feb 2022",
+                        end: "Feb 2023",
                     },
                     {
-                        title: "Ferrara University",
-                        description: "Bachelor's degree",
+                        title: "University of Ferrara",
+                        description:
+                            "Bachelor's degree in Computer Science and Technology, IT",
                         location: "Ferrara, IT",
-                        start: "2023",
-                        end: "????",
+                        start: "Set 2023",
+                        end: "Set 2026",
+                    },
+                    {
+                        title: "TECNOMAT",
+                        description: "logistics employee",
+                        location: "Ferrara, IT",
+                        start: "Jan 2024",
+                        end: "Today",
                     },
                 ],
             },
@@ -220,7 +236,7 @@ export const translate = {
             description:
                 "Conoscimi meglio, leggi la mia biografia e scopri chi sono.",
             background: {
-                title: "Formazione",
+                title: "Background",
                 p: "Ciao, sono Federico, uno sviluppatore web fullstack con sede in Italia. La mia passione per la tecnologia e la creatività mi ha portato a intraprendere un viaggio nel campo delle web applications, dove sono costantemente alla ricerca di nuove sfide e opportunità per imparare e crescere. Benvenuto nel mio spazio digitale, dove trasformo linee di codice in esperienze coinvolgenti e funzionalità innovative.",
             },
             experiences: {
@@ -228,24 +244,33 @@ export const translate = {
                 list: [
                     {
                         title: "IIS N.Copernico A.Carpeggiani",
-                        description: "Diploma",
+                        description:
+                            "Diploma Istituto Tecnico e Professionale, Informatica",
                         location: "Ferrara, IT",
-                        start: "2018",
-                        end: "2023",
+                        start: "Set 2018",
+                        end: "Giu 2023",
                     },
                     {
                         title: "Logikamente S.r.l.",
-                        description: "Stage",
+                        description: "Sviluppatore Web - Stage",
                         location: "Ferrara, IT",
-                        start: "2022",
-                        end: "2023",
+                        start: "Feb 2022",
+                        end: "Feb 2023",
                     },
                     {
-                        title: "Università di Ferrara",
-                        description: "Laurea triennale",
+                        title: "Università degli Studi di Ferrara",
+                        description:
+                            "Laurea triennale in Scienze e Tecnologie Informatiche, Informatica",
                         location: "Ferrara, IT",
-                        start: "2023",
-                        end: "????",
+                        start: "Set 2023",
+                        end: "Set 2026",
+                    },
+                    {
+                        title: "TECNOMAT",
+                        description: "Addetto alla logistica",
+                        location: "Ferrara, IT",
+                        start: "Gen 2024",
+                        end: "Oggi",
                     },
                 ],
             },

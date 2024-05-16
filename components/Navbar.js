@@ -14,7 +14,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import ThemeChanger from "./ThemeChanger";
 import LanguageChanger from "./LanguageChanger";
-import { routes, resume } from "@/data/site.config";
+import { routes } from "@/data/site.config";
 
 const caveat = Caveat({ subsets: ["latin"] });
 
@@ -64,17 +64,6 @@ export default function Navbar() {
                 <NavbarItem>
                     <LanguageChanger />
                 </NavbarItem>
-                <NavbarItem className="hidden md:block">
-                    <Button
-                        as={Link}
-                        href={resume[locale].url}
-                        color="primary"
-                        variant="flat"
-                        target="_blank"
-                    >
-                        {resume[locale].title}
-                    </Button>
-                </NavbarItem>
                 <Button
                     as={NavbarMenuToggle}
                     isIconOnly
@@ -101,19 +90,6 @@ export default function Navbar() {
                         </LinkUI>
                     </NavbarMenuItem>
                 ))}
-
-                <NavbarMenuItem className="w-full gap-6 flex flex-col items-center mb-6">
-                    <Divider className="w-3/5" />
-                    <Button
-                        as={Link}
-                        href={resume[locale].url}
-                        color="primary"
-                        variant="flat"
-                        target="_blank"
-                    >
-                        {resume[locale].title}
-                    </Button>
-                </NavbarMenuItem>
             </NavbarMenu>
         </NextNavbar>
     );

@@ -20,7 +20,7 @@ export default function Footer() {
                 >
                     {email}
                 </Link>
-                <section className="grid grid-cols-2 sm:grid-cols-3 gap-4 items-center justify-center">
+                <section className="grid grid-cols-2 sm:grid-cols-4 gap-4 items-center justify-center">
                     {links.map((link, index) => (
                         <Button
                             key={`${link}-${index}`}
