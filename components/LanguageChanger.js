@@ -14,9 +14,6 @@ import { translate, languageName } from "@/data/site.config";
 
 export default function LanguageChanger() {
     const { locale, pathname, locales } = useRouter();
-
-    const [selectedKeys, setSelectedKeys] = useState(new Set([locale]));
-
     const languageChanger = translate.languageChanger[locale];
 
     return (
@@ -38,8 +35,7 @@ export default function LanguageChanger() {
                 variant="flat"
                 disallowEmptySelection
                 selectionMode="single"
-                selectedKeys={selectedKeys}
-                onSelectionChange={setSelectedKeys}
+                selectedKeys={[locale]}
             >
                 <DropdownSection title={languageChanger}>
                     {locales.map((loc) => (
