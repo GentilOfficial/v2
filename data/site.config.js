@@ -214,14 +214,6 @@ export const translate = {
                         end: "Feb 2023",
                     },
                     {
-                        title: "University of Ferrara",
-                        description:
-                            "Bachelor's degree in Computer Science and Technology, IT",
-                        location: "Ferrara, IT",
-                        start: "Set 2023",
-                        end: "Set 2026",
-                    },
-                    {
                         title: "TECNOMAT",
                         description: "logistics employee",
                         location: "Ferrara, IT",
@@ -256,14 +248,6 @@ export const translate = {
                         location: "Ferrara, IT",
                         start: "Feb 2022",
                         end: "Feb 2023",
-                    },
-                    {
-                        title: "Università degli Studi di Ferrara",
-                        description:
-                            "Laurea triennale in Scienze e Tecnologie Informatiche, Informatica",
-                        location: "Ferrara, IT",
-                        start: "Set 2023",
-                        end: "Set 2026",
                     },
                     {
                         title: "TECNOMAT",
